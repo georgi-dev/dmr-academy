@@ -1,0 +1,27 @@
+$arrow-size = 7px
+
+.sidebar
+  .sidebar-wrapper
+    ul
+      li
+        &.-active > a
+          i
+            background: $theme-color[0]
+          &:hover, &:focus, &:active, &[aria-expanded='true']
+            i
+              background: $theme-color[0]
+
+        a
+          &[aria-expanded='true']
+            i
+              background: rgba($theme-color[0], 0.33)
+          &:hover, &:focus, &:active
+            i
+              background: rgba($theme-color[0], 0.66)
+
+  .chat
+    .chat-item
+      &.-to
+        background: rgba($theme-color[0], 0.9)
+        &::after
+          border-left: $arrow-size solid rgba($theme-color[0], 0.9)

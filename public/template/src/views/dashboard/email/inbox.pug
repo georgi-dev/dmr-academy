@@ -1,0 +1,332 @@
+extends ../../layouts/dashboard.pug
+
+block content
+  +aside(class='-dark -left -with-left-sidebar -collapse-with-sidebar -collapsible')
+    +sidebar-mail(server, page['view'])
+    
+  +beside(class='mail -left-aside -collapse-with-sidebar -collapsible')
+    +container-fluid(class='mail-header')
+      +row 
+        +col({ xs: 12 })
+          h3 
+            +fa('inbox') 
+            | Inbox
+          
+          div(class='form -dark')
+            // Mail Actions
+            div(class='mail-actions')
+              div(id='mail-actions-primary')
+                div(class='btn-group _pull-right')
+                  +btn(class='-sm _cursor-default')
+                    strong 1-15 
+                    |  of 
+                    strong 247
+                  +btn(class='-sm -dark' data-toggle='tooltip' title='Previous Page' href='#')
+                    +fa('chevron-left')
+                  +btn(class='-sm -dark' data-toggle='tooltip' title='Next Page' href='#')
+                    +fa('chevron-right')
+                +form-group(id='check-all-wrapper' data-toggle='tooltip' title='Check All')
+                  div(class='form-check -checkbox')
+                    input(class='form-check-input' id='mail-check-all' name='check-all' type='checkbox')
+                    label(for='mail-check-all')
+              
+              div(id='mail-actions-secondary')
+                div(class='btn-group')
+                  +btn(class='-sm -dark' data-toggle='tooltip' title='Archive' href='#')
+                    +fa('archive')
+                  +btn(class='-sm -dark' data-toggle='tooltip' title='Spam' href='#')
+                    +fa('exclamation-circle')
+                  +btn(class='-sm -dark' data-toggle='tooltip' title='Delete' href='#')
+                    +fa('trash')
+                div(class='btn-group')
+                  div(class='btn-dropdown' data-toggle='tooltip' title='Move To' )
+                    +btn(class='-sm -dark' data-toggle='dropdown' href='#')
+                      +fa('folder')
+                      +fa('caret-down')(class='_margin-left-sm')
+                    div(class='dropdown-menu -dark')
+                      div(class='dropdown-item') Social
+                      div(class='dropdown-item') Promotions
+                      div(class='dropdown-item') Updates
+                      div(class='dropdown-item') Forums
+                      div(class='dropdown-divider')
+                      div(class='dropdown-item') Spam
+                      div(class='dropdown-item') Trash
+                  div(class='btn-dropdown' data-toggle='tooltip' title='Label As') 
+                    +btn(class='-sm -dark' data-toggle='dropdown' href='#')
+                      +fa('tag')
+                      +fa('caret-down')(class='_margin-left-sm')
+                    div(class='dropdown-menu -dark')
+                      div(class='dropdown-item') Updates
+                      div(class='dropdown-item') Social
+                      div(class='dropdown-item') Promotions
+                      div(class='dropdown-item') Forums
+            // /Mail Actions
+            
+    div(class='table-responsive')
+      table(class='mail-items table -dark -hovered')
+        tbody
+          +mail-item(class='-unread -starred' data-href=url('dashboard/email/detail'))
+            td(class='mail-item-actions')
+              div(class='form -dark')
+                +form-group
+                  div(class='form-check -checkbox')
+                    input(class='form-check-input' id='inbox-item-1' name='check' type='checkbox')
+                    label(for='inbox-item-1')
+              div(class='mail-item-star')
+                +fa('star')
+            td(class='mail-item-sender') Allen Perry 
+            td(class='mail-item-title')
+              | Website Development
+              span (3)
+            td(class='mail-item-excerpt') Dui auctor feugiat nec morbi quisque mollis ipsum libero aenean fermentum bibendum, platea..
+            td(class='mail-item-attachment')
+              +fa('paperclip')
+            td(class='mail-item-date')
+              | 16 Dec
+              
+          +mail-item(class='-unread' data-href=url('dashboard/email/detail'))
+            td(class='mail-item-actions')
+              div(class='form -dark')
+                +form-group
+                  div(class='form-check -checkbox') 
+                    input(class='form-check-input' id='inbox-item-2' name='check' type='checkbox')
+                    label(for='inbox-item-2')
+              div(class='mail-item-star')
+                +fa('star')
+            td(class='mail-item-sender') Jill Andrews
+            td(class='mail-item-title') Item Support
+            td(class='mail-item-excerpt') Dui auctor feugiat nec morbi quisque mollis ipsum libero aenean fermentum bibendum, platea..
+            td(class='mail-item-attachment')
+            td(class='mail-item-date')
+              | 9 Dec
+              
+          +mail-item(class='-unread' data-href=url('dashboard/email/detail'))
+            td(class='mail-item-actions')
+              div(class='form -dark')
+                +form-group
+                  div(class='form-check -checkbox')
+                    input(class='form-check-input' id='inbox-item-3' name='check' type='checkbox')
+                    label(for='inbox-item-3')
+              div(class='mail-item-star')
+                +fa('star')
+            td(class='mail-item-sender') Envato
+            td(class='mail-item-title') Envato Forums Summary
+            td(class='mail-item-excerpt') Dui auctor feugiat nec morbi quisque mollis ipsum libero aenean fermentum bibendum, platea..
+            td(class='mail-item-attachment')
+            td(class='mail-item-date')
+              | 1 Dec
+              
+          +mail-item(class='-read -starred' data-href=url('dashboard/email/detail'))
+            td(class='mail-item-actions')
+              div(class='form -dark')
+                +form-group
+                  div(class='form-check -checkbox')
+                    input(class='form-check-input' id='inbox-item-4' name='check' type='checkbox')
+                    label(for='inbox-item-4')
+              div(class='mail-item-star')
+                +fa('star')
+            td(class='mail-item-sender') Tracy Stewart
+            td(class='mail-item-title') You Rock
+            td(class='mail-item-excerpt') Dui auctor feugiat nec morbi quisque mollis ipsum libero aenean fermentum bibendum, platea..
+            td(class='mail-item-attachment')
+            td(class='mail-item-date')
+              | 23 Nov
+              
+              
+          +mail-item(class='-read' data-href=url('dashboard/email/detail'))
+            td(class='mail-item-actions')
+              div(class='form -dark')
+                +form-group
+                  div(class='form-check -checkbox')
+                    input(class='form-check-input' id='inbox-item-5' name='check' type='checkbox')
+                    label(for='inbox-item-5')
+              div(class='mail-item-star')
+                +fa('star')
+            td(class='mail-item-sender') Johnny Mitchell
+            td(class='mail-item-title') Need some help
+              span (5)
+            td(class='mail-item-excerpt') Dui auctor feugiat nec morbi quisque mollis ipsum libero aenean fermentum bibendum, platea..
+            td(class='mail-item-attachment')
+              +fa('paperclip')
+            td(class='mail-item-date')
+              | 14 Nov
+              
+          +mail-item(class='-read' data-href=url('dashboard/email/detail'))
+            td(class='mail-item-actions')
+              div(class='form -dark')
+                +form-group
+                  div(class='form-check -checkbox')
+                    input(class='form-check-input' id='inbox-item-6' name='check' type='checkbox')
+                    label(for='inbox-item-6')
+              div(class='mail-item-star')
+                +fa('star')
+            td(class='mail-item-sender') Adam Cole
+            td(class='mail-item-title') New Apparel Design
+            td(class='mail-item-excerpt') Dui auctor feugiat nec morbi quisque mollis ipsum libero aenean fermentum bibendum, platea..
+            td(class='mail-item-attachment')
+              +fa('paperclip')
+            td(class='mail-item-date')
+              | 10 Nov
+              
+          +mail-item(class='-read' data-href=url('dashboard/email/detail'))
+            td(class='mail-item-actions')
+              div(class='form -dark')
+                +form-group
+                  div(class='form-check -checkbox')
+                    input(class='form-check-input' id='inbox-item-7' name='check' type='checkbox')
+                    label(for='inbox-item-7')
+              div(class='mail-item-star')
+                +fa('star')
+            td(class='mail-item-sender') Envato
+            td(class='mail-item-title') Envato Forums Summary
+            td(class='mail-item-excerpt') Dui auctor feugiat nec morbi quisque mollis ipsum libero aenean fermentum bibendum, platea..
+            td(class='mail-item-attachment')
+            td(class='mail-item-date')
+              | 1 Nov
+              
+          +mail-item(class='-read' data-href=url('dashboard/email/detail'))
+            td(class='mail-item-actions')
+              div(class='form -dark')
+                +form-group
+                  div(class='form-check -checkbox')
+                    input(class='form-check-input' id='inbox-item-8' name='check' type='checkbox')
+                    label(for='inbox-item-8')
+              div(class='mail-item-star')
+                +fa('star')
+            td(class='mail-item-sender') Tracy Stewart
+            td(class='mail-item-title') You Rock
+            td(class='mail-item-excerpt') Dui auctor feugiat nec morbi quisque mollis ipsum libero aenean fermentum bibendum, platea..
+            td(class='mail-item-attachment')
+            td(class='mail-item-date')
+              | 27 Oct
+              
+              
+          +mail-item(class='-read' data-href=url('dashboard/email/detail'))
+            td(class='mail-item-actions')
+              div(class='form -dark')
+                +form-group
+                  div(class='form-check -checkbox')
+                    input(class='form-check-input' id='inbox-item-9' name='check' type='checkbox')
+                    label(for='inbox-item-9')
+              div(class='mail-item-star')
+                +fa('star')
+            td(class='mail-item-sender') Johnny Mitchell
+            td(class='mail-item-title') Phone Number
+            td(class='mail-item-excerpt') Dui auctor feugiat nec morbi quisque mollis ipsum libero aenean fermentum bibendum, platea..
+            td(class='mail-item-attachment')
+            td(class='mail-item-date')
+              | 26 Oct
+              
+          +mail-item(class='-read' data-href=url('dashboard/email/detail'))
+            td(class='mail-item-actions')
+              div(class='form -dark')
+                +form-group
+                  div(class='form-check -checkbox')
+                    input(class='form-check-input' id='inbox-item-10' name='check' type='checkbox')
+                    label(for='inbox-item-10')
+              div(class='mail-item-star')
+                +fa('star')
+            td(class='mail-item-sender') Adam Cole
+            td(class='mail-item-title') Company News
+              span (2) 
+            td(class='mail-item-excerpt') Dui auctor feugiat nec morbi quisque mollis ipsum libero aenean fermentum bibendum, platea..
+            td(class='mail-item-attachment')
+              +fa('paperclip')
+            td(class='mail-item-date')
+              | 17 Oct
+              
+          +mail-item(class='-read' data-href=url('dashboard/email/detail'))
+            td(class='mail-item-actions')
+              div(class='form -dark')
+                +form-group
+                  div(class='form-check -checkbox')
+                    input(class='form-check-input' id='inbox-item-6' name='check' type='checkbox')
+                    label(for='inbox-item-6')
+              div(class='mail-item-star')
+                +fa('star')
+            td(class='mail-item-sender') Adam Cole
+            td(class='mail-item-title') New Apparel Design
+            td(class='mail-item-excerpt') Dui auctor feugiat nec morbi quisque mollis ipsum libero aenean fermentum bibendum, platea..
+            td(class='mail-item-attachment')
+              +fa('paperclip')
+            td(class='mail-item-date')
+              | 10 Oct
+              
+          +mail-item(class='-read' data-href=url('dashboard/email/detail'))
+            td(class='mail-item-actions')
+              div(class='form -dark')
+                +form-group
+                  div(class='form-check -checkbox')
+                    input(class='form-check-input' id='inbox-item-7' name='check' type='checkbox')
+                    label(for='inbox-item-7')
+              div(class='mail-item-star')
+                +fa('star')
+            td(class='mail-item-sender') Envato
+            td(class='mail-item-title') Envato Forums Summary
+            td(class='mail-item-excerpt') Dui auctor feugiat nec morbi quisque mollis ipsum libero aenean fermentum bibendum, platea..
+            td(class='mail-item-attachment')
+            td(class='mail-item-date')
+              | 1 Oct
+              
+          +mail-item(class='-read' data-href=url('dashboard/email/detail'))
+            td(class='mail-item-actions')
+              div(class='form -dark')
+                +form-group
+                  div(class='form-check -checkbox')
+                    input(class='form-check-input' id='inbox-item-8' name='check' type='checkbox')
+                    label(for='inbox-item-8')
+              div(class='mail-item-star')
+                +fa('star')
+            td(class='mail-item-sender') Tracy Stewart
+            td(class='mail-item-title') About Volta
+            td(class='mail-item-excerpt') Dui auctor feugiat nec morbi quisque mollis ipsum libero aenean fermentum bibendum, platea..
+            td(class='mail-item-attachment')
+            td(class='mail-item-date')
+              | 25 Sep
+              
+              
+          +mail-item(class='-read' data-href=url('dashboard/email/detail'))
+            td(class='mail-item-actions')
+              div(class='form -dark')
+                +form-group
+                  div(class='form-check -checkbox')
+                    input(class='form-check-input' id='inbox-item-9' name='check' type='checkbox')
+                    label(for='inbox-item-9')
+              div(class='mail-item-star')
+                +fa('star')
+            td(class='mail-item-sender') Johnny Mitchell
+            td(class='mail-item-title') Dashboard Design
+            td(class='mail-item-excerpt') Dui auctor feugiat nec morbi quisque mollis ipsum libero aenean fermentum bibendum, platea..
+            td(class='mail-item-attachment')
+            td(class='mail-item-date')
+              | 20 Sep
+              
+          +mail-item(class='-read' data-href=url('dashboard/email/detail'))
+            td(class='mail-item-actions')
+              div(class='form -dark')
+                +form-group
+                  div(class='form-check -checkbox')
+                    input(class='form-check-input' id='inbox-item-10' name='check' type='checkbox')
+                    label(for='inbox-item-10')
+              div(class='mail-item-star')
+                +fa('star')
+            td(class='mail-item-sender') Adam Cole
+            td(class='mail-item-title') Brilliant Idea
+              span (4)
+            td(class='mail-item-excerpt') Dui auctor feugiat nec morbi quisque mollis ipsum libero aenean fermentum bibendum, platea..
+            td(class='mail-item-attachment')
+              +fa('paperclip')
+            td(class='mail-item-date')
+              | 16 Sep
+    
+    div(class='mail-info')
+      p(class='_pull-right _text-right')
+        | Last account activity: 0 minutes ago
+        br
+        | Open in 
+        a(href='#') 1 other location
+        |.
+      p 
+        | 20.78 GB (69%) of 30 GB used
+        br
+        a(href='#') Manage

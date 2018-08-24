@@ -1,0 +1,456 @@
+extends ../../layouts/dashboard.pug
+
+block content
+  +container-fluid
+    +row 
+      +col({ lg: 12 })
+        +page-heading(server, page)
+    
+    +row 
+      +col({ lg: 12 })
+        +panel(class='-dark')
+          +panel-heading 
+            h4 Dropdowns
+            span A showcase of Volta dropdowns
+          +panel-body 
+            +dropdown-preview
+              div(class='dropdown-menu -dark')
+                a(class='dropdown-item') Action 
+                a(class='dropdown-item') Another Action
+                a(class='dropdown-item') Something else here
+                div(class='dropdown-divider')
+                a(class='dropdown-item') Separated link
+                
+            +dropdown-preview
+              div(class='dropdown-menu -light')
+                a(class='dropdown-item') Action
+                a(class='dropdown-item') Another Action
+                a(class='dropdown-item') Something else here
+                div(class='dropdown-divider')
+                a(class='dropdown-item') Separated link
+                
+            +dropdown-preview
+              div(class='dropdown-menu -primary')
+                a(class='dropdown-item') Action
+                a(class='dropdown-item') Another Action
+                a(class='dropdown-item') Something else here
+                div(class='dropdown-divider')
+                a(class='dropdown-item') Separated link
+                
+            +dropdown-preview
+              div(class='dropdown-menu -secondary')
+                a(class='dropdown-item') Action
+                a(class='dropdown-item') Another Action
+                a(class='dropdown-item') Something else here
+                div(class='dropdown-divider')
+                a(class='dropdown-item') Separated link
+                
+            +dropdown-preview
+              div(class='dropdown-menu -success')
+                a(class='dropdown-item') Action
+                a(class='dropdown-item') Another Action
+                a(class='dropdown-item') Something else here
+                div(class='dropdown-divider')
+                a(class='dropdown-item') Separated link
+                
+            +dropdown-preview
+              div(class='dropdown-menu -info')
+                a(class='dropdown-item') Action
+                a(class='dropdown-item') Another Action
+                a(class='dropdown-item') Something else here
+                div(class='dropdown-divider')
+                a(class='dropdown-item') Separated link
+                
+            +dropdown-preview
+              div(class='dropdown-menu -warning')
+                a(class='dropdown-item') Action
+                a(class='dropdown-item') Another Action
+                a(class='dropdown-item') Something else here
+                div(class='dropdown-divider')
+                a(class='dropdown-item') Separated link
+                
+            +dropdown-preview
+              div(class='dropdown-menu -danger')
+                a(class='dropdown-item') Action
+                a(class='dropdown-item') Another Action
+                a(class='dropdown-item') Something else here
+                div(class='dropdown-divider')
+                a(class='dropdown-item') Separated link
+            
+          
+            +dropdown-preview
+              div(class='dropdown-menu -dark')
+                a(class='dropdown-item') 
+                  +fa('user')(class='_margin-right-sm')
+                  | Action
+                a(class='dropdown-item') 
+                  +fa('cloud-upload')(class='_margin-right-sm')
+                  | Another Action
+                a(class='dropdown-item') 
+                  +fa('info-circle')(class='_margin-right-sm')
+                  | Something else here
+                div(class='dropdown-divider')
+                a(class='dropdown-item') 
+                  +fa('cog')(class='_margin-right-sm')
+                  | Separated link
+                  
+            +dropdown-preview
+              div(class='dropdown-menu -light')
+                a(class='dropdown-item') 
+                  +fa('user')(class='_margin-right-sm')
+                  | Action
+                a(class='dropdown-item') 
+                  +fa('cloud-upload')(class='_margin-right-sm')
+                  | Another Action
+                a(class='dropdown-item') 
+                  +fa('info-circle')(class='_margin-right-sm')
+                  | Something else here
+                div(class='dropdown-divider')
+                a(class='dropdown-item') 
+                  +fa('cog')(class='_margin-right-sm')
+                  | Separated link
+                
+            +dropdown-preview
+              div(class='dropdown-menu -primary')
+                a(class='dropdown-item') 
+                  +fa('user')(class='_margin-right-sm')
+                  | Action
+                a(class='dropdown-item') 
+                  +fa('cloud-upload')(class='_margin-right-sm')
+                  | Another Action
+                a(class='dropdown-item') 
+                  +fa('info-circle')(class='_margin-right-sm')
+                  | Something else here
+                div(class='dropdown-divider')
+                a(class='dropdown-item') 
+                  +fa('cog')(class='_margin-right-sm')
+                  | Separated link
+                  
+            +dropdown-preview
+              div(class='dropdown-menu -secondary')
+                a(class='dropdown-item') 
+                  +fa('user')(class='_margin-right-sm')
+                  | Action
+                a(class='dropdown-item') 
+                  +fa('cloud-upload')(class='_margin-right-sm')
+                  | Another Action
+                a(class='dropdown-item') 
+                  +fa('info-circle')(class='_margin-right-sm')
+                  | Something else here
+                div(class='dropdown-divider')
+                a(class='dropdown-item') 
+                  +fa('cog')(class='_margin-right-sm')
+                  | Separated link
+          
+            +dropdown-preview
+              div(class='dropdown-menu -success')
+                a(class='dropdown-item') 
+                  +fa('user')(class='_margin-right-sm')
+                  | Action
+                a(class='dropdown-item') 
+                  +fa('cloud-upload')(class='_margin-right-sm')
+                  | Another Action
+                a(class='dropdown-item') 
+                  +fa('info-circle')(class='_margin-right-sm')
+                  | Something else here
+                div(class='dropdown-divider')
+                a(class='dropdown-item') 
+                  +fa('cog')(class='_margin-right-sm')
+                  | Separated link
+                  
+            +dropdown-preview
+              div(class='dropdown-menu -info')
+                a(class='dropdown-item') 
+                  +fa('user')(class='_margin-right-sm')
+                  | Action
+                a(class='dropdown-item') 
+                  +fa('cloud-upload')(class='_margin-right-sm')
+                  | Another Action
+                a(class='dropdown-item') 
+                  +fa('info-circle')(class='_margin-right-sm')
+                  | Something else here
+                div(class='dropdown-divider')
+                a(class='dropdown-item') 
+                  +fa('cog')(class='_margin-right-sm')
+                  | Separated link
+                
+            +dropdown-preview
+              div(class='dropdown-menu -warning')
+                a(class='dropdown-item') 
+                  +fa('user')(class='_margin-right-sm')
+                  | Action
+                a(class='dropdown-item') 
+                  +fa('cloud-upload')(class='_margin-right-sm')
+                  | Another Action
+                a(class='dropdown-item') 
+                  +fa('info-circle')(class='_margin-right-sm')
+                  | Something else here
+                div(class='dropdown-divider')
+                a(class='dropdown-item') 
+                  +fa('cog')(class='_margin-right-sm')
+                  | Separated link
+                  
+            +dropdown-preview
+              div(class='dropdown-menu -danger')
+                a(class='dropdown-item') 
+                  +fa('user')(class='_margin-right-sm')
+                  | Action
+                a(class='dropdown-item') 
+                  +fa('cloud-upload')(class='_margin-right-sm')
+                  | Another Action
+                a(class='dropdown-item') 
+                  +fa('info-circle')(class='_margin-right-sm')
+                  | Something else here
+                div(class='dropdown-divider')
+                a(class='dropdown-item') 
+                  +fa('cog')(class='_margin-right-sm')
+                  | Separated link
+    
+    +row 
+      +col({ lg: 6 }) 
+        +panel(class='-dark')
+          +panel-heading 
+            h4 Breadcrumbs
+            span A showcase of Volta breadcrumbs
+          +panel-body    
+            div(class='breadcrumb -dark')
+              div(class='breadcrumb-item -active') Home
+            div(class='breadcrumb -dark')
+              a(class='breadcrumb-item' href='#') Home
+              div(class='breadcrumb-item -active') Menu
+            div(class='breadcrumb -dark')
+              a(class='breadcrumb-item' href='#') Home
+              a(class='breadcrumb-item' href='#') Menu
+              div(class='breadcrumb-item -active') Menu
+              
+            div(class='breadcrumb -light')
+              div(class='breadcrumb-item -active')
+                +fa('home')
+            div(class='breadcrumb -light')
+              a(class='breadcrumb-item' href='#')
+                +fa('home')
+              div(class='breadcrumb-item -active') Menu
+            div(class='breadcrumb -light')
+              a(class='breadcrumb-item' href='#')
+                +fa('home')
+              a(class='breadcrumb-item' href='#') Menu
+              div(class='breadcrumb-item -active') Menu
+              
+        +panel(class='-dark')
+          +panel-heading 
+            h4 Tags
+            span A showcase of Volta labels and badges
+          +panel-body  
+            table(class='table -dark')
+              thead
+                tr
+                  th Type
+                  th Label
+                  th Badge
+              tbody
+                tr 
+                  td Dark
+                  td
+                    +tag(class='-dark') Dark 
+                  td
+                    +tag(class='-dark') 1
+                tr 
+                  td Light
+                  td
+                    +tag(class='-light') Light 
+                  td
+                    +tag(class='-light') 1
+                tr 
+                  td Primary
+                  td
+                    +tag(class='-primary') Primary 
+                  td
+                    +tag(class='-primary') 1
+                tr 
+                  td Secondary
+                  td
+                    +tag(class='-secondary') Secondary 
+                  td
+                    +tag(class='-secondary') 1
+                tr 
+                  td Success
+                  td
+                    +tag(class='-success') Success 
+                  td
+                    +tag(class='-success') 1
+                tr 
+                  td Info
+                  td
+                    +tag(class='-info') Info 
+                  td
+                    +tag(class='-info') 1
+                tr 
+                  td Warning
+                  td
+                    +tag(class='-warning') Warning 
+                  td
+                    +tag(class='-warning') 1
+                tr 
+                  td Danger
+                  td
+                    +tag(class='-danger') Danger 
+                  td
+                    +tag(class='-danger') 1
+              
+        +panel(class='-dark')
+          +panel-heading 
+            h4 List Group
+            span A showcase of Volta list group
+          +panel-body  
+            // List Group
+            div(class='list-group -dark')
+              a(class='list-group-item' href='#')
+                +fa('globe')(class='list-group-icon')
+                | Lorem ipsum 
+              a(class='list-group-item' href='#')
+                +fa('github')(class='list-group-icon')
+                | Dolor sit amet 
+              a(class='list-group-item' href='#')
+                +fa('twitter')(class='list-group-icon')
+                | Laboris aliqua 
+            // /List Group
+                
+            div(class='_margin-top-1x') 
+            
+            // List Group
+            div(class='list-group -light')
+              a(class='list-group-item' href='#')
+                +fa('globe')(class='list-group-icon')
+                | Lorem ipsum  
+              a(class='list-group-item' href='#')
+                +fa('github')(class='list-group-icon')
+                | Dolor sit amet 
+              a(class='list-group-item' href='#')
+                +fa('twitter')(class='list-group-icon')
+                | Laboris aliqua 
+            // /List Group
+                
+                
+          
+      +col({ lg: 6 })
+        +panel(class='-dark')
+          +panel-heading 
+            h4 Tooltips
+            span A showcase of bootstrap tooltips
+          +panel-body 
+            p
+              | This is just an example of tooltip in a paragraph content written by 
+              a(href="#" data-toggle="tooltip" title="Default Tooltip") Author
+              |. You can set the tooltip position easily with 
+              a(href="#" data-toggle="tooltip" data-placement="bottom" title="Volta is Awesome!") Tooltip options.
+              
+            div(class='btn-list-unstyled')
+              +btn(class='-dark' data-toggle="tooltip" data-placement="top" title="Top Tooltip") Top Tooltip
+              +btn(class='-dark' data-toggle="tooltip" data-placement="right" title="Right Tooltip") Right Tooltip
+              +btn(class='-dark' data-toggle="tooltip" data-placement="bottom" title="Bottom Tooltip") Bottom Tooltip
+              +btn(class='-dark' data-toggle="tooltip" data-placement="left" title="Left Tooltip") Left Tooltip
+        
+        +panel(class='-dark')
+          +panel-heading 
+            h4 Popovers
+            span A showcase of bootstrap popovers
+          +panel-body 
+            div(class='btn-list-unstyled')
+              +btn(class='-dark' data-toggle="popover" data-placement="top" title="Top Popover" data-content="Lorem ipsum dolor sit amet.") Top Popover
+              +btn(class='-dark' data-toggle="popover" data-placement="right" title="Right Popover" data-content="Lorem ipsum dolor sit amet.") Right Popover
+              +btn(class='-dark' data-toggle="popover" data-placement="bottom" title="Bottom Popover" data-content="Lorem ipsum dolor sit amet.") Bottom Popover
+              +btn(class='-dark' data-toggle="popover" data-placement="left" title="Left Popover" data-content="Lorem ipsum dolor sit amet.") Left Popover
+        
+        +panel(class='-dark')
+          +panel-heading 
+            h4 Images
+            span A showcase of Volta's image styling
+          +panel-body 
+            img(class='-responsive _margin-1x' src="http://placehold.it/135x135" alt="Volta Admin Dashboard")
+            img(class='-responsive -bordered -dark _margin-1x' src="http://placehold.it/135x135" alt="Volta Admin Dashboard")
+            img(class='-responsive -rounded _margin-1x' src="http://placehold.it/135x135" alt="Volta Admin Dashboard")
+            img(class='-responsive -round _margin-1x' src="http://placehold.it/135x135" alt="Volta Admin Dashboard")
+        
+        +panel(class='-dark')
+          +panel-heading 
+            h4 Pagination
+            span A showcase of Volta's pagination
+          +panel-body 
+          
+            // Pagination
+            ul(class='pagination -dark')
+              li(class='pagination-item')
+                a(href='#')
+                  +fa('caret-left')
+              li(class='pagination-item -active') 
+                a 1
+              li(class='pagination-item')
+                a(href='#') 2
+              li(class='pagination-item')
+                a(href='#') 3
+              li(class='pagination-item')
+                a(href='#') 4
+              li(class='pagination-item')
+                a(href='#')
+                  +fa('caret-right')
+            // /Pagination
+          
+            // Pagination
+            ul(class='pagination -light')
+              li(class='pagination-item')
+                a(href='#')
+                  +fa('caret-left')
+              li(class='pagination-item -active') 
+                a 1
+              li(class='pagination-item')
+                a(href='#') 2
+              li(class='pagination-item')
+                a(href='#') 3
+              li(class='pagination-item')
+                a(href='#') 4
+              li(class='pagination-item')
+                a(href='#')
+                  +fa('caret-right')
+            // /Pagination
+        
+        +panel(class='-dark' id='ui-general-progress-bars')
+          +panel-heading 
+            h4 Progress Bars
+            span A showcase of Volta's progress bars
+          +panel-body
+            h5(class='_margin-bottom-1x') Progress Dark
+            +progress(class='-dark')
+              div(class='bar -dark' style="width: 60%")
+            +progress(class='-dark')
+              div(class='bar -light' style="width: 60%")
+            +progress(class='-dark')
+              div(class='bar -primary' style="width: 60%")
+            +progress(class='-dark')
+              div(class='bar -secondary' style="width: 60%")
+            +progress(class='-dark')
+              div(class='bar -success' style="width: 60%")
+            +progress(class='-dark')
+              div(class='bar -info' style="width: 60%")
+            +progress(class='-dark')
+              div(class='bar -warning' style="width: 60%")
+            +progress(class='-dark')
+              div(class='bar -danger' style="width: 60%")
+            
+            h5(class='_margin-top-2x _margin-bottom-1x') Progress Light
+            +progress(class='-light')
+              div(class='bar -danger' style="width: 60%")
+            +progress(class='-light')
+              div(class='bar -warning' style="width: 60%")
+            +progress(class='-light')
+              div(class='bar -info' style="width: 60%")
+            +progress(class='-light')
+              div(class='bar -success' style="width: 60%")
+            +progress(class='-light')
+              div(class='bar -primary' style="width: 60%")
+            +progress(class='-light')
+              div(class='bar -secondary' style="width: 60%")
+            +progress(class='-light')
+              div(class='bar -light' style="width: 60%")
+            +progress(class='-light')
+              div(class='bar -dark' style="width: 60%")
+                

@@ -1,0 +1,111 @@
+extends ../../layouts/dashboard.pug
+
+block content
+  +container-fluid
+    +row 
+      +col({ lg: 12 })
+        +page-heading(server, page)
+            
+    +row
+      +col({ md: 6, lg: 3 })
+        +panel(class='-dark')
+          +panel-body
+            div(class='panel-status')
+              span
+                | Monthly Sales
+              h4
+                +fa('chevron-up')(class='_text-success')
+                | 50%
+            div(class='panel-sparkline' id='chart-sales-status')
+            
+      +col({ md: 6, lg: 3 })
+        +panel(class='-dark')
+          +panel-body
+            div(class='panel-status')
+              span
+                | New Users
+              h4
+                +fa('check')(class='_text-info')
+                | 106
+            div(class='panel-sparkline' id='chart-users-status')
+            
+      +col({ md: 6, lg: 3 })
+        +panel(class='-dark')
+          +panel-body
+            div(class='panel-status')
+              span
+                | Impressions
+              h4
+                +fa('chevron-up')(class='_text-warning')
+                | 450
+            div(class='panel-sparkline' id='chart-impressions-status')
+            
+      +col({ md: 6, lg: 3 })
+        +panel(class='-dark')
+          +panel-body
+            div(class='panel-status')
+              span
+                | Downloads
+              h4
+                +fa('chevron-down')(class='_text-danger')
+                | 110
+            div(class='panel-sparkline' id='chart-downloads-status')
+    
+    +row 
+      +col({ md: 6 })
+        +panel(class='-dark')
+          div(class='panel-heading')
+            h4 Inline Charts 
+            span A showcase of Volta's Sparkline chart integration
+          
+          table(class='table -dark sparklines-table')
+            thead 
+              tr
+                th Name 
+                th Graph 
+            tbody 
+              tr 
+                td Line Chart
+                td
+                  div(id='sparkline-chart-line')
+              tr 
+                td Bar Chart
+                td
+                  div(id='sparkline-chart-bar')
+              tr 
+                td Tristate Chart
+                td
+                  div(id='sparkline-chart-tristate')
+              tr 
+                td Discrete Chart
+                td
+                  div(id='sparkline-chart-discrete')
+                
+      +col({ md: 6 })
+        +panel(class='-dark')
+          +panel-heading 
+            h4 Inline Charts 
+            span A showcase of Volta's Sparkline chart integration
+          
+          table(class='table -dark sparklines-table')
+            thead 
+              tr
+                th Name 
+                th Graph 
+            tbody 
+              tr 
+                td Bullet Chart
+                td
+                  div(id='sparkline-chart-bullet')
+              tr 
+                td Pie Chart
+                td
+                  div(id='sparkline-chart-pie')
+              tr 
+                td Box Chart
+                td
+                  div(id='sparkline-chart-box')
+              tr 
+                td Composite Chart
+                td
+                  div(id='sparkline-chart-composite')

@@ -1,0 +1,12 @@
+//- Loading spinner 
+//-
+mixin loader()
+  // Loading Spinner
+  div(class='loader-wrapper')
+    div(class='loader')
+      - var i = 1; 
+      while i <= 16
+        span(class='loader-block')
+        - i++
+  // /Loading Spinner
+  

@@ -1,0 +1,21 @@
+extends ../../layouts/dashboard.pug
+
+block content
+  +container-fluid
+    +row 
+      +col({ lg: 12 })
+        +page-heading(server, page)
+          
+    +row
+      +col({ lg: 12 })
+        +panel(class='-dark')
+          +panel-heading
+            h4 Dropzone
+            span A showcase of Volta's multi-upload implementation
+          +panel-body 
+            form(class='dropzone -dark' id='my-dropzone' method="post" action=url('forms/multi-upload/'))
+              div(class='fallback') 
+                div(class='form-group') 
+                  input(class='form-control' type="file" name="file")
+
+      

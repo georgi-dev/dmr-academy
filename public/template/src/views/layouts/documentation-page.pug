@@ -1,0 +1,21 @@
+extends dashboard.pug
+
+block layout
+  - let documentationPage = pages[pages.length - 1]
+  
+  +navbar(server, 'dark')      
+  
+  +sidebar-main({ server: server, pages: pages[2], theme: 'dark' })
+  
+  +content('dark')(class='-collapsible -documentation-page') 
+    block content 
+      +container-fluid
+        +row 
+          +col({ lg: 12 }) 
+            +panel(class='-dark')    
+              +panel-heading
+                h3
+                  +pe('ribbon')
+                  | Explore Topics
+              .panel-body
+                block page 

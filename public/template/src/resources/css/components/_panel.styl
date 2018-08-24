@@ -1,0 +1,184 @@
+.panel, .card
+  display: block
+  position: relative
+  margin-bottom: $base-margin
+  border-radius: 2px
+
+  &.-bordered
+    border-width: 1px
+    border-style: solid
+
+  for $border-position in ('top' 'left' 'right' 'bottom')
+    &.-bordered-{$border-position}
+      border-{$border-position}-width: 5px
+      border-{$border-position}-style: solid
+
+  &.-bordered-3d
+    border-width: 0
+    border-bottom-width: 5px
+    border-style: solid
+    border-radius: 0px 0px 5px 5px
+
+  .panel-status
+    float: right
+    text-align: right
+    h4
+      font-weight: bold
+
+  .panel-sparkline
+    box-sizing: border-box
+    width: 100%
+    position: relative
+    display: block
+    //
+    // canvas
+    //   margin-top: 35px
+
+  .panel-heading, .card-header
+  .panel-body, .card-block
+  .panel-footer, .card-footer
+    position: relative
+    background: transparent
+    display: block
+    clearfix()
+
+  .panel-heading, .card-header
+    padding: $panel['padding']
+    border-bottom-width: 1px
+    border-bottom-style: solid
+    border-radius: 0
+
+    &.-with-icon
+    &.-with-icon-sm
+    &.-with-icon-lg
+      > i
+        float: left
+        margin-top: -0.25rem
+        margin-right: 1rem
+
+    &.-with-icon-sm > i
+      margin-top: 0
+      font-size: 1.5rem
+    &.-with-icon > i
+      font-size: 2.25rem
+    &.-with-icon-lg > i
+      font-size: 3.5rem
+
+
+    h1, h2, h3, h4, h5, h6
+    .h1, .h2, .h3, .h4, .h5, .h6
+      margin-bottom: 0
+
+      > a
+        display: block
+        margin: - $panel['padding']
+        padding: $panel['padding']
+
+    a
+      &:hover, &:focus
+        text-decoration: none
+
+
+    .panel-actions, .card-actions
+      top: $panel['padding']
+
+  .panel-footer, .card-footer
+    padding: $panel['padding']
+    border-top-width: 1px
+    border-top-style: solid
+
+    .panel-actions
+      bottom: $panel['padding']
+
+  .panel-body, .card-block
+    padding: $panel['padding']
+
+    &.-bordered
+      border-top-width: 1px
+      border-top-style: solid
+
+    p:last-child
+      margin-bottom: 0
+
+    p > a
+      font-weight: bold
+      &.btn
+        font-weight: normal
+
+  .panel-actions, .card-actions
+    position: absolute
+    right: $panel['padding']
+    list-style: none
+    margin: 0
+
+    &.-centered
+      top: 50%
+      transform: translateY(-50%)
+
+    li
+      float: left
+      display: inline-block
+      margin-left: $panel['padding']
+
+      a
+        cursor: pointer
+        &:hover, &:active, &:focus
+          text-decoration: none
+
+        &.dropdown-toggle::after
+          display: none
+
+
+  &.-collapsible.-collapsed
+    .panel-body
+      display: none
+
+
+  &.-focused
+    max-width: 600px
+    margin: 3rem auto
+
+  for $scheme-name, $scheme-color in $panel['schemes']
+    &.-{$scheme-name}
+      background: $scheme-color['background']['light']
+      background: linear-gradient(to top left, $scheme-color['background']['lighter'], $scheme-color['background']['light'])
+      border-color: $scheme-color['background']['lighter']
+
+      color: $scheme-color['color']['default']
+
+      .panel-actions a, .card-actions a
+        color: $scheme-color['color']['dark']
+
+      .panel-body, .card-block
+        color: $scheme-color['color']['dark']
+        &.-bordered
+          border-color: $scheme-color['background']['lighter']
+
+      .panel-heading, .card-header
+      .panel-footer, .card-footer
+        border-color: $scheme-color['background']['lighter']
+
+      .panel-heading, .card-header
+        span
+          color: $scheme-color['color']['medium']
+
+
+  for $scheme-name, $scheme-color in $panel['schemes']
+    .panel-heading.-{$scheme-name}, .card-header.-{$scheme-name}
+    .panel-footer.-{$scheme-name}, .card-footer.-{$scheme-name}
+    .panel-body.-{$scheme-name}, .card-body.-{$scheme-name}
+      background: $scheme-color['background']['light']
+
+  for $brand-name, $brand-color in $brand
+    &.-{$brand-name}
+      color: $scheme['light']['color']['default']
+      .panel-heading, .card-header
+      .panel-footer, .card-footer
+        border-color: $scheme['dark']['background']['lighter']
+      background: linear-gradient(to top left, rgba($brand-color, 0.4), rgba($brand-color, 0.8))
+    &.-bordered-{$brand-name}
+      border-color: $brand-color
+    .panel-heading.-{$brand-name}, .card-header.-{$brand-name}
+    .panel-footer.-{$brand-name}, .card-footer.-{$brand-name}
+    .panel-body.-{$brand-name}, .card-body.-{$brand-name}
+      background: linear-gradient(to top left, rgba($brand-color, 0.4), rgba($brand-color, 0.8))

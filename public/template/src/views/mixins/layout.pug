@@ -1,0 +1,20 @@
+mixin content(theme, position)
+  - theme = theme || 'dark'
+  - position = position || 'with-left-sidebar'
+  
+  // Content
+  div(class='content -' + theme + ' -' + position)&attributes(attributes)
+    block content
+  // /Content
+
+mixin aside 
+  // Aside
+  aside&attributes(attributes)
+    block
+  // /Aside
+
+mixin beside 
+  // Beside
+  div(class='beside')&attributes(attributes)
+    block
+  // /Beside

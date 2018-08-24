@@ -1,0 +1,102 @@
+.btn
+  border-radius: 0
+  background-color: transparent
+  transition: all 0.3s ease
+  padding: $button['padding-vertical'] $button['padding-horizontal']
+  &.-xs
+    padding: $button['padding-vertical'] * (2/4) $button['padding-horizontal'] * (2/4)
+    font-size: 0.9rem
+  &.-sm
+    padding: $button['padding-vertical'] * (3/4) $button['padding-horizontal'] * (3/4)
+    font-size: 0.95rem
+  &.-lg
+    padding: $button['padding-vertical'] * (5/4) $button['padding-horizontal'] * (5/4)
+    font-size: 1.05rem
+  &.-xl
+    padding: $button['padding-vertical'] * (6/4) $button['padding-horizontal'] * (6/4)
+    font-size: 1.1rem
+
+  &.-wide
+    padding-left: $button['padding-horizontal'] * (6/4)
+    padding-right: $button['padding-horizontal'] * (6/4)
+
+  &.-narrow
+    padding-left: $button['padding-horizontal'] * (1/2)
+    padding-right: $button['padding-horizontal'] * (1/2)
+
+  &.-block
+    display: block
+    width: 100%
+    margin-left: 0
+    margin-right: 0
+
+  &.-hspace
+    margin-left: 1rem
+    margin-right: 1rem
+    &:first-child
+      margin-left: 0
+
+  &.-vspace
+    margin-top: 1rem
+    margin-bottom: 1rem
+
+  color: $scheme['light']['color']['darker']
+  &:hover, &:focus, &:active
+    color: $scheme['light']['color']['default']
+
+
+  for $scheme-name, $scheme-color in $scheme
+    &.-{$scheme-name}
+      background-image: linear-gradient(to bottom, $scheme-color['background']['dark'], $scheme-color['background']['medium'])
+      &:hover, &:focus
+        background-color: $scheme-color['background']['medium']
+      &:active
+        background-color: $scheme-color['background']['default']
+
+  &.-light
+    color: $scheme['dark']['color']['default']
+    &:hover, &:focus, &:active
+      color: $scheme['dark']['color']['default']
+
+
+  for $brand-name, $brand-color in $brand
+    &.-{$brand-name}
+      background-image: linear-gradient(to bottom, rgba($brand-color, 0.8), rgba($brand-color, 0.4))
+      &:hover, &:focus
+        background-color: rgba($brand-color, 0.5)
+      &:active
+        background-color: darken($brand-color, 40%)
+
+
+  for $social-name, $social-color in $social
+    &.-{$social-name}
+      background-image: linear-gradient(to bottom, rgba($social-color, 0.8), rgba($social-color, 0.5))
+      &:hover, &:focus
+        background-color: rgba($social-color, 0.5)
+      &:active
+        background-color: darken($social-color, 40%)
+
+.btn-group
+  margin: 0 1rem 1rem 0
+
+  &-vertical
+    margin-right: 1rem
+
+  &.-justified
+    display: table
+    width: 100%
+    table-layout: fixed
+    border-collapse: separate
+
+    .btn
+    .btn-group
+      padding-left: 0
+      padding-right: 0
+      float: none
+      display: table-cell
+      width: 1%
+      .btn
+        width: 100%
+
+      .dropdown-menu
+        left: auto

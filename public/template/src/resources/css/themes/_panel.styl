@@ -1,0 +1,14 @@
+.panel
+  for $brand-name, $brand-color in $theme-brand
+    &.-{$brand-name} 
+      color: $scheme['light']['color']['default']
+      .panel-heading, .card-header
+      .panel-footer, .card-footer
+        border-color: $scheme['dark']['background']['lighter']
+      background: linear-gradient(to top left, rgba($brand-color, 0.4), rgba($brand-color, 0.8))
+    &.-bordered-{$brand-name}
+      border-color: $brand-color
+    .panel-heading.-{$brand-name}, .card-header.-{$brand-name}
+    .panel-footer.-{$brand-name}, .card-footer.-{$brand-name}
+    .panel-body.-{$brand-name}, .card-body.-{$brand-name}
+      background: linear-gradient(to top left, rgba($brand-color, 0.4), rgba($brand-color, 0.8))

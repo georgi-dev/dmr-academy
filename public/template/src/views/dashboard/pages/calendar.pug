@@ -1,0 +1,14 @@
+extends ../../layouts/dashboard.pug
+
+block content
+  +container-fluid
+    +row 
+      +col({ lg: 12 }) 
+        +page-heading(server, page)
+          // a.btn.-dark#calendar-add href="javascript:void(0);" > pe icon="plus"
+          +btn(class='-dark page-heading-button' id='calendar-add-event' href="#") 
+            +fa("plus-circle")(class='_margin-right-1x')
+            | Add Event
+    +row 
+      +col({ md: 12 })
+        div(id='calendar')

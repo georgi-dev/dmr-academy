@@ -1,0 +1,45 @@
+.dropdown-menu
+  border-radius: 3px
+  padding: 0
+  width: 240px
+
+  &.-left
+    left: 0
+    right: auto
+  &.-right
+    right: 0
+    left: auto
+
+  .dropdown-divider
+    margin: 0
+    background: $scheme['light']['background']['light']
+
+  .dropdown-item
+  a.dropdown-item
+    padding: 0.75rem 1.25rem
+    transition: all 0.3s ease
+    color: $scheme['light']['color']['dark']
+    &:hover, &:focus, &:active
+      background: $scheme['light']['background']['light']
+      color: $scheme['light']['color']['default']
+
+
+  for $scheme-name, $scheme-color in $dropdown['schemes']
+    &.-{$scheme-name}
+      background: $scheme-color['background']['medium']
+      background: linear-gradient(to right, $scheme-color['background']['darker'], $scheme-color['background']['dark'])
+
+      .dropdown-divider
+        background: invert($scheme-color['background']['lighter'])
+
+      .dropdown-item
+        color: $scheme-color['color']['dark']
+        &:hover, &:focus, &:active
+          background: invert(rgba($scheme-color['background']['default'], 0.07))
+          color: $scheme-color['color']['default']
+
+
+  for $brand-name, $brand-color in $brand
+    &.-{$brand-name}
+      background: $brand-color
+      background: linear-gradient(to right, rgba($brand-color, 1), rgba($brand-color, 0.8))

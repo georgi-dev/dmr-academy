@@ -1,0 +1,503 @@
+// Sidebar styles
+//
+.sidebar
+  width: $sidebar['width']
+  height: 100%
+  z-index: 98
+  display: block
+  position: fixed
+  box-sizing: border-box
+  border-style: solid
+  font-size: 1rem
+  border-width: 0
+  top: 0
+  &.-left
+    left: 0
+  &.-right
+    right: 0
+
+  .sidebar-wrapper
+    width: $sidebar['width']
+
+  .scrollable-content
+    -ms-overflow-style: -ms-autohiding-scrollbar
+
+    [data-os="windows"] &
+    [data-os="linux"] &
+      right: -16px
+
+  &.-collapsible
+    +breakpoint-down(md)
+      width: $sidebar['responsive-width']
+
+      &.-open
+        width: $sidebar['responsive-width'] + $sidebar['width']
+
+        .nano-pane
+          opacity: 0
+
+      .sidebar-heading
+        display: none!important
+
+      .sidebar-wrapper
+        position: relative
+        height: 100%
+        height: 'calc(100% - %s)' % $navbar['height']
+        width: $sidebar['responsive-width']
+
+        > .sidebar-menu
+          height: 100%
+
+          &:focus
+            outline: none
+          > li
+            > ul
+              visibility: visible;
+              width: $sidebar['width']
+              position: absolute
+              top: 0
+              right: - $sidebar['width']
+            > a
+              padding: 0
+              span
+                display: none
+
+      &.-left
+        .sidebar-wrapper
+          > .sidebar-menu > li > ul
+            left: auto
+            right: - $sidebar['width']
+
+      &.-right
+        .sidebar-wrapper
+          float: right
+          > .sidebar-menu > li > ul
+            left: - $sidebar['width']
+            right: auto
+
+
+  &.-slideable.-collapsed:not(.-slides-content)
+    background: $scheme.dark.background.medium
+    background: linear-gradient(to right, $scheme.dark.background.darker, $scheme.dark.background.light)
+
+  .tag
+    margin-right: 10px
+    margin-top: ($sidebar['link-height'] / 2) - 16px
+    float: right
+    opacity: 0.5
+    line-height: 1rem
+
+  .nano-pane
+    margin-top: $navbar['height']
+
+  // Sidebar menu
+  //
+  .sidebar-wrapper
+    // Sidebar menus
+    //
+    ul
+      list-style: none
+      margin-top: 0
+      margin-left: 0
+      margin-bottom: 0
+      margin-right: 0
+      padding: 0
+      width: 100%
+
+      li
+        width: 100%
+        display: block
+        position: relative
+        display: block
+
+        &.sidebar-heading
+          padding: 1rem
+          font-size: 0.9rem
+
+        a
+          display: block
+          position: relative
+          transition: all 0.3s ease
+
+          &:hover, &:focus, &:active
+            text-decoration: none
+
+    // Direct children
+    //
+    > ul
+      margin-top: $navbar['height']
+
+      > li
+        > a
+          padding: 0 1rem 0 $sidebar['link-height'] + 15px
+          height: $sidebar['link-height']
+          line-height: $sidebar['link-height']
+          border: none
+
+          .arrow
+            line-height: $sidebar['link-height']
+            margin-right: 1rem
+
+          &::after
+            content: ''
+            display: block
+            position: absolute
+            bottom: 0
+            left: 0
+            height: 1px
+            width: 100%
+
+          i
+            transition: all 0.5s ease
+            font-size: 1.25rem
+            position: absolute
+            top: 0
+            left: 0
+            height: $sidebar['link-height'] - 1px
+            line-height: $sidebar['link-height']
+            width: $sidebar['link-height']
+            text-align: center
+
+        // Submenus
+        //
+        ul
+          li
+            a
+              padding: 0 1rem
+              height: $sidebar['link-inner-height']
+              line-height: $sidebar['link-inner-height']
+              font-size: 0.9rem
+
+              .arrow
+                line-height: $sidebar['link-inner-height']
+
+  for $scheme-name, $scheme-color in $sidebar['schemes']
+    &.-{$scheme-name}
+      &.-collapsible
+        +breakpoint-down(md)
+          .sidebar-wrapper
+            ul > li > ul
+              backdrop-filter: blur(7px)
+              -webkit-backdrop-filter: blur(7px)
+              background: $scheme.dark.background.dark
+              background: linear-gradient(to bottom right, $scheme-color['background']['dark'], $scheme-color['background']['medium'])
+
+          // &.-left .sidebar-menu
+          //   border-right: 1px solid $scheme-color['background']['lighter']
+          // &.-right .sidebar-menu
+          //   border-left: 1px solid $scheme-color['background']['lighter']
+      .sidebar-wrapper
+        // Sidebar menus
+        //
+        ul
+          border-color: $scheme-color['background']['lighter']
+
+          li
+            // Sidebar heading
+            //
+            &.sidebar-heading
+              color: $scheme-color['color']['default']
+
+            // Sidebar active
+            //
+            &.-active
+              background: linear-gradient(to left, $scheme-color['background']['lighter'], $scheme-color['background']['light'])
+
+              > a
+                font-weight: bold
+                color: $scheme-color['color']['default']
+
+                &:hover, &:focus, &:active, &[aria-expanded='true']
+                  background-position: - $sidebar['width']
+
+
+            // Sidebar last child
+            // hide bottom border
+            &:last-child a
+              &::after
+                display: none
+
+            // Sidebar item links
+            //
+            a
+              background: linear-gradient(to right, $scheme-color['background']['light'], $scheme-color['background']['transparent'])
+              color: $scheme-color['color']['dark']
+              &[aria-expanded='true']
+                i
+                  color: $scheme-color['color']['default']
+
+              &:hover, &:focus, &:active
+                color: $scheme-color['color']['default']
+                background-position: - $sidebar['width']
+
+            // Sidebar item icons
+            //
+            i
+              background: $scheme-color['background']['lighter']
+              background: linear-gradient(to right, $scheme-color['background']['lighter'], $scheme-color['background']['transparent'])
+
+        // Direct children
+        //
+        > ul
+          background: $scheme-color['background']['lighter']
+          background: linear-gradient(to bottom right, $scheme-color['background']['light'], $scheme-color['background']['transparent'])
+          border-color: $scheme['dark']['color']['light']
+
+          > li
+            > a::after
+              background: linear-gradient(to right, $scheme-color['background']['light'], $scheme-color['background']['transparent'])
+
+            // Submenus
+            //
+            ul
+              border-top: 1px solid $scheme-color['background']['light']
+              border-bottom: 1px solid $scheme-color['background']['light']
+              background: linear-gradient(to bottom, $scheme-color['background']['light'], $scheme-color['background']['lighter'], $scheme-color['background']['lighter'])
+
+
+  &.-slideable
+    &.-responsive
+      color: $scheme.light.color.medium
+      z-index: 999
+      overflow: hidden
+
+      &.-right
+        right: - $sidebar['width']
+      &.-left
+        left: - $sidebar['width']
+
+    .sidebar-content
+      margin-top: $navbar['height']
+      backdrop-filter: blur(7px)
+      -webkit-backdrop-filter: blur(7px)
+      background: $scheme['dark']['background']['dark']
+
+  .sidebar-tabs
+    display: block
+    position: relative
+    top: $navbar['height']
+    margin: 0
+    padding: 0
+    width: 100%
+    z-index: 1
+    background: $scheme.dark.background.darker
+    clearfix()
+
+    .sidebar-tab
+      display: inline-block
+      float: left
+      position: relative
+      width: percentage(1/2)
+      text-align: center
+      padding: 1rem 0.5rem
+      border-right: 1px solid $scheme.light.background.lighter
+      background: $scheme.dark.background.lighter
+      cursor: pointer
+      transition: all 0.3s ease
+      &.-active
+        background: $scheme.light.background.light
+        color: $scheme.light.color.default
+      &:hover, &:focus, &:active
+        color: $scheme.light.color.dark
+
+      &:last-child
+        border-right: none
+
+
+  .sidebar-tab-content
+    top: 0
+    left: 0
+    height: 100%
+    width: 100%
+    position: absolute
+    transition: all 0.5s ease
+    transform: translateX(100%)
+    display: none
+    opacity: 0
+
+    &.-active
+      opacity: 1
+      transform: translateX(0%)
+      position: relative
+      display: block
+
+  .sidebar-content-section
+    padding: 1rem
+    display: block
+
+    h1
+    h2
+    h3
+    h4
+    h5
+    h6
+      &:first-child
+        margin-top: 0
+      margin-top: 2rem
+      margin-bottom: 1rem
+
+  .chat-list-item
+    display: block
+    position: relative
+    cursor: pointer
+    transition: all 0.3s ease
+    margin-bottom: 1rem
+    clearfix()
+
+    &.-right
+      text-align: right
+
+      .chat-list-avatar
+        float: right
+        margin-right: 0
+        margin-left: 0.75rem
+
+      .chat-list-status
+        left: auto
+        right: 3px
+
+      .chat-user-back
+        position: absolute
+        top: 50%
+        left: 1rem
+        margin-top: -10px
+
+    &:hover, &:focus, &:active
+      background: $scheme.light.background.lighter
+      .chat-list-status
+        transform: scale(1.5) translate(-25%, -25%)
+    .chat-list-avatar
+      float: left
+      width: 42px
+      height: 42px
+      border-radius: 2px
+      margin-right: 0.75rem
+
+    .chat-list-user
+      color: $scheme.light.color.default
+
+    .chat-list-excerpt
+      font-size: 0.8rem
+
+    .chat-list-status
+      position: absolute
+      font-size: 0.6rem
+      transition: all 0.3s ease
+      top: 3px
+      left: 3px
+
+    &.-available .chat-list-status
+      color: $brand['success']
+    &.-busy .chat-list-status
+      color: $brand['danger']
+    &.-away .chat-list-status
+      color: $brand['warning']
+
+  .tasks-list
+    .task
+      color: $scheme.light.color.default
+      margin-bottom: 0
+
+      label
+        &::before
+          border: 1px solid $scheme.light.background.light
+          margin-bottom: 0.1rem
+        transition: all 0.3s ease
+        margin-bottom: 0
+      input:checked
+        + label
+          color: $scheme.light.color.medium
+          text-decoration: line-through
+
+  .settings-list
+    .form-group
+      color: $scheme.light.color.default
+
+      label
+        &::before
+          border: 1px solid $scheme.light.background.light
+          margin-bottom: 0.1rem
+        margin-bottom: 0
+
+
+  .chat-user
+    position: fixed;
+    width: 100%
+    top: 0
+    left: 0
+    padding-top: 0.75rem
+    padding-right: 1rem
+    border-top: 1px solid $scheme.light.background.lighter
+    background: $scheme.dark.background.dark
+    background: linear-gradient(to right, $scheme.dark.background.dark, $scheme.dark.background.default)
+    z-index: 11
+
+  .chat-form
+    position: fixed
+    width: 100%
+    height: auto
+    display: block
+    bottom: 55px
+    left: 0
+    z-index: 11
+    margin-bottom: 0
+    background-color: $scheme.dark.background.dark
+
+    input
+      position: relative
+      display: block
+      background-image: linear-gradient(to bottom right, $scheme.light.background.lighter, $scheme.light.background.light)
+      width: 100%
+      height: auto
+      border: none
+      padding: 1rem
+
+
+  .chat
+    height: 100%
+    width: 100%
+    overflow: auto
+    display: block
+
+    .chat-items
+      padding-top: ($navbar['height'] + 20px)
+      padding-left: 1rem
+      padding-right: 1rem
+      padding-bottom: 7rem
+      position: relative
+      display: block
+
+    .chat-item
+      $arrow-size = 7px
+
+      position: relative
+      display: block
+      padding: 0.5rem
+      margin-bottom: 1rem
+      font-size: 0.9rem
+
+      &::after
+        content: ''
+        position: absolute
+        width: 0
+        height: 0
+        top: 50%
+        margin-top: - $arrow-size
+        border-top: $arrow-size solid transparent
+        border-bottom: $arrow-size solid transparent
+
+      &.-from
+        background: $scheme.light.background.light
+        color: $scheme.light.color.default
+        margin-right: 1rem
+
+        &::after
+          border-right: $arrow-size solid $scheme.light.background.light
+          left: - $arrow-size
+
+      &.-to
+        color: $scheme.light.color.default
+        margin-left: 1rem
+
+        &::after
+          right: - $arrow-size

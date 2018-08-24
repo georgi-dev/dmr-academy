@@ -1,0 +1,8 @@
+.gritter-item
+  for $brand-name, $brand-color in $theme-brand
+    &.-{$brand-name}
+      background: $brand-color
+      background: linear-gradient(to right, rgba($brand-color, 0.8), rgba($brand-color, 0.5))
+      color: $scheme['light']['color']['default']
+      p
+        color: $scheme['light']['color']['dark']

@@ -1,0 +1,56 @@
+extends ../../layouts/dashboard.pug
+
+block content
+  +container-fluid
+    +row 
+      +col({ lg: 12 })
+        +page-heading(server, page)
+
+    div(id='grid-presentation') 
+      +row
+        h5 .row 
+        +col({ md: 2 })
+          | .col.-md-2
+        +col({ md: 2 })
+          | .col.-md-2
+        +col({ md: 2 })
+          | .col.-md-2
+        +col({ md: 2 })
+          | .col.-md-2
+        +col({ md: 2 })
+          | .col.-md-2
+        +col({ md: 2 })
+          | .col.-md-2
+    
+      +row
+        h5 .row 
+        +col({ md: 3 })
+          | .col.-md-3
+        +col({ md: 3 })
+          | .col.-md-3
+        +col({ md: 3 })
+          | .col.-md-3
+        +col({ md: 3 })
+          | .col.-md-3
+    
+      +row
+        h5 .row 
+        +col({ md: 4 })
+          | .col.-md-4
+        +col({ md: 4 })
+          | .col.-md-4
+        +col({ md: 4 })
+          | .col.-md-4
+      
+      +row
+        h5 .row 
+        +col({ md: 6 })
+          | .col.-md-6
+        +col({ md: 6 })
+          | .col.-md-6
+      
+      +row
+        h5 .row 
+        +col({ md: 12 })
+          | .col.-md-12
+    

@@ -1,0 +1,219 @@
+.mail-sidebar
+  .mail-sidebar-header
+    &.-fixed-height
+      height: 232px
+    padding: 1rem
+
+    .btn
+      margin-top: 1.5rem
+  .mail-sidebar-nav
+    li
+      height: $sidebar['link-height']
+      line-height: $sidebar['link-height']
+      border-top: 1px solid $scheme.dark.background.lighter
+      &:last-child
+        border-bottom: 1px solid $scheme.dark.background.lighter
+
+      &.-active a
+        background-image: linear-gradient(to right, $scheme.dark.background.light, $scheme.dark.background.lighter)
+        font-weight: bold
+        color: $scheme.light.color.default
+
+      a
+        display: block
+        position: relative
+        padding: 0 1rem
+        background-image: linear-gradient(to right, $scheme.dark.background.lighter, $scheme.dark.background.transparent)
+        transition: all 0.3s ease
+        color: $scheme.light.color.dark
+
+        &:hover
+        &:focus
+        &:active
+          background-color: $scheme.dark.background.lighter
+          text-decoration: none
+          color: $scheme.light.color.default
+        i
+          margin-right: 0.5rem
+
+      .tag
+        position: absolute
+        transform: translateY(-50%)
+        top: 50%
+        right: 1rem
+        line-height: 1rem
+
+.mail
+  .mail-header
+    padding-top: $content['padding']
+    padding-bottom: $content['padding']
+    margin-top: - $content['padding']
+    background-image: linear-gradient(to right, $scheme.dark.background.light, $scheme.dark.background.lighter)
+
+    h1
+    h2
+    h3
+    h4
+    h5
+    h6
+    .h1
+    .h2
+    .h3
+    .h4
+    .h5
+    .h6
+      i
+        margin-right: 0.75rem
+
+    .mail-actions
+      margin-top: 2rem
+      +breakpoint-down(sm)
+        margin-top: 1rem
+
+      .form-group
+        display: inline-block
+      .form-group
+      .form-check
+      label
+        margin: 0
+
+      #check-all-wrapper
+        float: left
+        margin-top: 0.5rem
+
+      .btn-group
+        margin-bottom: 0
+
+        &._pull-right
+          margin-right: 0
+
+      .btn-dropdown
+        float: left
+
+.mail-items
+  .mail-item
+    cursor: pointer
+
+    .mail-item-actions
+      min-width: 80px
+    .mail-item-title
+      min-width: 220px
+    .mail-item-sender
+      font-weight: bold
+      min-width: 160px
+    .mail-item-date
+      min-width: 80px
+
+    .mail-item-excerpt
+    .mail-item-title span
+      color: $scheme.light.color.medium
+
+    +breakpoint-down(sm)
+      display: block
+      position: relative
+      border-bottom: 1px solid $scheme.dark.background.lighter
+      padding: 1rem
+      background: linear-gradient(to top right, $scheme.light.background.lighter, $scheme.light.background.transparent)
+
+      td
+        display: block
+        border: none
+        padding: 0
+
+        &:hover
+        &:active
+        &:focus
+          background: transparent
+
+        &.mail-item-actions
+          display: none
+        &.mail-item-title
+          font-weight: 500
+        &.mail-item-date
+          position: absolute
+          top: 1rem
+          right: 1rem
+
+    &.-unread
+      background-color: $scheme.dark.background.light
+      .mail-item-sender
+      .mail-item-title
+      .mail-item-date
+        font-weight: bold
+        span
+          font-weight: normal
+
+    &.-starred .mail-item-star
+      &:hover, &:focus, &:active
+        opacity: 1
+      opacity: 1
+    .mail-item-star
+      display: inline-block
+      cursor: pointer
+      opacity: 0.33
+      font-size: 1.1rem
+      transition: all 0.3s ease
+      &:hover, &:focus, &:active
+        opacity: 0.66
+
+    .form
+      float: left
+    .form-group
+    .form-check
+    label
+      margin: 0
+
+    .mail-item-date
+      text-align: right
+
+.mail-info
+  padding: 0.5rem 1rem
+  p
+    margin: 0
+    font-size: 0.8rem
+
+.mail-sender
+  display: block
+  position: relative
+  padding: 1rem
+  height: 3.75rem
+  border-bottom: 1px solid $scheme.dark.background.lighter
+  background: $scheme.dark.background.medium
+  font-weight: bold
+  color: $scheme.light.color.default
+  a
+    display: inline-block
+    &:hover, &:focus, &:active
+      color: $scheme.light.color.default
+  span
+    font-weight: normal
+  img
+    border-radius: 2px
+    float: left
+    margin-right: 1rem
+    width: 25px
+    height: 25px
+
+.mail-body
+  padding: 2rem 1rem
+  background: linear-gradient(to top right, $scheme.light.background.lighter, $scheme.light.background.transparent)
+  border-bottom: 1px solid $scheme.dark.background.lighter
+  margin-bottom: 1rem
+  p:last-child
+    margin-bottom: 0
+
+
+#mail-actions-primary
+#mail-actions-secondary
+  display: block
+  position: relative
+  clearfix()
+
+#mail-actions-secondary
+  margin-top: 0.5rem
+
+  .btn-group:first-child
+    float: left
+  .btn-group:last-child
+    float: right
+    margin-right: 0

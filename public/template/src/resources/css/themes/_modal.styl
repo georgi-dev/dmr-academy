@@ -1,0 +1,10 @@
+.modal
+  for $brand-name, $brand-color in $theme-brand
+    &.-{$brand-name}
+      .modal-dialog
+        .modal-content
+          background: $brand-color
+          background: linear-gradient(to right, rgba($brand-color, 1), rgba($brand-color, 0.8))
+    .modal-header.-{$brand-name}
+      background: $brand-color
+      background: linear-gradient(to right, rgba($brand-color, 1), rgba($brand-color, 0.8))

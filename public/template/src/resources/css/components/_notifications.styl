@@ -1,0 +1,116 @@
+#gritter-notice-wrapper
+  position: fixed
+  top: $navbar['height'] + 16px
+  right: 16px
+  width: 380px
+  max-width: 90%
+  z-index: 9999
+
+  &.top-left
+    left: $sidebar['width'] + 16px
+    right: auto
+
+  &.bottom-right
+    top: auto
+    left: auto
+    bottom: 16px
+    right: 16px
+  &.bottom-left
+    top: auto
+    right: auto
+    bottom: 16px
+    left: $sidebar['width'] + 16px
+
+.gritter-close
+  position: absolute
+  top: 0.75rem
+  right: 1rem
+  font-size: 1.5rem
+  cursor: pointer
+  color: white
+
+  &:active
+    outline: none
+
+.gritter-title
+  font-size: 1rem
+  font-weight: normal
+  margin: 0 0 0.5rem
+  display: block
+
+.gritter-image-wrapper
+  clearfix()
+  float: left
+
+.gritter-image
+  width: 70px
+  height: 70px
+  float: left
+  margin-right: 1rem
+
+.gritter-item-wrapper
+  position: relative
+  margin: 0 0 1rem
+
+.gritter-item
+  display: block
+  padding: 1rem
+  position: relative
+  backdrop-filter: blur(10px)
+  -webkit-backdrop-filter: blur(10px)
+
+  &.-social
+    padding-left: 116px
+
+    .gritter-image-wrapper
+      position: absolute
+      top: 0
+      left: 0
+      width: 100px
+      height: 100%
+      display: block
+      background: $scheme['dark']['background']['lighter']
+
+    .gritter-image
+      width: 40px
+      height: 40px
+      position: absolute
+      top: 50%
+      left: 50%
+      transform: translate(-50%, -50%)
+
+  p
+    font-size: 0.9rem
+    padding: 0
+    margin: 0
+    word-wrap: break-word
+
+  &.-light
+    background: $scheme['light']['background']['darker']
+    background: linear-gradient(to right, $scheme['light']['background']['darker'], $scheme['light']['background']['medium'])
+    color: $scheme['dark']['color']['default']
+    p
+      color: $scheme['dark']['color']['dark']
+
+  &.-dark
+    background: $scheme['dark']['background']['darker']
+    background: linear-gradient(to right, $scheme['dark']['background']['darker'], $scheme['dark']['background']['medium'])
+    color: $scheme['light']['color']['default']
+    p
+      color: $scheme['light']['color']['dark']
+
+  for $brand-name, $brand-color in $brand
+    &.-{$brand-name}
+      background: $brand-color
+      background: linear-gradient(to right, rgba($brand-color, 0.8), rgba($brand-color, 0.5))
+      color: $scheme['light']['color']['default']
+      p
+        color: $scheme['light']['color']['dark']
+
+  for $social-name, $social-color in $social
+    &.-{$social-name}
+      background: $social-color
+      background: linear-gradient(to right, rgba($social-color, 0.8), rgba($social-color, 0.5))
+      color: $scheme['light']['color']['default']
+      p
+        color: $scheme['light']['color']['dark']

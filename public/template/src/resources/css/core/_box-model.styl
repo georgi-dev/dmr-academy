@@ -1,0 +1,138 @@
+// Box model $ix
+//
+for $i in (1..10)
+  ._margin-{$i}x
+    margin: $base-margin * $i
+
+  ._margin-vertical-{$i}x
+    margin-top: $base-margin * $i
+    margin-bottom: $base-margin * $i
+  ._margin-top-{$i}x
+    margin-top: $base-margin * $i
+  ._margin-bottom-{$i}x
+    margin-bottom: $base-margin * $i
+
+  ._margin-horizontal-{$i}x
+    margin-left: $base-margin * $i
+    margin-right: $base-margin * $i
+  ._margin-left-{$i}x
+    margin-left: $base-margin * $i
+  ._margin-right-{$i}x
+    margin-right: $base-margin * $i
+
+  ._padding-{$i}x
+    padding: $base-padding * $i
+
+  ._padding-vertical-{$i}x
+    padding-top: $base-padding * $i
+    padding-bottom: $base-padding * $i
+  ._padding-top-{$i}x
+    padding-top: $base-padding * $i
+  ._padding-bottom-{$i}x
+    padding-bottom: $base-padding * $i
+
+  ._padding-horizontal-{$i}x
+    padding-left: $base-padding * $i
+    padding-right: $base-padding * $i
+  ._padding-left-{$i}x
+    padding-left: $base-padding * $i
+  ._padding-right-{$i}x
+    padding-right: $base-padding * $i
+
+
+// Box model sm
+//
+._margin-sm
+  margin: ($base-margin * 1 / 2)
+
+._margin-vertical-sm
+  margin-top: ($base-margin * 1 / 2)
+  margin-bottom: ($base-margin * 1 / 2)
+._margin-top-sm
+  margin-top: ($base-margin * 1 / 2)
+._margin-bottom-sm
+  margin-bottom: ($base-margin * 1 / 2)
+
+._margin-horizontal-sm
+  margin-left: ($base-margin * 1 / 2)
+  margin-right: ($base-margin * 1 / 2)
+._margin-left-sm
+  margin-left: ($base-margin * 1 / 2)
+._margin-right-sm
+  margin-right: ($base-margin * 1 / 2)
+
+._padding-sm
+  padding: ($base-padding * 1 / 2)
+
+._padding-vertical-sm
+  padding-top: ($base-padding * 1 / 2)
+  padding-bottom: ($base-padding * 1 / 2)
+._padding-top-sm
+  padding-top: ($base-padding * 1 / 2)
+._padding-bottom-sm
+  padding-bottom: ($base-padding * 1 / 2)
+
+._padding-horizontal-sm
+  padding-left: ($base-padding * 1 / 2)
+  padding-right: ($base-padding * 1 / 2)
+._padding-left-sm
+  padding-left: ($base-padding * 1 / 2)
+._padding-right-sm
+  padding-right: ($base-padding * 1 / 2)
+
+
+
+// Box model None
+//
+._margin-none
+  margin: 0 !important
+
+._margin-left-none
+  margin-left: 0 !important
+._margin-right-none
+  margin-right: 0 !important
+
+._margin-top-none
+  margin-top: 0 !important
+._margin-bottom-none
+  margin-bottom: 0 !important
+
+._padding-none
+  padding: 0 !important
+
+
+._padding-left-none
+  padding-left: 0 !important
+._padding-right-none
+  padding-right: 0 !important
+
+._padding-top-none
+  padding-top: 0 !important
+._padding-bottom-none
+  padding-bottom: 0 !important
+
+// Utilities
+._full-width
+  width: 100% !important
+  box-sizing: border-box
+
+img._full-width
+  height: auto
+
+._max-full-width
+  max-width: 100% !important
+  box-sizing: border-box
+
+._full-height
+  height: 100% !important
+  box-sizing: border-box
+
+img._full-height
+  width: auto
+
+._max-full-height
+  max-height: 100% !important
+  box-sizing: border-box
+
+._hidden
+  display: none

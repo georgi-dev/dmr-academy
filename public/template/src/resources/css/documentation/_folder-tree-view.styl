@@ -1,0 +1,54 @@
+$file-margin = 1.2rem
+
+.folder-tree-view
+  padding: 2rem
+  background: $scheme.dark.background.light
+  border-radius: 3px
+  margin: 0
+  list-style: none
+  position: relative
+  display: block
+
+  .disabled i
+    color: $lightgray
+
+  i
+    color: $scheme.light.color.medium
+    margin-right: 0.5rem
+
+  span
+    display: block
+
+  span:nth-child(2n)
+    position: absolute
+    top: $file-margin
+    left: 1.8rem
+    font-size: 0.75rem
+    color: $scheme.light.color.medium
+  .file span:nth-child(2n)
+    left: 1.7rem
+
+
+  ul
+    padding-left: 2rem
+    margin-top: $file-margin
+    list-style: none
+
+  li
+    font-size: 1rem
+    margin-top: $file-margin
+    position: relative
+    &:first-child
+      margin-top: 0
+
+    &.folder
+      span:nth-child(2n)
+        cursor: pointer
+      &.disabled span:nth-child(2n)
+        cursor: default
+
+      &.open
+        > ul
+          display: block
+      > ul
+        display: none

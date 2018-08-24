@@ -1,0 +1,47 @@
+extends ../../layouts/dashboard.pug
+
+block content
+  +container-fluid
+    +row 
+      +col({ lg: 12 })
+        +page-heading(server, page)
+      
+    +row
+      +col({ lg: 12 })
+        +panel(class='-dark')
+          +panel-heading
+            h4 World Map
+          div(class='map -lg' id='vector-world')
+    +row
+      +col({ lg: 6 })
+        +panel(class='-dark')
+          +panel-heading
+            h4 North America Map
+          div(class='map' id='vector-north-america')
+      +col({ lg: 6 })
+        +panel(class='-dark')
+          +panel-heading
+            h4 South America Map
+          div(class='map' id='vector-south-america')
+    +row
+      +col({ lg: 6 })
+        +panel(class='-dark')
+          +panel-heading 
+            h4 Europe Map
+          div(class='map' id='vector-europe')
+      +col({ lg: 6 })
+        +panel(class='-dark')
+          +panel-heading
+            h4 Australia Map
+          div(class='map' id='vector-australia')
+    +row
+      +col({ lg: 6 })
+        +panel(class='-dark')
+          +panel-heading
+            h4 Asia Map
+          div(class='map' id='vector-asia')
+      +col({ lg: 6 })
+        +panel(class='-dark')
+          +panel-heading
+            h4 Africa Map
+          div(class='map' id='vector-africa')

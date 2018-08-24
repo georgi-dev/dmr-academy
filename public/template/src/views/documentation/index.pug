@@ -1,0 +1,64 @@
+extends ../layouts/documentation.pug
+
+block content 
+  +container
+    +row
+      +col({ xs: 12 })(class='_text-center')
+        +panel(class='-dark')
+          +panel-heading
+            h1 Documentation
+          +panel-body
+            p.    
+              A collection of articles with everything you need to know about Volta.
+      
+    +row 
+      +col({ xs: 12 })
+        +row 
+          +col({ lg: 8 }) 
+            +panel(class='-dark')
+              +panel-heading
+                h3 
+                  +pe("ribbon")(class='_margin-right-sm')
+                  | Explore Topics
+              +panel-body
+                p.
+                  We've prepared an extended knowledgebase on how to use all of 
+                  the amazing features that the Volta Admin Template has to offer.
+            +panel(class='-dark')
+              +panel-body
+                +row(class='margin-top-1x' id='topics-section')
+                  - let documentation = pages[pages.length - 1]
+                  each category, categoryIndex in documentation.pages 
+                    - if (categoryIndex == 0) continue
+                    
+                    +col({ sm: 6 })(class='same-height') 
+                      div(class='topics')
+                        h5
+                          span(class='count-bubble') 
+                            = categoryIndex 
+                          strong 
+                            = category.title 
+
+                        if category.pages
+                          ul(class='list-unstyled')
+                            each page in category.pages
+                              li
+                                a(href=url(documentation.route + category.route + page.route))
+                                  +fa('file-o')
+                                  = page.title
+                
+          +col({ lg: 4 })
+            +panel(class='-dark')
+              +panel-heading 
+                h1(class='_text-right _pull-right') 
+                  +fa('comments') 
+                h3
+                  | Looking for help? 
+                  br
+                  small Join the Community
+              +panel-body
+                p.
+                  Cannot find what you're looking for? 
+                  Join our Support Forum and we'll help you.
+                a(class='btn -primary -block' href='http://support.pixevil.com') Support Forum
+          

@@ -1,0 +1,40 @@
+extends ../../layouts/dashboard.pug
+
+block content
+  +container-fluid
+    +row 
+      +col({ lg: 12 })
+        +page-heading(server, page)
+          
+    +row
+      +col({ lg: 12 })
+        +panel(class='-dark')
+          +panel-heading
+            h4 Input Masking
+            span A showcase of Volta's input masking
+          +panel-body
+            form(class='form -dark')
+              +form-group
+                label(for='input-mask-date') Date Input Mask
+                input(class='form-control' id='form-basic-password' name="input-mask-date" type="text" placeholder="dd/mm/yyyy" data-inputmask="'alias': 'date'")
+          
+              +form-group
+                label(for='input-mask-currency') Currency
+                input(class='form-control' id='form-basic-password' name="input-mask-currency" type="text" placeholder="$ 0.00" data-inputmask="'alias': 'numeric', 'groupSeparator': ',', 'autoGroup': true, 'digits': 2, 'digitsOptional': false, 'prefix': '$ ', 'placeholder': '0'")
+          
+              +form-group
+                label(for='input-mask-license-plate') License Plate
+                input(class='form-control' id='form-basic-password' name="input-mask-license-plate" type="text" placeholder="_-___-___" data-inputmask="'mask': '[9-]AAA-999'")
+          
+              +form-group
+                label(for='input-mask-phone') Phone
+                input(class='form-control' id='form-basic-password' name="input-mask-phone" type="text" placeholder="+_(___)___-____" data-inputmask="'alias': 'phone'")
+          
+              +form-group
+                label(for='input-mask-ip') IP Address
+                input(class='form-control' id='form-basic-password' name="input-mask-ip" type="text" placeholder="___.___.___.___" data-inputmask="'alias': 'ip'")
+          
+              +form-group
+                label(for='input-mask-email') Email Address
+                input(class='form-control' id='form-basic-password' name="input-mask-ip" type="text" placeholder="_@_._" data-inputmask="'alias': 'email'")
+          

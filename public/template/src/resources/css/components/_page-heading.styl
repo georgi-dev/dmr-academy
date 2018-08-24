@@ -1,0 +1,30 @@
+.page-heading
+  margin-top: 0.5rem
+  margin-bottom: 2rem
+
+  .breadcrumb
+    background: transparent
+    border-radius: 0
+    padding: 0
+    margin: 0
+    font-size: 0.9rem
+
+  for $scheme-name, $scheme in $page-heading['schemes']
+    &.-{$scheme-name}
+      color: $scheme['color']['default']
+
+      .breadcrumb-item
+        color: $scheme['color']['default']
+        &::before, &.-active
+          color: $scheme['color']['medium']
+
+.page-heading-button
+  position: absolute
+  top: 1rem
+  right: 1rem
+  // font-size: 2.5rem
+  // width: 60px
+  // height: 60px
+  // line-height: 70px
+  // text-align: center
+  // padding: 0

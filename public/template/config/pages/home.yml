@@ -1,0 +1,3 @@
+title: The Next Generation of Web Application and Admin Templates
+route: '/home'
+view: [ src, views, home, index ]

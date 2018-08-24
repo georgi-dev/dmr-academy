@@ -1,0 +1,8 @@
+// Stylesheets
+if assets && assets.stylesheets
+  - for(let i = 0; i < assets.stylesheets.length; i++) 
+    link(href=url(assets.stylesheets[i]) rel="stylesheet" type="text/css")
+
+if page.assets && page.assets.stylesheets
+  - for(let i = 0; i < page.assets.stylesheets.length; i++) 
+    link(href=url(page.assets.stylesheets[i]) rel="stylesheet" type="text/css")

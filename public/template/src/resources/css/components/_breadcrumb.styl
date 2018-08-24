@@ -1,0 +1,10 @@
+.breadcrumb
+  .breadcrumb-item
+    color: $scheme['light']['color']['default']
+    &.-active, &::before
+      color: $scheme['light']['color']['medium']
+
+  &.-dark
+    background: linear-gradient(to bottom right, $scheme['dark']['background']['medium'], $scheme['dark']['background']['light'])
+  &.-light
+    background: linear-gradient(to bottom right, $scheme['light']['background']['lighter'], $scheme['light']['background']['light'])

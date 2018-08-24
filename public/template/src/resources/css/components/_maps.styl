@@ -1,0 +1,15 @@
+.map
+  width: 100%
+  height: $map['height']
+
+  for $factor-name, $factor-size in $map['factor']
+    &.-{$factor-name}
+      height: $map['height'] * $factor-size
+      +breakpoint-down(lg)
+        height: $map['height'] * 0.875 * $factor-size
+      +breakpoint-down(md)
+        height: $map['height'] * 0.75 * $factor-size
+      +breakpoint-down(sm)
+        height: $map['height'] * 0.625 * $factor-size
+      +breakpoint-down(xs)
+        height: $map['height'] * 0.5 * $factor-size

@@ -1,0 +1,35 @@
+mixin page-heading(server, page)
+  // Page Heading
+  div(class='page-heading -dark')&attributes(attributes)
+    h2 
+      = page.title
+    
+    +breadcrumb
+      a(class='breadcrumb-item' href=server.url) Home
+      - for (let i = 1; i < page.view.length - 1; i += 1 )
+        a(class='breadcrumb-item' href="#")  
+          = page.view[i].replace(/\b\w/g, function (l) { return l.toUpperCase() })
+      a(class='breadcrumb-item -active') 
+        = page.title
+    
+    block 
+  // /Page Heading
+  
+  
+mixin page-heading-documentation(server, page)
+  // Page Heading
+  div(class='page-heading -dark')&attributes(attributes)
+    h2 
+      = page.title
+    
+    +breadcrumb
+      a(class='breadcrumb-item' href=url('documentation')) Documentation
+      - for (let i = 1; i < page.view.length - 1; i += 1 )
+        a(class='breadcrumb-item' href="#") 
+          = page.view.replace(/\b\w/g, function (l) { return l.toUpperCase() })
+      a(class='breadcrumb-item -active') 
+        = page.title
+    
+    block
+  // /Page Heading
+  

@@ -1,0 +1,8 @@
+// Scripts
+if assets && assets.scripts
+  - for(let i = 0; i < assets.scripts.length; i++) 
+    script(src=url(assets.scripts[i]) type='text/javascript')
+
+if page.assets && page.assets.scripts
+  - for(let i = 0; i < page.assets.scripts.length; i++) 
+    script(src=url(page.assets.scripts[i]) type='text/javascript')

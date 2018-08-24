@@ -1,0 +1,46 @@
+.nav
+  .nav-link
+    border-radius: 0
+    transition: all 0.5s ease
+
+    &.active
+      background-size: 200% 100%
+      background-position: 0% 0%
+
+  for $scheme-name, $scheme-color in $panel['schemes']
+    &.-{$scheme-name}
+      background: linear-gradient(to right, $scheme-color['background']['light'], $scheme-color['background']['lighter'])
+      border-color: $scheme-color['background']['lighter']
+      .nav-link
+        color: $scheme-color['color']['default']
+        &.active
+          background: $scheme-color['background']['light']
+          background: linear-gradient(to bottom right, $scheme-color['background']['light'], $scheme-color['background']['lighter'])
+          border-color: $scheme-color['background']['transparent']
+          &:hover, &:focus, &:active
+            background: linear-gradient(to bottom right, $scheme-color['background']['light'], $scheme-color['background']['lighter'])
+            color: $scheme-color['color']['default']
+            border-color: $scheme-color['background']['lighter']
+
+        &:hover, &:focus, &:active
+          background: $scheme-color['background']['lighter']
+          border-color: $scheme-color['background']['lighter']
+
+  for $brand-name, $brand-color in $brand
+    &.-{$brand-name}
+      background: linear-gradient(to right, rgba($brand-color, 0.5), rgba($brand-color, 0.25))
+      border-color: rgba($brand-color, 0.25)
+      .nav-link
+        color: $scheme['light']['color']['default']
+        &.active
+          background: rgba($brand-color, 0.25)
+          background: linear-gradient(to bottom right, rgba($brand-color, 0.25), rgba($brand-color, 0.5))
+          border-color: rgba($brand-color, 0)
+          &:hover, &:focus, &:active
+            background: linear-gradient(to bottom right, rgba($brand-color, 0.25), rgba($brand-color, 0.5))
+            color: $scheme['light']['color']['default']
+            border-color: rgba($brand-color, 0.5)
+
+        &:hover, &:focus, &:active
+          background: rgba($brand-color, 0.1)
+          border-color: rgba($brand-color, 0.5)

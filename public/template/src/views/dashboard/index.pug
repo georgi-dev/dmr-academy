@@ -1,0 +1,234 @@
+extends ../layouts/dashboard.pug
+
+block content
+  +container-fluid  
+    +row
+      +col({ xl: 8, lg: 12 })
+        +panel(class='-dark') 
+          +panel-heading
+            ul(class='panel-actions')
+              li 
+                a(href="#")
+                  +fa("refresh")
+              li
+                a(class='dropdown-toggle' data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" href="#")
+                  +fa("bars") 
+                div(class='dropdown-menu -right -dark')
+                  a(class='dropdown-item') 
+                    +fa("cloud")
+                    | Action
+                  a(class='dropdown-item ')
+                    +fa("refresh")
+                    | Update
+                    
+                  div(class='dropdown-divider')
+                  
+                  a(class='dropdown-item') 
+                    +fa("cog")
+                    | Settings  
+            
+            h4 Project Progress
+            span A showcase of Volta's charts
+            
+          +panel-body 
+            div(class='chart -md' id='chart-project-progress')
+            
+      +col({ xl: 4, lg: 12 })
+        +row(id='dashboard-sparklines')
+          +col({ xl: 12, lg: 3, sm: 6 })
+            +panel(class='-dark')
+              +panel-body
+                div(class='panel-status') 
+                  span
+                    | Revenue
+                  h4
+                    +fa("chevron-up")(class='_text-success')
+                    | 50%
+                div(class='panel-sparkline' id='chart-sales-status')
+                
+          +col({ xl: 12, lg: 3, sm: 6 })
+            +panel(class='-dark')
+              +panel-body
+                div(class='panel-status')
+                  span
+                    | New Users
+                  h4
+                    +fa("check")(class='_text-info')
+                    | 106
+                div(class='panel-sparkline' id='chart-users-status')
+                
+          +col({ xl: 12, lg: 3, sm: 6 })
+            +panel(class='-dark')
+              +panel-body
+                div(class='panel-status')
+                  span
+                    | Views
+                  h4
+                    +fa("chevron-up")(class='_text-warning')
+                    | 450
+                div(class='panel-sparkline' id='chart-impressions-status')
+                
+          +col({ xl: 12, lg: 3, sm: 6 })
+            +panel(class='-dark') 
+              +panel-body
+                div(class='panel-status')
+                  span 
+                    | Downloads 
+                  h4
+                    +fa("chevron-down")(class='_text-danger')
+                    | 110
+                div(class='panel-sparkline' id='chart-downloads-status')
+                
+
+      
+      //- col.dashboard-table-col xl=12
+      //-   panel.-dark
+      //-     panel-heading
+      //-       ul.panel-actions.-centered
+      //-         li > a href="#" > fa icon="refresh" 
+      //-       h4 Latest Commits
+      //-     .table-responsive
+      //-       table.table.-dark 
+      //-         thead 
+      //-           tr 
+      //-             th User
+      //-             th Commit
+      //-             th 
+      //-         tbody 
+      //-           tr 
+      //-             td.-user.-detailed > a href="#" 
+      //-               img src="#{@root_path}/img/users/male3.jpg"
+      //-               | John Doe
+      //-               span' \ 16/08/2016
+      //-             td.-detailed
+      //-               | Added new gradient styles
+      //-               span \ 4dbfd8e899b8ac0752a81c72
+      //-             td._text-right > a href="#" > fa icon="github"
+      //-           tr 
+      //-             td.-user.-detailed > a href="#" 
+      //-               img src="#{@root_path}/img/users/female1.jpg"
+      //-               | Gabriella Cruz
+      //-               span' \ 15/08/2016
+      //-             td.-detailed 
+      //-               | Fixed responsive navbar collapse
+      //-               span \ d0b6ad71f969db60f6126c33
+      //-             td._text-right > a href="#" > fa icon="github"
+      //-           tr 
+      //-             td.-user.-detailed > a href="#" 
+      //-               img src="#{@root_path}/img/users/male2.jpg"
+      //-               | Mario Flores
+      //-               span' \ 28/07/2016
+      //-             td.-detailed 
+      //-               | Awesome new dashboard chart
+      //-               span \ 2c9c76251b6e346106fae3b3
+      //-             td._text-right > a href="#" > fa icon="github"
+      //-           tr 
+      //-             td.-user.-detailed > a href="#" 
+      //-               img src="#{@root_path}/img/users/male3.jpg"
+      //-               | John Doe
+      //-               span' \ 26/07/2016
+      //-             td.-detailed 
+      //-               | Completed signin and signup pages
+      //-               span \ f476fee9fda0a65a1190050b
+      //-             td._text-right > a href="#" > fa icon="github"
+      //-           tr 
+      //-             td.-user.-detailed > a href="#" 
+      //-               img src="#{@root_path}/img/users/female3.jpg"
+      //-               | Johanna Cooper
+      //-               span' \ 25/07/2016
+      //-             td.-detailed 
+      //-               | Completed layout examples
+      //-               span \ aa47cca1dfbed0e631bc97a4
+      //-             td._text-right > a href="#" > fa icon="github"
+
+    
+    +row
+      +col({ xl: 4, lg: 6 })
+        +panel(class='-dark')
+          +panel-heading
+            h4 Top Sales
+          +panel-body
+            div(class='chart -sm' id='chart-top-sales')
+      +col({ xl: 4, lg: 6 })
+        +panel(class='-dark')
+          +panel-heading
+            h4 Monthly Visits
+          +panel-body
+            div(class='chart -sm' id='chart-monthly-visits')
+      +col({ xl: 4, lg: 12 })
+        +panel(class='-dark')
+          +panel-heading
+            h4 Advertisement
+          div(class='chart -sm _margin-top-2x' id='chart-advertisement')
+            
+    +row
+      +col({ lg: 4 })
+        +panel(class='-dark')
+          +panel-heading
+            h4 Project Progress
+          +panel-body(id='dashboard-progress-bars')
+            p
+              | Admin Panel
+              span(class='_pull-right _text-muted')  80%
+            div(class='progress -dark')
+              div(class='bar -primary' style="width: 80%")
+              
+            p
+              | Landing Page
+              span(class='_pull-right _text-muted')  90%
+            div(class='progress -dark')
+              div(class='bar -primary' style="width: 90%")
+              
+            p
+              | Unit Testing
+              span(class='_pull-right _text-muted')  55%
+            div(class='progress -dark')
+              div(class='bar -primary' style="width: 55%")
+              
+            p
+              | Email Templates
+              span(class='_pull-right _text-muted')  40%
+            div(class='progress -dark')
+              div(class='bar -primary' style="width: 40%")
+              
+            p
+              | Theming
+              span(class='_pull-right _text-muted')  90%
+            div(class='progress -dark')
+              div(class='bar -primary' style="width: 90%")
+              
+              
+      +col({ lg: 8 })
+        +panel(class='-dark')
+          +panel-heading
+            h4 Calendar
+          +panel-body
+            div(class='tasks-calendar-wrapper')
+              - let today = new Date();
+              - let dayNames = [ 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday' ];
+              - let monthNames = [ "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December" ];
+              
+              div(class='tasks-calendar' data-date=today.getDate() + '/' + today.getMonth() + today.getFullYear())
+              div(class='tasks-calendar-list')
+                div(class='tasks-calendar-day')  
+                  = dayNames[today.getDay() - 1]
+                div(class='tasks-calendar-date') 
+                  = today.getDate() + ' ' + monthNames[today.getMonth() - 1]
+                 
+                form(class='form -dark')
+                  input(class='tasks-calendar-add-new' placeholder="Add Note")
+                  button(type="submit")
+                    +fa(plus-circle)
+                  
+                  
+                ul 
+                  li 
+                    | Meet with investors
+                    span 5h
+                  li 
+                    | Send weekly newsletter
+                    span 2h
+                  li 
+                    | Post holiday notice
+                    span 15m
+  

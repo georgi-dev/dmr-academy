@@ -1,0 +1,343 @@
+extends ../../layouts/dashboard.pug
+
+block content
+  +container-fluid
+    +row 
+      +col({ lg: 12 })
+        +page-heading(server, page)
+
+    +row 
+      +col({ lg: 4 })
+        +panel(class='-dark')
+          +panel-body 
+            h4 Simple Panel
+            p |
+              Quisque gravida aliquam diam at cursus, quisque laoreet ac lectus a rhoncusac tempus odio.
+            p |
+              Aliquam posuere volutpat turpis, ut euimod diam pellentesque at. Sed sit amet nulla a dui dignisim euismod. Morbi luctus elementum dictum. Donec convallis mattis elit id varius. Quisque facilisis sapien quis mauris, erat condimentum.
+      
+      +col({ lg: 4 })
+        +panel(class='-dark -bordered')
+          +panel-body
+            h4 Bordered Panel
+            p |
+              Quisque gravida aliquam diam at cursus, quisque laoreet ac lectus a rhoncusac tempus odio.
+            p |
+              Aliquam posuere volutpat turpis, ut euimod diam pellentesque at. Sed sit amet nulla a dui dignisim euismod. Morbi luctus elementum dictum. Donec convallis mattis elit id varius. Quisque facilisis sapien quis mauris, erat condimentum.
+      
+      +col({ lg: 4 })
+        +panel(class='-dark -bordered-3d')
+          +panel-body
+            h4 3D Panel
+            p |
+              Quisque gravida aliquam diam at cursus, quisque laoreet ac lectus a rhoncusac tempus odio.
+            p |
+              Aliquam posuere volutpat turpis, ut euimod diam pellentesque at. Sed sit amet nulla a dui dignisim euismod. Morbi luctus elementum dictum. Donec convallis mattis elit id varius. Quisque facilisis sapien quis mauris, erat condimentum.
+      
+    +row
+      +col({ lg: 4 })
+        +panel(class='-dark')
+          +panel-heading 
+            h4 Default Panel
+            span Panel Subtitle
+          +panel-body 
+            p |
+              Quisque gravida aliquam diam at cursus, quisque laoreet ac lectus a rhoncusac tempus odio.
+            p |
+              Aliquam posuere volutpat turpis, ut euimod diam pellentesque at. Sed sit amet nulla a dui dignisim euismod. Morbi luctus elementum dictum. Donec convallis mattis elit id varius. Quisque facilisis sapien quis mauris, erat condimentum.
+          
+      +col({ lg: 4 })
+        +panel(class='-dark')
+          +panel-heading(class='-dark')
+            h4 Dark Heading Panel
+            span Panel Subtitle
+          +panel-body  
+            p |
+              Quisque gravida aliquam diam at cursus, quisque laoreet ac lectus a rhoncusac tempus odio.
+            p |
+              Aliquam posuere volutpat turpis, ut euimod diam pellentesque at. Sed sit amet nulla a dui dignisim euismod. Morbi luctus elementum dictum. Donec convallis mattis elit id varius. Quisque facilisis sapien quis mauris, erat condimentum.
+          
+      +col({ lg: 4 })
+        +panel(class='-dark')
+          +panel-heading
+            h4 Dark Body Panel
+            span Panel Subtitle
+          +panel-body(class='-dark')
+            p |
+              Quisque gravida aliquam diam at cursus, quisque laoreet ac lectus a rhoncusac tempus odio.
+            p |
+              Aliquam posuere volutpat turpis, ut euimod diam pellentesque at. Sed sit amet nulla a dui dignisim euismod. Morbi luctus elementum dictum. Donec convallis mattis elit id varius. Quisque facilisis sapien quis mauris, erat condimentum.
+          
+      
+    +row
+      +col({ lg: 4 })
+        +panel(class='-primary')
+          +panel-heading
+            h4 Primary Panel
+            span Panel Subtitle
+          +panel-body 
+            p |
+              Quisque gravida aliquam diam at cursus, quisque laoreet ac lectus a rhoncusac tempus odio.
+            p |
+              Aliquam posuere volutpat turpis, ut euimod diam pellentesque at. Sed sit amet nulla a dui dignisim euismod. Morbi luctus elementum dictum. Donec convallis mattis elit id varius. Quisque facilisis sapien quis mauris, erat condimentum.
+
+      +col({ lg: 4 })
+        +panel(class='-secondary')
+          +panel-heading
+            h4 Secondary Panel
+            span Panel Subtitle
+          +panel-body 
+            p |
+              Quisque gravida aliquam diam at cursus, quisque laoreet ac lectus a rhoncusac tempus odio.
+            p |
+              Aliquam posuere volutpat turpis, ut euimod diam pellentesque at. Sed sit amet nulla a dui dignisim euismod. Morbi luctus elementum dictum. Donec convallis mattis elit id varius. Quisque facilisis sapien quis mauris, erat condimentum.
+
+      +col({ lg: 4 })
+        +panel(class='-success')
+          +panel-heading
+            h4 Success Panel
+            span Panel Subtitle
+          +panel-body 
+            p |
+              Quisque gravida aliquam diam at cursus, quisque laoreet ac lectus a rhoncusac tempus odio.
+            p |
+              Aliquam posuere volutpat turpis, ut euimod diam pellentesque at. Sed sit amet nulla a dui dignisim euismod. Morbi luctus elementum dictum. Donec convallis mattis elit id varius. Quisque facilisis sapien quis mauris, erat condimentum.
+    
+    +row
+      +col({ lg: 4 })
+        +panel(class='-warning')
+          +panel-heading
+            h4 Warning Panel
+            span Panel Subtitle
+          +panel-body 
+            p |
+              Quisque gravida aliquam diam at cursus, quisque laoreet ac lectus a rhoncusac tempus odio.
+            p |
+              Aliquam posuere volutpat turpis, ut euimod diam pellentesque at. Sed sit amet nulla a dui dignisim euismod. Morbi luctus elementum dictum. Donec convallis mattis elit id varius. Quisque facilisis sapien quis mauris, erat condimentum.
+
+      +col({ lg: 4 })
+        +panel(class='-info')
+          +panel-heading
+            h4 Info Panel
+            span Panel Subtitle
+          +panel-body 
+            p |
+              Quisque gravida aliquam diam at cursus, quisque laoreet ac lectus a rhoncusac tempus odio.
+            p |
+              Aliquam posuere volutpat turpis, ut euimod diam pellentesque at. Sed sit amet nulla a dui dignisim euismod. Morbi luctus elementum dictum. Donec convallis mattis elit id varius. Quisque facilisis sapien quis mauris, erat condimentum.
+
+      +col({ lg: 4 })
+        +panel(class='-danger')
+          +panel-heading
+            h4 Danger Panel
+            span Panel Subtitle
+          +panel-body 
+            p |
+              Quisque gravida aliquam diam at cursus, quisque laoreet ac lectus a rhoncusac tempus odio.
+            p |
+              Aliquam posuere volutpat turpis, ut euimod diam pellentesque at. Sed sit amet nulla a dui dignisim euismod. Morbi luctus elementum dictum. Donec convallis mattis elit id varius. Quisque facilisis sapien quis mauris, erat condimentum.
+    
+      
+    +row
+      +col({ lg: 4 })
+        +panel(class='-dark -bordered-bottom -bordered-primary -collapsible')
+          +panel-heading(class='-primary')
+            h4 Selective Primary Coloring
+            span Panel Subtitle
+          +panel-body 
+            p |
+              Quisque gravida aliquam diam at cursus, quisque laoreet ac lectus a rhoncusac tempus odio.
+            p |
+              Aliquam posuere volutpat turpis, ut euimod diam pellentesque at. Sed sit amet nulla a dui dignisim euismod. Morbi luctus elementum dictum. Donec convallis mattis elit id varius. Quisque facilisis sapien quis mauris, erat condimentum.
+
+      +col({ lg: 4 })
+        +panel(class='-dark -bordered-bottom -bordered-secondary -collapsible')
+          +panel-heading(class='-secondary')
+            h4 Selective Secondary Coloring
+            span Panel Subtitle
+          +panel-body 
+            p |
+              Quisque gravida aliquam diam at cursus, quisque laoreet ac lectus a rhoncusac tempus odio.
+            p |
+              Aliquam posuere volutpat turpis, ut euimod diam pellentesque at. Sed sit amet nulla a dui dignisim euismod. Morbi luctus elementum dictum. Donec convallis mattis elit id varius. Quisque facilisis sapien quis mauris, erat condimentum.
+
+      +col({ lg: 4 })
+        +panel(class='-dark -bordered-bottom -bordered-success -collapsible')
+          +panel-heading(class='-success')
+            h4 Selective Success Coloring
+            span Panel Subtitle
+          +panel-body 
+            p |
+              Quisque gravida aliquam diam at cursus, quisque laoreet ac lectus a rhoncusac tempus odio.
+            p |
+              Aliquam posuere volutpat turpis, ut euimod diam pellentesque at. Sed sit amet nulla a dui dignisim euismod. Morbi luctus elementum dictum. Donec convallis mattis elit id varius. Quisque facilisis sapien quis mauris, erat condimentum.
+    
+    +row
+      +col({ lg: 4 })
+        +panel(class='-dark -bordered-bottom -bordered-warning -collapsible')
+          +panel-heading(class='-warning')
+            h4 Selective Warning Coloring
+            span Panel Subtitle
+          +panel-body 
+            p |
+              Quisque gravida aliquam diam at cursus, quisque laoreet ac lectus a rhoncusac tempus odio.
+            p |
+              Aliquam posuere volutpat turpis, ut euimod diam pellentesque at. Sed sit amet nulla a dui dignisim euismod. Morbi luctus elementum dictum. Donec convallis mattis elit id varius. Quisque facilisis sapien quis mauris, erat condimentum.
+
+      +col({ lg: 4 })
+        +panel(class='-dark -bordered-bottom -bordered-info -collapsible')
+          +panel-heading(class='-info')
+            h4 Selective Info Coloring
+            span Panel Subtitle
+          +panel-body 
+            p |
+              Quisque gravida aliquam diam at cursus, quisque laoreet ac lectus a rhoncusac tempus odio.
+            p |
+              Aliquam posuere volutpat turpis, ut euimod diam pellentesque at. Sed sit amet nulla a dui dignisim euismod. Morbi luctus elementum dictum. Donec convallis mattis elit id varius. Quisque facilisis sapien quis mauris, erat condimentum.
+
+      +col({ lg: 4 })
+        +panel(class='-dark -bordered-bottom -bordered-danger -collapsible')
+          +panel-heading(class='-danger')
+            h4 Selective Danger Coloring
+            span Panel Subtitle
+          +panel-body 
+            p |
+              Quisque gravida aliquam diam at cursus, quisque laoreet ac lectus a rhoncusac tempus odio.
+            p |
+              Aliquam posuere volutpat turpis, ut euimod diam pellentesque at. Sed sit amet nulla a dui dignisim euismod. Morbi luctus elementum dictum. Donec convallis mattis elit id varius. Quisque facilisis sapien quis mauris, erat condimentum.
+
+    +row
+      +col({ lg: 4 })
+        +panel(class='-dark -dismissible')
+          +panel-heading
+            ul(class='panel-actions')
+              li
+                a(data-action="dismiss" href="#") 
+                  +fa('times') 
+              li
+                a(href="#")
+                  +fa('bars') 
+            h4 Panel Actions
+            span Panel Subtitle
+          +panel-body 
+            p |
+              Quisque gravida aliquam diam at cursus, quisque laoreet ac lectus a rhoncusac tempus odio.
+            p |
+              Aliquam posuere volutpat turpis, ut euimod diam pellentesque at. Sed sit amet nulla a dui dignisim euismod. Morbi luctus elementum dictum. Donec convallis mattis elit id varius. Quisque facilisis sapien quis mauris, erat condimentum.
+    
+      +col({ lg: 4 })
+        +panel(class='-dark -dismissible')
+          +panel-heading
+            ul(class='panel-actions')
+              li
+                a(data-action="dismiss" href="#")
+                  +fa('times') 
+              li
+                a(class='dropdown-toggle' data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" href="#")
+                  +fa('bars') 
+                div(class='dropdown-menu -right -dark')
+                  a(class='dropdown-item') 
+                    +fa('cloud')
+                    | Action
+                  a(class='dropdown-item') 
+                    +fa('refresh')
+                    | Update
+                  div(class='dropdown-divider')
+                  a(class='dropdown-item') 
+                    +fa('cog')
+                    | Settings
+            h4 Panel Actions Dropdown
+            span Panel Subtitle
+          +panel-body 
+            p |
+              Quisque gravida aliquam diam at cursus, quisque laoreet ac lectus a rhoncusac tempus odio.
+            p |
+              Aliquam posuere volutpat turpis, ut euimod diam pellentesque at. Sed sit amet nulla a dui dignisim euismod. Morbi luctus elementum dictum. Donec convallis mattis elit id varius. Quisque facilisis sapien quis mauris, erat condimentum.
+      
+      +col({ lg: 4 })
+        +panel(class='-dark -dismissible')
+          +panel-heading
+            ul(class='panel-actions -centered')
+              li
+                a(data-action="dismiss" href="#")
+                  +fa('times') 
+              li
+                a(href="#")
+                  +fa('bars') 
+            h4 Panel Actions Centered
+            span Panel Subtitle
+          +panel-body 
+            p |
+              Quisque gravida aliquam diam at cursus, quisque laoreet ac lectus a rhoncusac tempus odio.
+            p |
+              Aliquam posuere volutpat turpis, ut euimod diam pellentesque at. Sed sit amet nulla a dui dignisim euismod. Morbi luctus elementum dictum. Donec convallis mattis elit id varius. Quisque facilisis sapien quis mauris, erat condimentum.
+    
+
+    +row
+      +col({ lg: 4 })
+        +panel(class='-dark')
+          +panel-heading(class='-with-icon-sm')
+            +fa('home')
+            h4 Small Icon Panel
+          +panel-body 
+            p |
+              Quisque gravida aliquam diam at cursus, quisque laoreet ac lectus a rhoncusac tempus odio.
+            p |
+              Sed sit amet nulla a dui dignisim euismod. Aliquam posuere volutpat turpis, ut euimod diam pellentesque at. Sed sit amet nulla a dui dignisim euismod. Morbi luctus elementum dictum. Donec convallis mattis elit id varius. Quisque facilisis sapien quis mauris, erat condimentum.
+      
+      +col({ lg: 4 })
+        +panel(class='-dark')
+          +panel-heading(class='-with-icon')
+            +fa('home')
+            h4 Icon Panel
+            span Panel Subtitle
+          +panel-body 
+            p |
+              Quisque gravida aliquam diam at cursus, quisque laoreet ac lectus a rhoncusac tempus odio.
+            p |
+              Aliquam posuere volutpat turpis, ut euimod diam pellentesque at. Sed sit amet nulla a dui dignisim euismod. Morbi luctus elementum dictum. Donec convallis mattis elit id varius. Quisque facilisis sapien quis mauris, erat condimentum.
+      
+      +col({ lg: 4 })
+        +panel(class='-dark')
+          +panel-heading(class='-with-icon-lg')
+            +fa('home')
+            h4 Large Icon Panel
+            span Panel Subtitle
+          +panel-body 
+            p |
+              Quisque gravida aliquam diam at cursus, quisque laoreet ac lectus a rhoncusac tempus odio.
+            p |
+              Aliquam posuere volutpat turpis, ut euimod diam pellentesque at. Sed sit amet nulla a dui dignisim euismod. Morbi luctus elementum dictum. Donec convallis mattis elit id varius. Quisque facilisis sapien quis mauris, erat condimentum.
+
+    +row
+      +col({ md: 6 })
+        +panel(class='-dark -collapsible')
+          +panel-heading
+            ul(class='panel-actions -centered')
+              li 
+                a(data-action="collapse" href="#")
+                  +fa("chevron-down") 
+            h4 Collapsible Panel
+            span Panel Subtitle
+          +panel-body 
+            p |
+              Quisque gravida aliquam diam at cursus, quisque laoreet ac lectus a rhoncusac tempus odio.
+            p |
+              Aliquam posuere volutpat turpis, ut euimod diam pellentesque at. Sed sit amet nulla a dui dignisim euismod. Morbi luctus elementum dictum. Donec convallis mattis elit id varius. Quisque facilisis sapien quis mauris, erat condimentum.
+      
+      +col({ md: 6 })
+        +panel(class='-dark -collapsible -collapsed')
+          +panel-heading
+            ul(class='panel-actions -centered')
+              li 
+                a(data-action="collapse" href="#") 
+                  +fa("chevron-right")
+            h4 Collapsed Panel
+            span Panel Subtitle
+          +panel-body 
+            p |
+              Quisque gravida aliquam diam at cursus, quisque laoreet ac lectus a rhoncusac tempus odio.
+            p |
+              Aliquam posuere volutpat turpis, ut euimod diam pellentesque at. Sed sit amet nulla a dui dignisim euismod. Morbi luctus elementum dictum. Donec convallis mattis elit id varius. Quisque facilisis sapien quis mauris, erat condimentum.
+    
+    

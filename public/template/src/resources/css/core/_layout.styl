@@ -1,0 +1,161 @@
+body
+  background-color: $colors['black']
+  background-repeat: no-repeat
+  background-attachment: fixed
+  margin: 0
+  overflow-x: hidden
+
+::-webkit-scrollbar
+  height: 3px
+  width: 3px
+  &-thumb
+    background-clip: content-box
+    background-color: rgba(0, 0, 0, 0.75)
+    border-radius: 3px
+
+a
+  color: $colors['white']
+  &:hover, &:focus, &:active
+    color: $colors['white']
+
+:focus
+  outline: none
+::-moz-focus-inner
+  border: 0
+
+.content
+  width: 100%
+  display: block
+  position: relative
+  margin-top: $navbar['height']
+  padding: $content['padding']
+
+  +breakpoint-down(md)
+    padding-left: ($content['padding'] / 2)
+    padding-right: ($content['padding'] / 2)
+
+    &.-collapsible
+      &.-with-left-sidebar
+        padding-left: $sidebar['responsive-width']
+        padding-right: 0
+      &.-with-right-sidebar
+        padding-right: $sidebar['responsive-width']
+        padding-left: 0
+
+  +breakpoint-down(sm)
+    padding-left: 0
+    padding-right: 0
+
+  &.-with-left-sidebar
+    padding-left: $sidebar['width'] + $content['padding']
+
+  &.-with-right-sidebar
+    padding-right: $sidebar['width'] + $content['padding']
+
+  &.-with-top-navbar
+    margin-top: $navbar['height']
+    margin-bottom: 0
+
+  &.-with-bottom-navbar
+    margin-top: 0
+    margin-bottom: $navbar['height']
+
+  &.-dark
+    color: $scheme['light']['color']['dark']
+  &.-light
+    color: $scheme['dark']['color']['dark']
+
+aside
+.aside
+  z-index: 2
+  position: absolute
+  display: block
+  top: 0
+
+  &.-with-left-sidebar
+    &.-left
+      left: $sidebar['width']
+    &.-right
+      right: 0
+  &.-with-right-sidebar
+    &.-left
+      left: 0
+    &.-right
+      right: $sidebar['width']
+
+  width: $sidebar['width']
+  height: 100%
+
+  &.-dark
+    background: $scheme['dark']['background']['light']
+    background: linear-gradient(to bottom right, $scheme['dark']['background']['light'], $scheme['dark']['background']['lighter'])
+  &.-light
+    background: $scheme['light']['background']['light']
+
+
+  .aside-content
+    padding: 1rem
+    color: $scheme['light']['color']['default']
+
+  // +breakpoint-down(md)
+  //   &.-collapse-with-sidebar
+  //     &.-with-left-sidebar
+  //       &.-left
+  //         left: $sidebar['responsive-width']
+  //       &.-right
+  //         right: 0
+  //     &.-with-right-sidebar
+  //       &.-left
+  //         left: 0
+  //       &.-right
+  //         right: $sidebar['responsive-width']
+  +breakpoint-down(md)
+    &.-collapse-with-sidebar
+      &.-with-left-sidebar
+        &.-left
+          left: auto
+      &.-with-right-sidebar
+        &.-right
+          right: auto
+
+    &.-collapsible
+      margin-top: -($content['padding'] / 2)
+      margin-bottom: $content['padding']
+      position: relative
+      &.-left
+        left: auto
+      &.-right
+        right: auto
+      width: 100%
+      height: auto
+
+
+
+.beside
+  z-index: 1
+  width: 100%
+  display: block
+  box-sizing: border-box
+  &.-left-aside
+    padding-left: $sidebar['width'] - 2 * $content['padding']
+    margin-left: $content['padding']
+  &.-right-aside
+    padding-right: $sidebar['width'] - 2 * $content['padding']
+    margin-right: $content['padding']
+
+  +breakpoint-down(md)
+    &.-collapse-with-sidebar
+      &.-left-aside
+        padding-left: $sidebar['width']
+        margin-left: 0
+      &.-right-aside
+        padding-right: $sidebar['width']
+        margin-right: 0
+
+    &.-collapsible
+      &.-left-aside
+        padding-left: 0
+        margin-left: 0
+      &.-right-aside
+        padding-right: 0
+        margin-right: 0

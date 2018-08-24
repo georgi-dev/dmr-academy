@@ -1,0 +1,10 @@
+//- Create a bootstrap button 
+//-
+mixin alert(type, icon, iconType)
+  - iconType = iconType || ''
+   
+  // Alert
+  div(class='alert -' + type)&attributes(attributes)
+    div(class='alert-icon ' + iconType)
+      i(class=icon)
+    block

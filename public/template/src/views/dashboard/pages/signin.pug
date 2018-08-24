@@ -1,0 +1,29 @@
+extends ../../layouts/dashboard-unauthenticated.pug
+
+block content
+  +container-fluid
+    +row   
+      +col({ lg: 12 })
+        +panel(class='-dark -focused')
+          +panel-heading(class='-dark -with-icon-lg')
+            +pe('angle-right-circle')
+            h3 Sign In 
+            span Please enter your account credentials
+          +panel-body 
+            form(class='form -dark' id='form-signin' action=server.url + '/' data-toggle='validator' method='POST')
+              +form-group
+                label(class='form-label' for='form-signin-username') Username
+                input(class='form-control' id='form-signin-username' name='username' type='text' required=true placeholder='Username' value='admin')
+              +form-group
+                label(for='form-signin-password') Password
+                input(class='form-control' id='form-signin-password' name='password' type='password' required=true placeholder='Password' value='admin')
+                a(class='form-text _text-muted _text-right' href=url('forgot-password')) 
+                  small Forgot Password?
+              +form-group(class='_margin-top-2x _margin-bottom-none')
+                div(class='form-check -checkbox')
+                  input(class='form-check-input' id='form-signin-remember' name='password' type='checkbox' checked=true)
+                  label(for='form-signin-remember') Remember me 
+                  button(class='btn -primary _pull-right' type='submit' name='signup') Signin      
+        
+        p(class='_text-center')
+          a(class='_text-muted' href=url('signup')) I don't have an account yet, sign me up!

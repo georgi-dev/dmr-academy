@@ -1,0 +1,19 @@
+extends ../../layouts/dashboard.pug
+
+block layout
+  +navbar(server, 'dark')      
+
+  +sidebar-main({ server: server, pages: pages[1], theme: 'dark' })(class='-collapsible') 
+  +sidebar-secondary(server, page['view'], 'dark')  
+
+  +content('dark')(class='-collapsible')
+    block content
+      +aside(class='-dark -left -with-left-sidebar -collapse-with-sidebar -collapsible')
+        div(class='aside-content') Page Aside
+        
+      +beside(class='-left-aside -collapse-with-sidebar -collapsible')
+        +container-fluid
+          +row 
+            +col({ lg: 12 })
+              +page-heading(server, page)
+      

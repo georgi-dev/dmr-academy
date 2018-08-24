@@ -1,0 +1,111 @@
+body
+  font-family: 'Proxima Nova', 'Helvetica Neue', 'Helvetica', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Arial', sans-serif
+  text-rendering: optimizeLegibility
+  -webkit-font-smoothing: antialiased
+
+for $name, $color in $colors
+  ._text-{$name}
+    color: $color
+
+._font-black
+  font-weight: 900
+
+._font-bold
+  font-weight: bold
+
+._font-normal
+  font-weight: normal
+
+._font-light
+  font-weight: 300
+
+._font-thin
+  font-weight: 100
+
+._font-italic
+  font-style: italic
+
+._text-center
+  text-align: center
+
+._text-left
+  text-align: left
+
+._text-right
+  text-align: right
+
+._text-muted
+  color: $scheme['light']['color']['medium']
+.text-muted
+  color: $scheme['light']['color']['medium'] !important
+
+._pull-right
+  float: right
+  clearfix()
+
+._pull-left
+  float: left
+  clearfix()
+
+// Selection color
+selection
+  background: $colors['concrete']
+  color: $colors['white']
+
+-moz-selection
+  color: $colors['white']
+  background: $colors['concrete']
+
+
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6
+  font-weight: 300
+  font-family: $font-family-heading
+
+  > small
+    font-size: 60%
+    color: $scheme['light']['color']['medium']
+
+mark, .mark
+  background: $scheme['light']['background']['medium']
+
+
+blockquote, .blockquote
+  border-left: 2px solid transparent
+  font-size: 1.25rem
+  padding: 0.25rem 1rem
+
+  &.-right
+    border-left: 0 solid transparent
+    border-right: 2px solid transparent
+    text-align: right
+
+    &.-light
+      border-right-color: $scheme['light']['background']['medium']
+    &.-dark
+      border-right-color: $scheme['dark']['background']['medium']
+
+  &.-light
+    border-left-color: $scheme['light']['background']['medium']
+  &.-dark
+    border-left-color: $scheme['dark']['background']['medium']
+
+
+  footer, .blockquote-footer
+    font-size: 1rem
+    color: $scheme['light']['color']['medium']
+
+
+._cursor-default
+  cursor: default
+
+._cursor-pointer
+  cursor: pointer
+
+a
+  transition: color 0.3s ease
+
+
+code
+  color: $scheme.light.color.dark
+  background: $scheme.dark.background.medium

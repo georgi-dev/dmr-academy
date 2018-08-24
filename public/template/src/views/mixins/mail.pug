@@ -1,0 +1,45 @@
+mixin mail-item
+  // Mail Item
+  tr(class='mail-item')&attributes(attributes) 
+    block
+  // /Mail Item
+  
+mixin sidebar-mail(server, active)
+  // Mail Sidebar
+  div(class='mail-sidebar')&attributes(attributes)
+    div(class='mail-sidebar-header -fixed-height')
+      h3 
+        | Mail
+      p(class='_text-muted ')
+        | Welcome to Volta's beautiful email service! You have <strong>5</strong> new emails.
+      a(class='btn -primary -block' href=url('dashboard/email/compose')) Compose
+    
+    nav(class='mail-sidebar-nav')
+      ul(class='list-unstyled')
+        li(class=(active.indexOf('inbox') != -1) ? '-active' : '')
+          a(href=url('dashboard/email/inbox'))
+            +fa("inbox")
+            | Inbox
+            span(class='tag -dark') 5  
+        li 
+          a(href='#') 
+            +fa('star') 
+            | Starred
+        li
+          a(href='#') 
+            +fa('envelope')
+            | Sent
+        li
+          a(href='#') 
+            +fa('file-text')
+            | Drafts
+            span(class='tag -dark') 2  
+        li
+          a(href='#') 
+            +fa('ban') 
+            | Spam
+        li
+          a(href='#') 
+            +fa('trash')
+            | Trash
+  // /Mail Sidebar

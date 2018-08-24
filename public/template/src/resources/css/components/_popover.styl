@@ -1,0 +1,39 @@
+.popover
+  border-radius: 2px
+  background: $scheme['dark']['background']['darker']
+  color: $scheme['light']['background']['default']
+  font-size: 1rem
+
+  &.popover-top
+  &.bs-tether-element-attached-bottom
+    &::before
+    &::after
+    .popover-title::before
+      border-top-color: $scheme['dark']['background']['medium']
+
+  &.popover-right
+  &.bs-tether-element-attached-left
+    &::before
+    &::after
+    .popover-title::before
+      border-right-color: $scheme['dark']['background']['medium']
+
+  &.popover-bottom
+  &.bs-tether-element-attached-top
+    &::before
+    &::after
+    .popover-title::before
+      border-bottom-color: $scheme['dark']['background']['medium']
+
+  &.popover-left
+  &.bs-tether-element-attached-right
+    &::before
+    &::after
+    .popover-title::before
+      border-left-color: $scheme['dark']['background']['medium']
+
+
+  .popover-title
+    background: $scheme['dark']['background']['medium']
+    border-bottom-color: $scheme['light']['background']['light']
+    font-size: 1.1rem

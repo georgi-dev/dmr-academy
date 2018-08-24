@@ -1,0 +1,233 @@
+mixin chat-list-item() 
+  // Chat List Item
+  a(class='chat-list-item sidebar-tab' data-target='#chat-view-tab')&attributes(attributes)
+    block
+  // /Chat List Item 
+    
+
+mixin sidebar-secondary(server, active, theme, position)
+  - theme = theme || 'dark'
+  - position = position || 'right'
+
+  // Right Sidebar 
+  div(class='sidebar -' + theme + ' -' + position + ' -slideable' id='sidebar-secondary' data-collapse='0' data-slide-content="false")&attributes(attributes)
+    ul(class='sidebar-tabs') 
+      li(class='sidebar-tab -active' data-target='#chat-tab') Chat
+      li(class='sidebar-tab' data-target='#tasks-tab') Tasks 
+
+    div(class='sidebar-wrapper scrollable') 
+      div(class='sidebar-content scrollable-content')
+      
+          
+        div(class='sidebar-tab-content -active' id='chat-tab')
+          div(class='chat-list sidebar-content-section') 
+            h5 A 
+            
+            +chat-list-item()(class='-busy')
+              img(class='chat-list-avatar' src=url('resources/img/users/male1.jpg'))
+              +fa('circle')(class='chat-list-status')
+              div(class='chat-list-user') Adam Cartman
+              div(class='chat-list-excerpt') Busy
+            +chat-list-item()(class='-available')
+              img(class='chat-list-avatar' src=url('resources/img/users/female5.jpg'))
+              +fa('circle')(class='chat-list-status')
+              div(class='chat-list-user') Alice Silver
+              div(class='chat-list-excerpt') I agree, Volta's awesome..
+              
+            h5 B 
+            
+            +chat-list-item()(class='-available')
+              img(class='chat-list-avatar' src=url('resources/img/users/male12.jpg'))
+              +fa('circle')(class='chat-list-status')
+              div(class='chat-list-user') Bill James
+              div(class='chat-list-excerpt') Available
+            +chat-list-item()(class='-away')
+              img(class='chat-list-avatar' src=url('resources/img/users/male4.jpg'))
+              +fa('circle')(class='chat-list-status')
+              div(class='chat-list-user') Bart Davidson
+              div(class='chat-list-excerpt') Away
+            +chat-list-item()(class='-available')
+              img(class='chat-list-avatar' src=url('resources/img/users/female6.jpg'))
+              +fa('circle')(class='chat-list-status')
+              div(class='chat-list-user') Barbara Everwind
+              div(class='chat-list-excerpt') Available
+              
+            h5 C
+            
+            +chat-list-item()(class='-available')
+              img(class='chat-list-avatar' src=url('resources/img/users/female4.jpg'))
+              +fa('circle')(class='chat-list-status')
+              div(class='chat-list-user') Cindy Wang
+              div(class='chat-list-excerpt') I heard you got the new..
+              
+            h5 D
+            
+            +chat-list-item()(class='-busy')
+              img(class='chat-list-avatar' src=url('resources/img/users/male13.jpg'))
+              +fa('circle')(class='chat-list-status')
+              div(class='chat-list-user') David Wilderman
+              div(class='chat-list-excerpt') Busy
+            +chat-list-item()(class='-away')
+              img(class='chat-list-avatar' src=url('resources/img/users/female7.jpg'))
+              +fa('circle')(class='chat-list-status')
+              div(class='chat-list-user') Deborah Wilson
+              div(class='chat-list-excerpt') Away
+              
+            h5 E 
+            
+            +chat-list-item()(class='-busy')
+              img(class='chat-list-avatar' src=url('resources/img/users/male5.jpg'))
+              +fa('circle')(class='chat-list-status')
+              div(class='chat-list-user') Evan Sidewell
+              div(class='chat-list-excerpt') Hey! When do we go to.. 
+            +chat-list-item()(class='-available')
+              img(class='chat-list-avatar' src=url('resources/img/users/female8.jpg'))
+              +fa('circle')(class='chat-list-status')
+              div(class='chat-list-user') Emma Sidewell
+              div(class='chat-list-excerpt') Available
+            +chat-list-item()(class='-available')
+              img(class='chat-list-avatar' src=url('resources/img/users/female6.jpg'))
+              +fa('circle')(class='chat-list-status')
+              div(class='chat-list-user') Evelyn Grant
+              div(class='chat-list-excerpt') Available
+              
+            h5 F 
+            
+            +chat-list-item()(class='-available')
+              img(class='chat-list-avatar' src=url('resources/img/users/female9.jpg'))
+              +fa('circle')(class='chat-list-status') 
+              div(class='chat-list-user') Felicia Brown
+              div(class='chat-list-excerpt') Available
+              
+            h5 G
+            
+            +chat-list-item()(class='-available')
+              img(class='chat-list-avatar' src=url('resources/img/users/female1.jpg'))
+              +fa('circle')(class='chat-list-status')
+              div(class='chat-list-user') Gabriella Cruz
+              div(class='chat-list-excerpt') I heard you got the new..
+              
+            h5 J
+            
+            +chat-list-item()(class='-available')
+              img(class='chat-list-avatar' src=url('resources/img/users/male3.jpg'))
+              +fa('circle')(class='chat-list-status')
+              div(class='chat-list-user') John Doe
+              div(class='chat-list-excerpt') Hey, wanna go to eat at..
+              
+            +chat-list-item()(class='-away')
+              img(class='chat-list-avatar' src=url('resources/img/users/female3.jpg'))
+              +fa('circle')(class='chat-list-status')
+              div(class='chat-list-user') Johanna Cooper
+              div(class='chat-list-excerpt') Away
+              
+            h5 M
+              
+            +chat-list-item()(class='-away')
+              img(class='chat-list-avatar' src=url('resources/img/users/male2.jpg'))
+              +fa('circle')(class='chat-list-status')
+              div(class='chat-list-user') Mario Flores
+              div(class='chat-list-excerpt') Bro! It's finally time for..
+            +chat-list-item()(class='-away')
+              img(class='chat-list-avatar' src=url('resources/img/users/male11.jpg'))
+              +fa('circle')(class='chat-list-status')
+              div(class='chat-list-user') Martin Gray
+              div(class='chat-list-excerpt') Away
+              
+            h5 P
+            
+            +chat-list-item()(class='-available')
+              img(class='chat-list-avatar' src=url('resources/img/users/male10.jpg'))
+              +fa('circle')(class='chat-list-status')
+              div(class='chat-list-user') Paul Jackman
+              div(class='chat-list-excerpt') Available
+              
+            h5 S
+            
+            +chat-list-item()(class='-available')
+              img(class='chat-list-avatar' src=url('resources/img/users/female2.jpg'))
+              +fa('circle')(class='chat-list-status')
+              div(class='chat-list-user') Sofia Owens
+              div(class='chat-list-excerpt') Available
+              
+            h5 T
+            
+            +chat-list-item()(class='-available')
+              img(class='chat-list-avatar' src=url('resources/img/users/male12.jpg'))
+              +fa('circle')(class='chat-list-status')
+              div(class='chat-list-user') Tim Owens
+              div(class='chat-list-excerpt') Available
+            +chat-list-item()(class='-available')
+              img(class='chat-list-avatar' src=url('resources/img/users/female10.jpg'))
+              +fa('circle')(class='chat-list-status')
+              div(class='chat-list-user') Tania Seville
+              div(class='chat-list-excerpt') Available
+              
+
+
+      
+        div(class='sidebar-tab-content' id='tasks-tab')
+          div(class='tasks-list sidebar-content-section form -dark')
+            h5 Under Review 
+            
+            +form-group()(class='task')
+              div(class='form-check -checkbox')
+                input(class='form-check-input' id='task-checkbox-1' name='task' type='checkbox' checked='true')
+                label(for='task-checkbox-1') Email pipeline results to Susie and Anna
+            +form-group()(class='task')
+              div(class='form-check -checkbox')
+                input(class='form-check-input' id='task-checkbox-2' name='task' type='checkbox' checked='true')
+                label(for='task-checkbox-2') Respond to email from James at Palmer Tech
+            +form-group()(class='task')
+              div(class='form-check -checkbox')
+                input(class='form-check-input' id='task-checkbox-3' name='task' type='checkbox' checked='true')
+                label(for='task-checkbox-3') Prepare presentation for tomorrow
+                
+            h5 Critical 
+            
+            +form-group()(class='task')
+              div(class='form-check -checkbox')
+                input(class='form-check-input' id='task-checkbox-5' name='task' type='checkbox')
+                label(for='task-checkbox-5') Finish Development Report on Volta
+            +form-group()(class='task')
+              div(class='form-check -checkbox')
+                input(class='form-check-input' id='task-checkbox-6' name='task' type='checkbox')
+                label(for='task-checkbox-6') Review coworker's front-end commit and fix problems
+            
+            h5 General
+            
+            +form-group()(class='task')
+              div(class='form-check -checkbox')
+                input(class='form-check-input' id='task-checkbox-7' name='task' type='checkbox')
+                label(for='task-checkbox-7') Book flight to San Diego for JS Conference
+            +form-group()(class='task')
+              div(class='form-check -checkbox')
+                input(class='form-check-input' id='task-checkbox-8' name='task' type='checkbox')
+                label(for='task-checkbox-8') Buy birthday present for Lisa
+            +form-group()(class='task')
+              div(class='form-check -checkbox')
+                input(class='form-check-input' id='task-checkbox-9' name='task' type='checkbox')
+                label(for='task-checkbox-9') Replace wireless mouse and keyboard batteries
+                
+      
+        div(class='sidebar-tab-content chat-view-tab' id='chat-view-tab') 
+          div(class='chat-user')
+            a(class=' chat-list-item sidebar-tab -available -right' data-target='#chat-tab')
+              +fa('chevron-left')(class='chat-user-back')
+              img(class='chat-list-avatar' src=url('resources/img/users/male3.jpg'))
+              +fa('circle')(class='chat-list-status')
+              div(class='chat-list-user') John Doe
+              div(class='chat-list-excerpt') Web Developer
+          form(class='chat-form form -dark' method='POST')
+            input(class='form-control' type='text' name='message' placeholder='Type something..')
+            
+          div(class='chat')
+            div(class='chat-view')
+              div(class='chat-items')
+                div(class='chat-item -from') Hello
+                div(class='chat-item -to') Hi John! How are you?
+                div(class='chat-item -from') Great, thank you! Got some free time to help me with my task today?
+                div(class='chat-item -to') Sure, I'm free now. Is it ok for you?
+                div(class='chat-item -from') Yeah, it's perfect. I've been waiting to use the new Admin theme for a while now. 
+                div(class='chat-item -to') I know, I've never seen anything like it.
+  // /Right Sidebar

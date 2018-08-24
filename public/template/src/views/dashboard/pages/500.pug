@@ -1,0 +1,13 @@
+extends ../../layouts/dashboard-unauthenticated.pug
+
+block content
+  +container-fluid
+    +row   
+      +col({ lg: 12 })
+        div(class='error-section')
+          div(class='error-icon') 
+            +pe('tools') 
+          div(class='error-content')
+            div(class='error-title') Error 500
+            div(class='error-subtitle') Oops! There was an internal server error. We are working on it!
+            a(class='btn -dark -wide' href=server.url + "/") Back to Homepage

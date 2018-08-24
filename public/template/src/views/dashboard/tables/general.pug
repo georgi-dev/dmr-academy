@@ -1,0 +1,448 @@
+extends ../../layouts/dashboard.pug
+
+block content
+  +container-fluid
+    +row 
+      +col({ lg: 12 })
+        +page-heading(server, page)
+          
+    +row
+      +col({ xl: 6 })
+        +panel(class='-dark')
+          +panel-heading
+            h4 Basic Table
+          div(class='table-responsive')
+            table(class='table -dark')
+              thead 
+                tr 
+                  th Name
+                  th Date
+                  th Rate
+                  th Sales
+                  th 
+              tbody 
+                tr 
+                  td(class='-user') 
+                    a(href='#') 
+                      img(src=url('resources/img/users/male3.jpg'))
+                      | John Doe
+                  td 16/06/2016
+                  td 55%
+                  td 431  
+                  td
+                    a(href='#')
+                      +fa('user')
+                tr 
+                  td(class='-user') 
+                    a(href='#') 
+                      img(src=url('resources/img/users/female1.jpg'))
+                      | Gabriella Cruz
+                  td 15/08/2016
+                  td 40%
+                  td 140  
+                  td
+                    a(href='#')
+                      +fa('user')
+                tr 
+                  td(class='-user')
+                    a(href='#') 
+                      img(src=url('resources/img/users/female2.jpg'))
+                      | Sofia Owens
+                  td 11/09/2016
+                  td 70%
+                  td 420  
+                  td
+                    a(href='#')
+                      +fa('user')
+                tr 
+                  td(class='-user') 
+                    a(href='#') 
+                      img(src=url('resources/img/users/male2.jpg'))
+                      | Mario Flores
+                  td 15/09/2016
+                  td 60%
+                  td 362  
+                  td
+                    a(href='#')
+                      +fa('user')
+                tr 
+                  td(class='-user') 
+                    a(href='#') 
+                      img(src=url('resources/img/users/female3.jpg'))
+                      | Johanna Cooper
+                  td 15/08/2016
+                  td 50%
+                  td 192  
+                  td
+                    a(href='#')
+                      +fa('user')
+                
+      +col({ xl: 6 })
+        +panel(class='-dark')
+          +panel-heading
+            h4 Striped Table
+          div(class='table-responsive')
+            table(class='table -dark -striped')
+              thead 
+                tr 
+                  th Name
+                  th Date
+                  th Rate
+                  th Sales
+                  th 
+              tbody 
+                tr 
+                  td
+                    a(href='#') John Doe
+                  td 16/06/2016
+                  td 55%
+                  td 431  
+                  td
+                    a(href='#')
+                      +fa('trash-o')
+                tr 
+                  td
+                    a(href='#') Gabriella Cruz
+                  td 15/08/2016
+                  td 40%
+                  td 140  
+                  td
+                    a(href='#')
+                      +fa('trash-o')
+                tr 
+                  td
+                    a(href='#') Sofia Owens
+                  td 11/09/2016
+                  td 70%
+                  td 420  
+                  td
+                    a(href='#')
+                      +fa('trash-o')
+                tr 
+                  td
+                    a(href='#') Mario Flores
+                  td 15/09/2016
+                  td 60%
+                  td 362  
+                  td
+                    a(href='#')
+                      +fa('trash-o')
+                tr 
+                  td
+                    a(href='#') Johanna Cooper
+                  td 15/08/2016
+                  td 50%
+                  td 192  
+                  td
+                    a(href='#')
+                      +fa('trash-o')
+      
+    +row          
+      +col({ xl: 12 })
+        +panel(class='-dark')
+          +panel-heading
+            ul(class='panel-actions -centered')
+              li
+                    a(href='#')
+                      +fa('print') 
+              li
+                    a(href='#')
+                      +fa('refresh') 
+              li
+                a(class='dropdown-toggle' data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" href="#") 
+                  +fa('bars') 
+                div(class='dropdown-menu -right -dark')
+                  a(class='dropdown-item') 
+                    +fa('cloud')
+                    |  Action
+                  a(class='dropdown-item') 
+                    +fa('refresh')
+                    |  Update
+                  div(class='dropdown-divider')
+                  a(class='dropdown-item') 
+                    +fa('cog')
+                    |  Settings
+            h4 Latest Sales
+          div(class='table-responsive')
+            table(class='table -dark')
+              thead 
+                tr 
+                  th Product
+                  th Price
+                  th Date
+                  th State
+                  th 
+              tbody 
+                tr 
+                  td
+                    a(href='#') Apple MacBook Pro 15"
+                  td $1899
+                  td 16/06/2016
+                  td(class='_text-success') Completed  
+                  td
+                    a(href='#')
+                      +fa('ellipsis-v')
+                tr 
+                  td
+                    a(href='#') Apple iPhone 7 
+                  td $949
+                  td 15/08/2016
+                  td(class='_text-success') Completed  
+                  td
+                    a(href='#')
+                      +fa('ellipsis-v')
+                tr 
+                  td
+                    a(href='#') LG 34UC98
+                  td $839
+                  td 15/09/2016
+                  td(class='_text-warning') Pending  
+                  td
+                    a(href='#')
+                      +fa('ellipsis-v')
+                tr 
+                  td
+                    a(href='#') Intel i5 6600k
+                  td $359
+                  td 15/08/2016
+                  td(class='_text-success') Completed  
+                  td
+                    a(href='#')
+                      +fa('ellipsis-v')
+                tr 
+                  td
+                    a(href='#') Samsung Galaxy S7
+                  td $569
+                  td 15/08/2016
+                  td(class='_text-success') Completed  
+                  td
+                    a(href='#')
+                      +fa('ellipsis-v')
+                tr 
+                  td
+                    a(href='#') Gigabyte GTX 1080
+                  td $799
+                  td 15/08/2016
+                  td(class='_text-danger') Cancelled  
+                  td
+                    a(href='#')
+                      +fa('ellipsis-v')
+                tr 
+                  td
+                    a(href='#') Apple iMac 27"
+                  td $2399
+                  td 15/08/2016
+                  td(class='_text-warning') Pending  
+                  td
+                    a(href='#')
+                      +fa('ellipsis-v')
+
+    +row          
+      +col({ xl: 6 })
+        +panel(class='-dark')
+          +panel-heading
+            h4 Bordered Table
+          div(class='table-responsive')
+            table(class='table -dark -striped -bordered')
+              thead 
+                tr 
+                  th OS
+                  th(class='_text-right') Visitors
+                  th(class='_text-right') 
+              tbody 
+                tr 
+                  td
+                    a(href='#') MacOS
+                  td(class='_text-right') 431  
+                  td(class='_text-right')
+                    a(href='#')
+                      +fa('cog')
+                tr 
+                  td
+                    a(href='#') Windows
+                  td(class='_text-right') 140  
+                  td(class='_text-right')
+                    a(href='#')
+                      +fa('cog')
+                tr 
+                  td
+                    a(href='#') Linux
+                  td(class='_text-right') 420  
+                  td(class='_text-right')
+                    a(href='#')
+                      +fa('cog')
+                tr 
+                  td
+                    a(href='#') Android
+                  td(class='_text-right') 362  
+                  td(class='_text-right')
+                    a(href='#')
+                      +fa('cog')
+                tr 
+                  td
+                    a(href='#') iOS
+                  td(class='_text-right') 192  
+                  td(class='_text-right')
+                    a(href='#')
+                      +fa('cog')
+                
+      +col({ xl: 6 })
+        +panel(class='-dark')
+          +panel-heading
+            h4 Contextual Table
+          div(class='table-responsive')
+            table(class='table -dark -bordered')
+              thead 
+                tr 
+                  th Name
+                  th Date
+                  th Rate
+                  th Sales
+                  th 
+              tbody 
+                tr(class='-primary')
+                  td
+                    a(href='#') John Doe
+                  td 16/06/2016
+                  td 55%
+                  td 431  
+                  td
+                    a(href='#')
+                      +fa('trash-o')
+                tr(class='-success')
+                  td
+                    a(href='#') Gabriella Cruz
+                  td 15/08/2016
+                  td 40%
+                  td 140  
+                  td
+                    a(href='#')
+                      +fa('trash-o')
+                tr(class='-info')
+                  td
+                    a(href='#') Sofia Owens
+                  td 11/09/2016
+                  td 70%
+                  td 420  
+                  td
+                    a(href='#')
+                      +fa('trash-o')
+                tr(class='-warning')
+                  td
+                    a(href='#') Mario Flores
+                  td 15/09/2016
+                  td 60%
+                  td 362  
+                  td
+                    a(href='#')
+                      +fa('trash-o')
+                tr(class='-danger')
+                  td
+                    a(href='#') James Cooper
+                  td 15/08/2016
+                  td 50%
+                  td 192  
+                  td
+                    a(href='#')
+                      +fa('trash-o')
+
+
+    +row
+      +col({ xl: 12 })
+        +panel(class='-dark')
+          +panel-heading
+            h4 Detailed Table
+          div(class='table-responsive')
+            table(class='table -dark')
+              thead 
+                tr 
+                  th Name
+                  th Date
+                  th Progress
+                  th 
+              tbody 
+                tr 
+                  td(class='-user -detailed')
+                    a(href='#') 
+                      img(src=url('resources/img/users/male3.jpg'))
+                      | John Doe
+                      span Sales Lead
+                  td(class='-detailed')
+                    | 16/06/2016
+                    span 14:30
+                  td(class='-detailed')
+                    div(class='progress -dark')
+                      div(class='bar -primary' style="width: 58%")
+                    span(class='_pull-right') 116/200
+                    span 58%
+                  td(class='_text-center')
+                    a(href='#')
+                      +fa('search')
+                tr 
+                  td(class='-user -detailed') 
+                    a(href='#') 
+                      img(src=url('resources/img/users/female1.jpg'))
+                      | Gabriella Cruz
+                      span Sales Manager
+                  td(class='-detailed') 
+                    | 15/08/2016
+                    span 06:24
+                  td(class='-detailed') 
+                    div(class='progress -dark')
+                      div(class='bar -primary' style="width: 41%")
+                    span(class='_pull-right') 166/400
+                    span 41% 
+                  td(class='_text-center')
+                    a(href='#')
+                      +fa('search')
+                tr 
+                  td(class='-user -detailed')
+                    a(href='#') 
+                      img(src=url('resources/img/users/female2.jpg'))
+                      | Sofia Owens
+                      span Sales Staff
+                  td(class='-detailed')
+                    | 11/09/2016
+                    span 08:42
+                  td(class='-detailed') 
+                    div(class='progress -dark')
+                      div(class='bar -primary' style="width: 84%")
+                    span(class='_pull-right') 420/500
+                    span 84% 
+                  td(class='_text-center')
+                    a(href='#')
+                      +fa('search')
+                tr 
+                  td(class='-user -detailed') 
+                    a(href='#') 
+                      img(src=url('resources/img/users/male2.jpg'))
+                      | Mario Flores
+                      span Sales Staff
+                  td(class='-detailed') 
+                    | 15/09/2016
+                    span 19:36
+                  td(class='-detailed') 
+                    div(class='progress -dark')
+                      div(class='bar -primary' style="width: 72%")
+                    span(class='_pull-right') 360/500
+                    span 72%
+                  td(class='_text-center')
+                    a(href='#')
+                      +fa('search')
+                tr 
+                  td(class='-user -detailed') 
+                    a(href='#') 
+                      img(src=url('resources/img/users/female3.jpg'))
+                      | Johanna Cooper
+                      span Accounting
+                  td(class='-detailed')
+                    | 15/08/2016
+                    span 15:25
+                  td(class='-detailed') 
+                    div(class='progress -dark')
+                      div(class='bar -primary' style="width: 64%")
+                    span(class='_pull-right') 192/300
+                    span 64%
+                  td(class='_text-center')
+                    a(href='#')
+                      +fa('search')

@@ -1,0 +1,36 @@
+.alert
+  border-radius: 2px
+  display: block
+  padding-bottom: $base-padding
+  padding-left: $base-padding * 3.5
+  padding-right: $base-padding
+  padding-top: $base-padding
+  position: relative
+
+  .alert-icon
+    position: absolute
+    font-size: 1.5rem
+    top: 0
+    left: 0
+    height: 100%
+    padding: 0.75rem 1rem
+
+  &.-contrasted
+    padding-left: $base-padding * 4.5
+
+  &.-dark
+    background: linear-gradient(to bottom right, $scheme['dark']['background']['medium'], $scheme['dark']['background']['light'])
+  &.-light
+    background: linear-gradient(to bottom right, $scheme['light']['background']['lighter'], $scheme['light']['background']['light'])
+
+  for $brand-name, $brand-color in $brand
+    &.-{$brand-name}
+      background: linear-gradient(to bottom right, rgba($brand-color, 1), rgba($brand-color, 0.75))
+      &.-contrasted .alert-icon
+        background: darken($brand-color, 15%)
+
+    &.-contrasted .alert-icon.-{$brand-name}
+      background: darken($brand-color, 15%)
+
+    &.-border-{$brand-name}
+      border-color: lighten($brand-color, 10%)

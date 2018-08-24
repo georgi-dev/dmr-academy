@@ -1,0 +1,172 @@
+.navbar
+  margin: 0
+  padding: 0
+  border-radius: 0
+  box-sizing: border-box
+  z-index: 9999
+  width: 100%
+  height: $navbar['height']
+  +breakpoint-down(md)
+    height: auto
+
+  backdrop-filter: blur(15px)
+  -webkit-backdrop-filter: blur(15px)
+
+  &.-fixed-top,
+  &.-fixed-bottom
+    position: fixed
+    left: 0
+  &.-fixed-top
+    top: 0
+  &.-fixed-bottom
+    bottom: 0
+
+  .navbar-wrapper
+    display: block
+    width: 100%
+    height: 100%
+    position: relative
+    background: transparent
+    transition: all 1s ease
+    clearfix()
+
+  for $navbar-items in (1..8)
+    &.-has-{$navbar-items}-items
+      +breakpoint-down(xs)
+        .navbar-nav
+          > li
+            width: percentage(1 / ($navbar-items))
+
+  .navbar-brand
+    padding: 0 1rem
+    width: $sidebar['width']
+    text-align: center
+    margin: 0
+    z-index: 99
+
+    display: block
+    float: left
+    clear: both
+
+    +breakpoint-down(md)
+      padding: 0 0 0 $navbar['height']
+
+    +breakpoint-down(sm)
+      width: ($sidebar['width'] * 3 / 4)
+
+    +breakpoint-down(xs)
+      width: 100%
+
+    transition: background-position 0.5s ease
+    background-size: ($sidebar['width'] * 3 / 2) 1px
+
+    &:hover, &:focus, &:active
+      background-position: - ($sidebar['width'] / 2)
+
+    font-weight: 300
+    font-size: 1.5rem
+    line-height: $navbar['height']
+    h1, h2, h3, h4, h5, h6
+      margin: 0
+      font-weight: inherit
+      font-size: inherit
+      line-height: inherit
+
+    img
+      margin-right: 0.5rem
+
+  .navbar-nav
+    position: relative
+    list-style: none
+    &.-right
+      float: right
+    &.-left
+      float: left
+    display: block
+    margin: 0
+    padding: 0
+
+    +breakpoint-down(md)
+      margin: 0
+    +breakpoint-down(xs)
+      float: left
+      width: 100%
+
+    > li
+      text-align: center
+      display: block
+      float: left
+
+      > a
+        font-size: 1.5rem
+        line-height: $navbar['height']
+
+        height: $navbar['height']
+        width: $navbar['height']
+        +breakpoint-down(xs)
+          width: 100%
+
+        display: block
+        position: relative
+        transition: background 0.5s ease, color 0.5s ease
+
+        border-left-width: 1px
+        border-left-style: solid
+        &:last-child
+          border-right-width: 1px
+          border-right-style: solid
+
+  i
+    position: relative
+    margin-top: 20px
+
+  .navbar-profile
+    i
+      position: relative
+      display: inline-block
+      margin-top: 20px
+      font-size: 1.75rem
+    img
+      width: 25px
+      height: 25px
+      margin-top: -5px
+      opacity: 0.75
+
+  a
+    &:hover, &:focus, &:active
+      text-decoration: none
+
+  .navbar-item-count
+    position: absolute
+    top: 0.5rem
+    right: 0.5rem
+    border-radius: 2px
+    font-size: 10px
+    line-height: 10px
+    padding: 4px
+
+  for $scheme-name, $scheme-color in $navbar['schemes']
+    &.-{$scheme-name}
+      background: $scheme-color['background']['lighter']
+      background: linear-gradient(to left, $scheme-color['background']['lighter'], $scheme-color['background']['light'])
+      border-bottom: 1px solid $scheme-color['background']['lighter']
+
+      &.-opaque
+        .navbar-wrapper
+          background: $scheme-color['background']['medium'] !important
+
+      &, a
+        color: $scheme-color['color']['default']
+
+      .navbar-brand
+        background-image: linear-gradient(to right, $scheme-color['background']['light'], $scheme-color['background']['transparent'])
+        border-right: $scheme-color['background']['lighter']
+
+      .navbar-nav > li > a
+        background-image: linear-gradient(to bottom, $scheme-color['background']['lighter'], $scheme-color['background']['transparent'])
+        border-left-color: $scheme-color['background']['lighter']
+        border-right-color: $scheme-color['background']['lighter']
+        &:hover, &:focus, &:active
+          background-color: $scheme-color['background']['lighter']
+        &.-active
+          background-image: linear-gradient(to bottom, $scheme-color['background']['light'], $scheme-color['background']['lighter'])

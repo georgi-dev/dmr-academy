@@ -1,0 +1,55 @@
+//- Create a new bootstrap container 
+//-
+mixin container
+  div(class='container')&attributes(attributes) 
+    block
+
+//- Create a new bootstrap fluid container 
+//-
+mixin container-fluid
+  div(class='container-fluid')&attributes(attributes) 
+    block
+
+//- Create a new bootstrap container wrapper to allow fullwidth background 
+//-
+mixin container-wrapper
+  div(class='container-wrapper')&attributes(attributes) 
+    block
+
+
+//- Create a new bootstrap row
+//-
+mixin row
+  div(class='row')&attributes(attributes)
+    block
+
+//- Create a boostrap column
+//-
+mixin col(grid, offset)
+  - let columns = []
+  - offset = offset || {}
+
+  if grid['xs']
+    - columns.push('-xs-' + grid['xs'])
+  if grid['sm']
+    - columns.push('-sm-' + grid['sm'])
+  if grid['md']
+    - columns.push('-md-' + grid['md'])
+  if grid['lg']
+    - columns.push('-lg-' + grid['lg'])
+  if grid['xl']
+    - columns.push('-xl-' + grid['xl'])
+  
+  if offset['xs']
+    - columns.push('-xs-offset-' + offset['xs'])
+  if offset['sm']
+    - columns.push('-sm-offset-' + offset['sm'])
+  if offset['md']
+    - columns.push('-md-offset-' + offset['md'])
+  if offset['lg']
+    - columns.push('-lg-offset-' + offset['lg'])
+  if offset['xl']
+    - columns.push('-xl-offset-' + offset['xl'])
+  
+  div(class='col ' + columns.join(' '))&attributes(attributes)
+    block

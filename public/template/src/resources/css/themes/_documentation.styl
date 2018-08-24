@@ -1,0 +1,16 @@
+ul.table-of-contents
+  > li
+    &.active
+      > a
+        border-left: 2px solid $theme-color[0]
+    > a
+      &:hover
+        border-left: 2px solid $theme-color[0]
+
+    ul
+      li
+        &.active a
+          border-left-color: $theme-color[0]
+
+.count-bubble
+  background: $theme-color[0]

@@ -1,0 +1,351 @@
+# Dashboard
+#
+title: Dashboard
+route: '/dashboard'
+pages:
+
+# Dashboard Homepage
+#
+- title: Futuristic Web Application and Admin Dashboard
+  route: '/'
+  icon: pe pe-home
+  nav: { heading: 'Application', title: 'Dashboard' }
+  view: [ src, views, dashboard, index ]
+  assets:
+    scripts:
+    - vendors/sparkline/sparkline.js
+    - vendors/flot/flot.js
+    - resources/js/dashboard/views/index.coffee
+
+# Calendar
+#
+- title: Calendar
+  route: '/calendar'
+  icon: pe pe-date
+  view: [ src, views, dashboard, pages, calendar ]
+  assets:
+    scripts:
+    - vendors/jquery/jquery.ui.js
+    - vendors/fullcalendar/fullcalendar.js
+    - resources/js/dashboard/views/pages/calendar.coffee
+
+# Email
+#
+- route: '/email'
+  title: Email
+  icon: pe pe-mail
+  pages:
+    - title: Email Inbox
+      route: '/inbox'
+      nav: { title: 'Inbox' }
+      view: [ src, views, dashboard, email, inbox ]
+      assets:
+        scripts:
+        - resources/js/dashboard/views/email/email.coffee
+    # --
+    - title: Email Detail
+      route: '/detail'
+      nav: { title: 'Details' }
+      view: [ src, views, dashboard, email, detail ]
+      assets:
+        scripts:
+        - resources/js/dashboard/views/email/email.coffee
+    # --
+    - title: Email Compose
+      route: '/compose'
+      nav: { title: 'Compose' }
+      view: [ src, views, dashboard, email, compose ]
+      assets:
+        stylesheets:
+        - vendors/summernote/summernote.styl
+        scripts:
+        - vendors/summernote/summernote.js
+        - resources/js/dashboard/views/email/email.coffee
+
+# UI Components
+#
+- route: '/ui'
+  nav: { heading: 'Components', title: 'UI Kit' }
+  icon: pe pe-box2
+  pages:
+    - title: UI Alerts
+      route: '/alerts'
+      nav: { title: 'Alerts' }
+      view: [ src, views, dashboard, ui, alerts ]
+    # --
+    - title: UI Buttons
+      route: '/buttons'
+      nav: { title: 'Buttons' }
+      view: [ src, views, dashboard, ui, buttons ]
+    # --
+    - title: UI Panels
+      route: '/panels'
+      nav: { title: 'Panels' }
+      view: [ src, views, dashboard, ui, panels ]
+    # --
+    - title: UI General
+      route: '/general'
+      nav: { title: 'General' }
+      view: [ src, views, dashboard, ui, general ]
+    # --
+    - title: UI Modals
+      route: '/modals'
+      nav: { title: 'Modals' }
+      view: [ src, views, dashboard, ui, modals ]
+    # --
+    - title: UI Notifications
+      route: '/notifications'
+      nav: { title: 'Notifications' }
+      view: [ src, views, dashboard, ui, notifications ]
+      assets:
+        scripts:
+        - resources/js/dashboard/views/ui/notifications.coffee
+    # --
+    - title: UI Icons
+      route: '/icons'
+      nav: { title: 'Icons' }
+      view: [ src, views, dashboard, ui, icons ]
+    # --
+    - title: UI Grid
+      route: '/grid'
+      nav: { title: 'Grid' }
+      view: [ src, views, dashboard, ui, grid ]
+    # --
+    - title: UI Tabs
+      route: '/tabs'
+      nav: { title: 'Tabs' }
+      view: [ src, views, dashboard, ui, tabs ]
+    # --
+    - title: UI Typography
+      route: '/typography'
+      nav: { title: 'Typography' }
+      view: [ src, views, dashboard, ui, typography ]
+
+# Tables
+#
+- title: Tables
+  route: '/tables'
+  icon: pe pe-browser
+  pages:
+    - title: Tables
+      route: '/general'
+      nav: { title: 'General' }
+      view: [ src, views, dashboard, tables, general ]
+    # --
+    - title: DataTables
+      route: '/data-tables'
+      view: [ src, views, dashboard, tables, data-tables ]
+      assets:
+        stylesheets:
+        - vendors/datatables/datatables.styl
+        scripts:
+        - vendors/datatables/datatables.js
+        - resources/js/dashboard/views/tables/datatables.coffee
+
+# Forms
+#
+- title: Forms
+  route: '/forms'
+  icon: pe pe-note
+  pages:
+    - title: Form Elements
+      route: '/elements'
+      nav: { title: 'Elements' }
+      view: [ src, views, dashboard, forms, elements ]
+    # --
+    - title: Form Validation
+      route: '/validation'
+      nav: { title: 'Validation' }
+      view: [ src, views, dashboard, forms, validation ]
+    # --
+    - title: Form Wizard
+      route: '/wizard'
+      nav: { title: 'Wizard' }
+      view: [ src, views, dashboard, forms, wizard ]
+      assets:
+        scripts:
+        - vendors/steps/steps.js
+        - resources/js/dashboard/views/forms/wizard.coffee
+    # --
+    - title: Form Input Masks
+      route: '/input-masks'
+      nav: { title: 'Input Masks' }
+      view: [ src, views, dashboard, forms, input-masks ]
+      assets:
+        scripts:
+        - vendors/inputmask/inputmask.js
+        - resources/js/dashboard/views/forms/input-masks.coffee
+    # --
+    - route: '/wysiwyg'
+      nav: { title: 'WYSIWYG' }
+      pages:
+        - title: Markdown
+          route: '/markdown'
+          view: [ src, views, dashboard, forms, wysiwyg-markdown ]
+          assets:
+            scripts:
+            - vendors/showdown/showdown.js
+            - vendors/markdown/markdown.js
+            - resources/js/dashboard/views/forms/wysiwyg-markdown.coffee
+        - title: Summernote
+          route: '/summernote'
+          view: [ src, views, dashboard, forms, wysiwyg-summernote ]
+          assets:
+            stylesheets:
+            - vendors/summernote/summernote.styl
+            scripts:
+            - vendors/summernote/summernote.js
+            - resources/js/dashboard/views/forms/wysiwyg-summernote.coffee
+    # --
+    - title: Form Multi-Upload
+      route: '/multi-upload'
+      nav: { title: 'Multi-Upload' }
+      view: [ src, views, dashboard, forms, multi-upload ]
+      assets:
+        stylesheets:
+        - vendors/dropzone/dropzone.scss
+        scripts:
+        - vendors/dropzone/dropzone.js
+        - resources/js/dashboard/views/forms/multi-upload.coffee
+
+# Charts
+#
+- title: Charts
+  route: '/charts'
+  icon: pe pe-graph2
+  pages:
+    - title: Flot Charts
+      route: '/flot'
+      nav: { title: 'Flot' }
+      view: [ src, views, dashboard, charts, flot ]
+      assets:
+        scripts:
+        - vendors/flot/jquery.flot.js
+        - vendors/flot/jquery.flot.pie.js
+        - vendors/flot/jquery.flot.resize.js
+        - vendors/flot/jquery.flot.animator.js
+        - resources/js/dashboard/views/charts/flot.coffee
+    # --
+    - title: Sparkline Charts
+      route: '/sparkline'
+      nav: { title: 'Sparkline' }
+      view: [ src, views, dashboard, charts, sparkline ]
+      assets:
+        scripts:
+        - vendors/sparkline/sparkline.js
+        - resources/js/dashboard/views/charts/sparkline.coffee
+    # --
+    - title: Chart.js Charts
+      route: '/chartjs'
+      nav: { title: 'Chart.js' }
+      view: [ src, views, dashboard, charts, chartjs ]
+      assets:
+        scripts:
+        - vendors/chartjs/chart.js
+        - resources/js/dashboard/views/charts/chart.coffee
+    # --
+    - title: Morris.js Charts
+      route: '/morris'
+      nav: { title: 'Morris.js' }
+      view: [ src, views, dashboard, charts, morris ]
+      assets:
+        scripts:
+        - vendors/raphael/raphael.js
+        - vendors/morris/morris.js
+        - resources/js/dashboard/views/charts/morris.coffee
+
+# Maps
+#
+- route: '/maps'
+  title: Maps
+  icon: pe pe-map-marker
+  pages:
+    - title: Google Maps
+      route: '/google'
+      view: [ src, views, dashboard, maps, google ]
+      assets:
+        scripts:
+        - http://maps.google.com/maps/api/js?v=3&sensor=false&key=AIzaSyC4i2yy_0EIWfa64GLVzmCQ8lukzhzSXFY
+        - vendors/gmaps/gmaps.js
+        - resources/js/dashboard/views/maps/google.coffee
+    # --
+    - title: Vector Maps
+      route: '/vector'
+      view: [ src, views, dashboard, maps, vector ]
+      assets:
+        scripts:
+        - vendors/vectormaps/vectormaps.js
+        - vendors/vectormaps/maps/world.js
+        - vendors/vectormaps/maps/continents/africa.js
+        - vendors/vectormaps/maps/continents/asia.js
+        - vendors/vectormaps/maps/continents/australia.js
+        - vendors/vectormaps/maps/continents/europe.js
+        - vendors/vectormaps/maps/continents/north-america.js
+        - vendors/vectormaps/maps/continents/south-america.js
+        - resources/js/dashboard/views/maps/vector.coffee
+
+# Pages
+#
+- title: Pages
+  route: '/pages'
+  nav: { heading: 'Pages' }
+  icon: pe pe-copy-file
+  pages:
+    - title: Blank Page
+      route: '/blank'
+      view: [ src, views, dashboard, pages, blank ]
+    # --
+    - title: Sign In
+      route: '/signin'
+      view: [ src, views, dashboard, pages, signin ]
+    # --
+    - title: Sign Up
+      route: '/signup'
+      view: [ src, views, dashboard, pages, signup ]
+    # --
+    - title: Error 404
+      route: '/404'
+      view: [ src, views, dashboard, pages, '404' ]
+    # --
+    - title: Error 500
+      route: '/500'
+      view: [ src, views, dashboard, pages, '500' ]
+    # --
+    - title: Forgot Password
+      route: '/forgot-password'
+      view: [ src, views, dashboard, pages, forgot-password ]
+
+# Layouts
+#
+- title: Layouts
+  route: '/layouts'
+  icon: pe pe-albums
+  pages:
+    - title: Left Sidebar Layout
+      route: '/left-sidebar'
+      view: [ src, views, dashboard, page-layouts, left-sidebar ]
+    # --
+    - title: Left Sidebar Left Aside Layout
+      nav: { title: 'Left Sidebar Left Aside' }
+      route: '/left-sidebar-left-aside'
+      view: [ src, views, dashboard, page-layouts, left-sidebar-left-aside ]
+    # --
+    - title: Left Sidebar Right Aside Layout
+      route: '/left-sidebar-right-aside'
+      view: [ src, views, dashboard, page-layouts, left-sidebar-right-aside ]
+    # --
+    - title: Right Sidebar Layout
+      route: '/right-sidebar'
+      view: [ src, views, dashboard, page-layouts, right-sidebar ]
+    # --
+    - title: Right Sidebar Left Aside Layout
+      route: '/right-sidebar-left-aside'
+      view: [ src, views, dashboard, page-layouts, right-sidebar-left-aside ]
+    # --
+    - title: Right Sidebar Right Aside Layout
+      route: '/right-sidebar-right-aside'
+      view: [ src, views, dashboard, page-layouts, right-sidebar-right-aside ]
+    # --
+    - title: Without Sidebar Layout
+      route: '/without-sidebar'
+      view: [ src, views, dashboard, page-layouts, without-sidebar ]

@@ -1,0 +1,34 @@
+.progress
+  height: 7px
+  width: 100%
+  display: block
+  position: relative
+
+  &.-dark
+    background: linear-gradient(to right, $scheme['dark']['background']['medium'], $scheme['dark']['background']['light'])
+  &.-light
+    background: linear-gradient(to right, $scheme['light']['background']['medium'], $scheme['light']['background']['light'])
+
+  .bar
+    position: absolute
+    display: block
+    height: 100%
+    width: auto
+    top: 0
+    left: 0
+    border-bottom-width: 1px
+    border-bottom-style: solid
+
+    &.-dark
+      background: linear-gradient(to right, $scheme['dark']['background']['darker'], $scheme['dark']['background']['dark'])
+      border-bottom-color: lighten($scheme['dark']['background']['darker'], 10%)
+
+    &.-light
+      background: linear-gradient(to right, $scheme['light']['background']['darker'], $scheme['light']['background']['dark'])
+      border-bottom-color: lighten($scheme['light']['background']['darker'], 10%)
+
+    for $brand-name, $brand-color in $brand
+      &.-{$brand-name}
+        background: $brand-color
+        background: linear-gradient(to right, rgba($brand-color, 1), rgba($brand-color, 0.8))
+        border-bottom-color: lighten($brand-color, 5%)

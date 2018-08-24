@@ -1,0 +1,228 @@
+extends ../../layouts/dashboard.pug
+
+block content
+  +container-fluid
+    +row 
+      +col({ lg: 12 })
+        +page-heading(server, page)
+
+    +row
+      +col({ lg: 6 })    
+        +panel(class='-dark')
+          +panel-heading 
+            h4 Headings
+            span A showcase of Volta's heading typography
+          +panel-body 
+            h1 h1. Heading text
+            h2 h2. Heading text
+            h3 h3. Heading text
+            h4 h4. Heading text
+            h5 h5. Heading text
+            h6 h6. Heading text
+              
+      +col({ lg: 6 })
+        +panel(class='-dark')
+          +panel-heading 
+            h4 Headings with secondary text    
+            span A showcase of Volta's heading typography
+          +panel-body 
+            h1 h1. Heading text
+              small  Secondary text
+            h2 h2. Heading text
+              small  Secondary text
+            h3 h3. Heading text
+              small  Secondary text
+            h4 h4. Heading text
+              small  Secondary text
+            h5 h5. Heading text
+              small  Secondary text
+            h6 h6. Heading text
+              small  Secondary text
+    
+    +row  
+      +col({ lg: 6 })
+        +panel(class='-dark')
+          +panel-heading 
+            h4 Body Text
+            span A showcase of Volta's body typography
+          +panel-body 
+            p 
+              | Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+            p
+              |Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+      +col({ lg: 6 })
+        +panel(class='-dark')
+          +panel-heading 
+            h4 Lead Text
+            span A showcase of Volta's lead typography
+          +panel-body 
+            p.lead
+              | Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+            p
+              | Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+    
+    +row  
+      +col({ lg: 4 })
+        +panel(class='-dark')
+          +panel-heading 
+            h4 Left Alignment
+            span A showcase of Volta's body typography
+          +panel-body
+            p(class='_text-left') 
+              | Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+
+      +col({ lg: 4 })
+        +panel(class='-dark')
+          +panel-heading(class='_text-center')
+            h4 Center Alignment
+            span A showcase of Volta's body typography
+          +panel-body
+            p(class='_text-center') 
+              | Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+      
+      +col({ lg: 4 })
+        +panel(class='-dark')
+          +panel-heading(class='_text-right')
+            h4 Right Alignment
+            span A showcase of Volta's body typography 
+          +panel-body
+            p(class='_text-right') 
+              | Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+      
+    +row  
+      +col({ lg: 4 })
+        +panel(class='-dark')
+          +panel-heading 
+            h4 Unordered List
+            span A showcase of Volta's list typography
+          +panel-body
+            ul
+              li Lorem ipsum dolor sit amet
+              li Consectetur adipiscing elit
+              li Integer molestie lorem at massa
+              li Facilisis in pretium nisl aliquet
+              li Nulla volutpat aliquam velit
+                ul
+                  li Phasellus iaculis neque
+                  li Purus sodales ultricies
+                  li Vestibulum laoreet porttitor sem
+                  li Ac tristique libero volutpat at
+              li Faucibus porta lacus fringilla vel
+              li Aenean sit amet erat nunc
+              li Eget porttitor lorem
+              
+      +col({ lg: 4 })
+        +panel(class='-dark')
+          +panel-heading 
+            h4 Ordered List
+            span A showcase of Volta's list typography
+          +panel-body
+            ol
+              li Lorem ipsum dolor sit amet
+              li Consectetur adipiscing elit
+              li Integer molestie lorem at massa
+              li Facilisis in pretium nisl aliquet
+              li Nulla volutpat aliquam velit
+                ol
+                  li Phasellus iaculis neque
+                  li Purus sodales ultricies
+                  li Vestibulum laoreet porttitor sem
+                  li Ac tristique libero volutpat at
+              li Faucibus porta lacus fringilla vel
+              li Aenean sit amet erat nunc
+              li Eget porttitor lorem
+      
+      +col({ lg: 4 })
+        +panel(class='-dark')
+          +panel-heading 
+            h4 Unstyled List
+            span A showcase of Volta's list typography
+          +panel-body
+            ul(class='list-unstyled')
+              li Lorem ipsum dolor sit amet
+              li Consectetur adipiscing elit
+              li Integer molestie lorem at massa
+              li Facilisis in pretium nisl aliquet
+              li Nulla volutpat aliquam velit
+                ul
+                  li Phasellus iaculis neque
+                  li Purus sodales ultricies
+                  li Vestibulum laoreet porttitor sem
+                  li Ac tristique libero volutpat at
+              li Faucibus porta lacus fringilla vel
+              li Aenean sit amet erat nunc
+              li Eget porttitor lorem
+              
+    +row  
+      +col({ lg: 4 })
+        +panel(class='-dark')
+          +panel-heading 
+            h4 Inline Text Elements
+            span A showcase of Volta's typography elements
+          +panel-body
+            p You can use the mark tag to <mark>highlight</mark> text.
+            p <del>This line of text is meant to be treated as deleted text.</del>
+            p <s>This line of text is meant to be treated as no longer accurate.</s>
+            p <ins>This line of text is an addition to the document.</ins>
+            p <u>This line of text will render as underlined</u>
+            p <small>This line of text is meant to be treated as fine print.</small>
+            p <strong>This line rendered as bold text.</strong>
+            p <em>This line rendered as italicized text.</em>
+      +col({ lg: 4 })
+        +panel(class='-dark')
+          +panel-heading 
+            h4 Text Colors
+            span A showcase of Volta's typography colors
+          +panel-body  
+            p(class='_text-white') This text has a white color.
+            p(class='_text-black') This text has a black color.
+            p(class='_text-primary') This text has a primary color.
+            p(class='_text-secondary') This text has a secondary color.
+            p(class='_text-success') This text has a success color.
+            p(class='_text-info') This text has a info color.
+            p(class='_text-warning') This text has a warning color.
+            p(class='_text-danger') This text has a danger color.      
+      +col({ lg: 4 })
+        +panel(class='-dark')
+          +panel-heading 
+            h4 Inline Lists
+            span A showcase of Volta's list typography
+          +panel-body
+            ul(class='list-inline')
+              li Lorem ipsum
+              li Phasellus iaculis
+              li Nulla volutpat
+              
+        +panel(class='-dark')
+          +panel-heading 
+            h4 Address
+            span A showcase of Volta's address typography
+          +panel-body
+            address
+              strong Twitter, Inc. 
+              br
+              | 1355 Market Street, Suite 900 
+              br
+              | San Francisco, CA 94103 
+              br
+              abbr(title="Phone") P: 
+              |  (123) 456 7890
+          
+    +row  
+      +col({ lg: 12 })
+        +panel(class='-dark')
+          +panel-heading 
+            h4 Blockquotes
+            span A showcase of Volta's blockquotes typography
+          +panel-body
+            blockquote(class='-light')
+              p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante iaculis nulla volutpat.
+              footer
+                | Someone famous in 
+                cite(title="Source Title")  Source Title
+            blockquote(class='-dark -right')
+              p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante iaculis nulla volutpat.
+              footer
+                | Someone famous in 
+                cite(title="Source Title")  Source Title
+    

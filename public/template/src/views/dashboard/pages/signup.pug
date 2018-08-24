@@ -1,0 +1,30 @@
+extends ../../layouts/dashboard-unauthenticated.pug
+
+block content
+  +container-fluid
+    +row   
+      +col({ lg: 12 })
+        +panel(class='-dark -focused')
+          +panel-heading(class='-dark -with-icon-lg')
+            +pe('plus')
+            h3 Sign Up
+            span We'll never share your credentials with anyone.
+          +panel-body 
+            form(class='form -dark' id='form-signup' action=server.url + '/' data-toggle='validator' method='POST')
+              +form-group
+                label(class='form-label' for='form-signup-username') Username
+                input(class='form-control' id='form-signup-username' name='username' type='text' required=true placeholder='Username')
+              +form-group
+                label(class='form-label' for='form-signup-email') Email
+                input(class='form-control' id='form-signup-email' name='email' type='email' required=true placeholder='Email')
+              +form-group
+                label(for='form-signup-password') Password
+                input(class='form-control' id='form-signup-password' name='password' type='password' required=true placeholder='Password')
+              +form-group
+                input(class='form-control' id='form-signup-password-confirmation' name='password-confirmation' type='password' required=true placeholder='Password Confirmation' data-match="#form-signup-password")
+              +form-group(class='_margin-top-2x _margin-bottom-none')
+                div(class='form-check -checkbox') 
+                  button(class='btn -primary -block' type='submit' name='signup') Signup      
+        
+        p(class='_text-center')
+          a(class='_text-muted' href=url('signin')) I already have an account, sign me in!

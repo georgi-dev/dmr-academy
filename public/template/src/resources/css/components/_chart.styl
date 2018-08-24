@@ -1,0 +1,73 @@
+.chart
+  height: $chart['height']
+  +breakpoint-down(lg)
+    height: $chart['height'] * 0.875
+  +breakpoint-down(md)
+    height: $chart['height'] * 0.75
+  +breakpoint-down(sm)
+    height: $chart['height'] * 0.625
+  +breakpoint-down(xs)
+    height: $chart['height'] * 0.5
+
+  for $factor-name, $factor-size in $chart['factor']
+    &.-{$factor-name}
+      height: $chart['height'] * $factor-size
+      +breakpoint-down(lg)
+        height: $chart['height'] * 0.875 * $factor-size
+      +breakpoint-down(md)
+        height: $chart['height'] * 0.75 * $factor-size
+      +breakpoint-down(sm)
+        height: $chart['height'] * 0.625 * $factor-size
+      +breakpoint-down(xs)
+        height: $chart['height'] * 0.5 * $factor-size
+
+
+  .flot-text
+    .flot-x-axis
+    .flot-y-axis
+      color: $scheme['light']['color']['medium']
+
+  .legend
+    .legendLabel
+      color: $scheme['light']['color']['dark']
+
+.jqstooltip
+  border: none !important
+  box-sizing: content-box
+
+#flot-tooltip
+  position: absolute
+  display: none
+  top: 0
+  left: 0
+  font-size: 12px
+  padding: 0.25rem 0.5rem
+  background: $scheme['dark']['background']['medium']
+  color: $scheme['light']['color']['dark']
+
+.morris-hover
+  position: absolute
+  z-index: 1000
+
+  &.morris-default-style
+    border-radius: 2px
+    padding: 6px
+    color: $scheme['light']['color']['dark']
+    background: $scheme['dark']['background']['dark']
+    background: linear-gradient(to bottom right, $scheme['dark']['background']['dark'], $scheme['dark']['background']['darker'])
+    border: solid 1px $scheme['dark']['background']['medium']
+
+    font-family: sans-serif
+    font-size: 12px
+    text-align: center
+
+    .morris-hover-row-label
+      font-weight: bold
+      margin: 0.25em 0
+
+    .morris-hover-point
+      white-space: nowrap
+      margin: 0.1em 0
+
+.panel-sparkline canvas
+  max-width: 150px

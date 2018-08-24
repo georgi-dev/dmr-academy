@@ -1,0 +1,12 @@
+form
+.form
+  for $brand-name, $brand-color in $theme-brand
+    .form-group.-{$brand-name}
+    .form-group.has-{$brand-name}
+      label, .help-block
+        color: $brand-color
+      .form-control
+      .form-check label::before
+        border-color: rgba($brand-color, 0.66)
+        &:active, &:focus
+          box-shadow: none

@@ -1,0 +1,37 @@
+// Themes
+//
+for $theme-name, $theme-color in $themes
+  $theme-mix = mix($theme-color[0], $theme-color[1])
+
+  body.{$theme-name}
+    // Core
+    background-color: $theme-mix
+    background-image: linear-gradient(to bottom right, $theme-color[0], $theme-color[1])
+
+    ::-webkit-scrollbar
+      &-track
+        background: linear-gradient(to bottom, alpha(mix($theme-color[0], $theme-color[1]), 0), $theme-color[1])
+
+    $theme-brand = {
+      primary: $theme-color[0],
+      secondary: $theme-color[1]
+    }
+
+    // Components
+    //
+    @import '_alert'
+    @import '_button'
+    @import '_datepicker'
+    @import '_dropdown'
+    @import '_documentation'
+    @import '_form'
+    @import '_modal'
+    @import '_navbar'
+    @import '_notifications'
+    @import '_panel'
+    @import '_progress'
+    @import '_sidebar'
+    @import '_scaffolding'
+    @import '_table'
+    @import '_tabs'
+    @import '_tag'

@@ -1,0 +1,8 @@
+//- Add server base URL to asset link if it's a relative url 
+//-
+- function isActivePage(input) {
+  if input['view']
+    - return page['view'].toString() === input['view'].slice(2).toString() 
+  else
+    - return page['route'].indexOf(input['route']) !== -1
+- }

@@ -1,0 +1,364 @@
+extends ../../layouts/dashboard.pug
+
+block content
+  +container-fluid
+    +row 
+      +col({ lg: 12 })
+        +page-heading(server, page)
+      
+    +row 
+      +col({ lg: 6 })
+        +panel(class='-dark')
+          +panel-heading
+            h4 Buttons
+            span A showcase of Volta's button colors
+          +panel-body
+            div(class='btn-list')
+              +btn(class='-light' href='#') Light
+              +btn(class='-dark' href='#') Dark
+              +btn(class='-primary' href='#') Primary
+              +btn(class='-secondary' href='#') Secondary
+            div(class='btn-list')
+              +btn(class='-success' href='#') Success
+              +btn(class='-warning' href='#') Warning
+              +btn(class='-info' href='#') Info
+              +btn(class='-danger' href='#') Danger
+              
+      +col({ lg: 6 })
+        +panel(class='-dark')
+          +panel-heading
+            h4 Icon Buttons
+            span A showcase of Volta buttons with icons
+          +panel-body
+            div(class='btn-list')
+              +btn(class='-light' href='#') 
+                +fa('cloud')
+                |  Light
+              +btn(class='-dark' href='#') 
+                +fa('circle-o')
+                |  Dark
+              +btn(class='-primary' href='#')
+                +fa('globe')
+                |  Primary
+              +btn(class='-secondary' href='#') 
+                +fa('github')
+                |  Secondary
+
+              +btn(class='-success' href='#') 
+                +fa('check-circle')
+                |  Success
+              +btn(class='-info' href='#') 
+                +fa('info-circle')
+                |  Info
+              +btn(class='-warning' href='#') 
+                +fa('warning')
+                |  Warning
+              +btn(class='-danger' href='#') 
+                +fa('exclamation-circle')
+                |  Danger 
+        
+    +row      
+      +col({ lg: 12, xl: 6 })
+        +panel(class='-dark')
+          +panel-heading
+            h4 Button Sizes
+            span A showcase of Volta button sizes
+          +panel-body
+            div(class='btn-list-unstyled')
+              +btn(class='-xl -dark -block' href='#') 
+                | Extralarge
+              +btn(class='-xl -dark  -block' href='#') 
+                +fa('file-o')
+                |  Extralarge
+                
+              +btn(class='-lg -dark -block' href='#') 
+                | Large
+              +btn(class='-lg -dark  -block' href='#') 
+                +fa('file-o')
+                |  Large
+                
+              +btn(class='-dark -block' href='#')
+                | Normal
+              +btn(class='-dark  -block' href='#')
+                +fa('file-o')
+                |  Normal
+                
+              +btn(class='-sm -dark -block' href='#') 
+                | Small
+              +btn(class='-sm -dark  -block' href='#') 
+                +fa('file-o')
+                |  Small
+                
+              +btn(class='-xs -dark -block' href='#') 
+                | Extrasmall
+              +btn(class='-xs -dark -block' href='#') 
+                +fa('file-o')
+                |  Extrasmall
+
+
+        +panel(class='-dark')
+          +panel-heading
+            h4 Button Dropdowns
+            span A showcase of grouped buttons
+          +panel-body
+            h5 Standard
+            
+            +dropdown-btn
+              +btn(class='-dark' href='#' data-toggle='dropdown')
+                | Dark
+                +fa('caret-down')(class='_margin-left-1x')
+              div(class='dropdown-menu -dark')
+                div(class='dropdown-item') Action
+                div(class='dropdown-item') Another Action
+                div(class='dropdown-item') Something else here
+                div(class='dropdown-divider')
+                div(class='dropdown-item') Separated link
+              
+            +dropdown-btn
+              +btn(class='-light' href='#' data-toggle='dropdown')
+                | Light
+                +fa('caret-down')(class='_margin-left-1x')
+              div(class='dropdown-menu -light')
+                div(class='dropdown-item') Action
+                div(class='dropdown-item') Another Action
+                div(class='dropdown-item') Something else here
+                div(class='dropdown-divider')
+                div(class='dropdown-item') Separated link
+              
+            +dropdown-btn
+              +btn(class='-primary' href='#' data-toggle='dropdown')
+                | Primary
+                +fa('caret-down')(class='_margin-left-1x')
+              div(class='dropdown-menu -primary')
+                div(class='dropdown-item') Action
+                div(class='dropdown-item') Another Action
+                div(class='dropdown-item') Something else here
+                div(class='dropdown-divider')
+                div(class='dropdown-item') Separated link
+              
+            +dropdown-btn
+              +btn(class='-secondary' href='#' data-toggle='dropdown')
+                | Secondary
+                +fa('caret-down')(class='_margin-left-1x')
+              div(class='dropdown-menu -secondary')
+                div(class='dropdown-item') Action
+                div(class='dropdown-item') Another Action
+                div(class='dropdown-item') Something else here
+                div(class='dropdown-divider')
+                div(class='dropdown-item') Separated link
+              
+            +dropdown-btn
+              +btn(class='-success' href='#' data-toggle='dropdown')
+                | Success
+                +fa('caret-down')(class='_margin-left-1x')
+              div(class='dropdown-menu -success')
+                div(class='dropdown-item') Action
+                div(class='dropdown-item') Another Action
+                div(class='dropdown-item') Something else here
+                div(class='dropdown-divider')
+                div(class='dropdown-item') Separated link
+              
+            +dropdown-btn
+              +btn(class='-info' href='#' data-toggle='dropdown')
+                | Info
+                +fa('caret-down')(class='_margin-left-1x')
+              div(class='dropdown-menu -info')
+                div(class='dropdown-item') Action
+                div(class='dropdown-item') Another Action
+                div(class='dropdown-item') Something else here
+                div(class='dropdown-divider')
+                div(class='dropdown-item') Separated link
+              
+            +dropdown-btn
+              +btn(class='-warning' href='#' data-toggle='dropdown')
+                | Warning
+                +fa('caret-down')(class='_margin-left-1x')
+              div(class='dropdown-menu -warning')
+                div(class='dropdown-item') Action
+                div(class='dropdown-item') Another Action
+                div(class='dropdown-item') Something else here
+                div(class='dropdown-divider')
+                div(class='dropdown-item') Separated link
+              
+            +dropdown-btn
+              +btn(class='-danger' href='#' data-toggle='dropdown')
+                | Danger
+                +fa('caret-down')(class='_margin-left-1x')
+              div(class='dropdown-menu -danger')
+                div(class='dropdown-item') Action
+                div(class='dropdown-item') Another Action
+                div(class='dropdown-item') Something else here
+                div(class='dropdown-divider')
+                div(class='dropdown-item') Separated link
+                  
+            h5 Split
+            
+            +dropdown-btn
+              +btn(class='-dark' href='#')
+                | Dark
+              +btn(class='-dark -narrow' href='#' data-toggle='dropdown')
+                +fa('caret-down')
+              div(class='dropdown-menu -dark')
+                div(class='dropdown-item') Action
+                div(class='dropdown-item') Another Action
+                div(class='dropdown-item') Something else here
+                div(class='dropdown-divider') 
+                div(class='dropdown-item') Separated link
+              
+            +dropdown-btn
+              +btn(class='-light' href='#') 
+                | Light
+              +btn(class='-light -narrow' href='#' data-toggle='dropdown')
+                +fa('caret-down')
+              div(class='dropdown-menu -light')
+                div(class='dropdown-item') Action
+                div(class='dropdown-item') Another Action
+                div(class='dropdown-item') Something else here
+                div(class='dropdown-divider')
+                div(class='dropdown-item') Separated link
+              
+            +dropdown-btn
+              +btn(class='-primary' href='#')
+                | Primary
+              +btn(class='-primary -narrow' href='#' data-toggle='dropdown')
+                +fa('caret-down')
+              div(class='dropdown-menu -primary')
+                div(class='dropdown-item') Action
+                div(class='dropdown-item') Another Action
+                div(class='dropdown-item') Something else here
+                div(class='dropdown-divider')
+                div(class='dropdown-item') Separated link
+              
+            +dropdown-btn
+              +btn(class='-secondary' href='#')
+                | Secondary
+              +btn(class='-secondary -narrow' href='#' data-toggle='dropdown')
+                +fa('caret-down')
+              div(class='dropdown-menu -secondary')
+                div(class='dropdown-item') Action
+                div(class='dropdown-item') Another Action
+                div(class='dropdown-item') Something else here
+                div(class='dropdown-divider')
+                div(class='dropdown-item') Separated link
+              
+            +dropdown-btn
+              +btn(class='-success' href='#')
+                | Success
+              +btn(class='-success -narrow' href='#' data-toggle='dropdown')
+                +fa('caret-down')
+              div(class='dropdown-menu -success')
+                div(class='dropdown-item') Action
+                div(class='dropdown-item') Another Action
+                div(class='dropdown-item') Something else here
+                div(class='dropdown-divider')
+                div(class='dropdown-item') Separated link
+              
+            +dropdown-btn
+              +btn(class='-info' href='#')
+                | Info
+              +btn(class='-info -narrow' href='#' data-toggle='dropdown') 
+                +fa('caret-down')
+              div(class='dropdown-menu -info')
+                div(class='dropdown-item') Action
+                div(class='dropdown-item') Another Action
+                div(class='dropdown-item') Something else here
+                div(class='dropdown-divider')
+                div(class='dropdown-item') Separated link
+              
+            +dropdown-btn
+              +btn(class='-warning' href='#')
+                | Warning
+              +btn(class='-warning -narrow' href='#' data-toggle='dropdown')
+                +fa('caret-down')
+              div(class='dropdown-menu -warning')
+                div(class='dropdown-item') Action
+                div(class='dropdown-item') Another Action
+                div(class='dropdown-item') Something else here
+                div(class='dropdown-divider')
+                div(class='dropdown-item') Separated link
+              
+            +dropdown-btn
+              +btn(class='-danger' href='#')
+                | Danger
+              +btn(class='-danger -narrow' href='#' data-toggle='dropdown')
+                +fa('caret-down')
+              div(class='dropdown-menu -danger')
+                div(class='dropdown-item') Action
+                div(class='dropdown-item') Another Action
+                div(class='dropdown-item') Something else here
+                div(class='dropdown-divider')
+                div(class='dropdown-item') Separated link
+                  
+                  
+      +col({ lg: 12, xl: 6 })
+        +panel(class='-dark')
+          +panel-heading
+            h4 Button Groups
+            span A showcase of grouped buttons
+          +panel-body
+            h5 Standard
+            .btn-group
+              +btn(class='-dark' href='#')
+                +fa('save')
+              +btn(class='-dark' href='#')
+                +fa('cut')
+              +btn(class='-dark' href='#')
+                +fa('copy')
+              +btn(class='-dark' href='#')
+                +fa('paste')
+            .btn-group
+              +btn(class='-dark' href='#')
+                +fa('globe')
+              +btn(class='-dark' href='#')
+                +fa('cog')
+                
+            h5(class='_margin-top-2x') Justified
+            div(class='btn-group -justified')
+              +btn(class='-dark' href='#') Home
+              +btn(class='-dark' href='#') Gallery
+              +btn(class='-dark' href='#') Services
+              +btn(class='-dark' href='#') Support
+              +btn(class='-dark' href='#') Contact
+              
+            div(class='btn-group -justified')
+              +btn(class='-primary' href='#') Home
+              +btn(class='-primary' href='#') Gallery
+              +btn(class='-primary' href='#') Services
+              +btn(class='-primary' href='#') Support
+              +btn(class='-primary' href='#') Contact
+              
+            h5(class='_margin-top-2x') Vertical
+            div(class='btn-group-vertical')
+              +btn(class='-dark' href='#') Home
+              +btn(class='-dark' href='#') Gallery
+              +btn(class='-dark' href='#') Services
+              +btn(class='-dark' href='#') Support
+              +btn(class='-dark' href='#') Contact
+              
+            div(class='btn-group-vertical')
+              +btn(class='-primary' href='#') Home
+              +btn(class='-primary' href='#') Gallery
+              +btn(class='-primary' href='#') Services
+              +btn(class='-primary' href='#') Support
+              +btn(class='-primary' href='#') Contact
+    
+                  
+        +panel(class='-dark')
+          +panel-heading
+            h4 Social Buttons
+            span A showcase of Volta's social buttons
+          +panel-body
+            div(class='btn-list')
+              +btn(class='-facebook' href='#') Facebook
+              +btn(class='-twitter' href='#') Twitter
+              +btn(class='-google-plus' href='#') Google+
+              +btn(class='-dribbble' href='#') Dribbble
+              +btn(class='-behance' href='#') Behance
+              +btn(class='-flickr' href='#') flickr
+              +btn(class='-linkedin' href='#') LinkedIn
+              +btn(class='-youtube' href='#') YouTube
+              +btn(class='-pinterest' href='#') Pinterest
+              +btn(class='-github' href='#') Github
+              +btn(class='-tumblr' href='#') Tumblr
+              +btn(class='-twitch' href='#') Twitch
+              +btn(class='-envato' href='#') Envato

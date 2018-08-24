@@ -1,0 +1,64 @@
+// Media Query Mixins
+//
+$screen = {
+  lg: 1200px
+  md: 992px
+  sm: 768px
+  xs: 576px
+}
+
+// Target specific breakpoint
+breakpoint(media)
+  if media == xl
+    @media screen and (min-width: $screen['lg'])
+      {block}
+  else if media == lg
+    @media screen and (min-width: $screen['md']) and (max-width: $screen['lg'] - 1)
+      {block}
+  else if media == md
+    @media screen and (min-width: $screen['sm'] ) and (max-width: $screen['md'] - 1)
+      {block}
+  else if media == sm
+    @media screen and (min-width: $screen['xs'] ) and (max-width: $screen['sm'] - 1)
+      {block}
+  else if media == xs
+    @media screen and (max-width: $screen['xs'] - 1)
+      {block}
+
+
+// Up to specific breakpoint
+breakpoint-down(media)
+  if media == xl
+    @media screen and (max-width: $screen['lg'])
+      {block}
+  else if media == lg
+    @media screen and (max-width: $screen['lg'] - 1)
+      {block}
+  else if media == md
+    @media screen and (max-width: $screen['md'] - 1)
+      {block}
+  else if media == sm
+    @media screen and (max-width: $screen['sm'] - 1)
+      {block}
+  else if media == xs
+    @media screen and (max-width: $screen['xs'] - 1)
+      {block}
+
+
+// From specific breakpoint
+breakpoint-up(media)
+  if media == xl
+    @media screen and (min-width: $screen['lg'])
+      {block}
+  else if media == lg
+    @media screen and (min-width: $screen['lg'])
+      {block}
+  else if media == md
+    @media screen and (min-width: $screen['md'])
+      {block}
+  else if media == sm
+    @media screen and (min-width: $screen['sm'])
+      {block}
+  else if media == xs
+    @media screen and (min-width: $screen['xs'])
+      {block}

@@ -1,0 +1,11 @@
+random()
+  return math(math(0, 'random') * 10 + 1, 'floor')
+
+clearfix()
+  zoom: 1
+  &:after
+  &:before
+    content: ""
+    display: table
+  &:after
+    clear: both

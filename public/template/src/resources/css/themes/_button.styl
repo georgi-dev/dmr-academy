@@ -1,0 +1,8 @@
+.btn
+  for $brand-name, $brand-color in $theme-brand
+    &.-{$brand-name}
+      background-image: linear-gradient(to bottom, rgba($brand-color, 0.8), rgba($brand-color, 0.4))
+      &:hover, &:focus 
+        background-color: rgba($brand-color, 0.5)
+      &:active
+        background-color: darken($brand-color, 40%)

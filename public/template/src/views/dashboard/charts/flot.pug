@@ -1,0 +1,53 @@
+extends ../../layouts/dashboard.pug
+
+block content
+  +container-fluid
+    +row 
+      +col({ lg: 12 })
+        +page-heading(server, page)
+        
+    +row
+      +col({ lg: 6 })
+        +panel.-dark
+          +panel-heading 
+            h4 Primary Line Chart
+            span A showcase of Volta's charts
+          +panel-body  
+            div(class='chart -md' id='flot-chart-primary')
+      +col({ lg: 6 })
+        +panel.-dark
+          +panel-heading 
+            h4 Dark Line Chart 
+            span A showcase of Volta's charts
+          +panel-body 
+            div(class='chart -md' id='flot-chart-dark')
+    +row  
+      +col({ lg: 12 })
+        +panel.-dark
+          +panel-heading 
+            h4 Combined Line Chart
+            span A showcase of Volta's charts
+          +panel-body 
+            div(class='chart -md' id='flot-chart-combined')
+            
+    +row  
+      +col({ lg: 4 })
+        +panel.-dark
+          +panel-heading 
+            h4 Line Chart
+            span A showcase of Volta's charts
+          div(class='chart -sm -no-label _margin-top-2x' id='flot-chart-line')
+            
+      +col({ lg: 4 })
+        +panel.-dark
+          +panel-heading 
+            h4 Pie Chart
+            span A showcase of Volta's charts
+          div(class='chart -sm -no-label _margin-top-2x' id='flot-chart-pie')
+            
+      +col({ lg: 4 })
+        +panel.-dark
+          +panel-heading 
+            h4 Bar Chart
+            span A showcase of Volta's charts
+          div(class='chart -sm -no-label _margin-top-2x' id='flot-chart-bar')

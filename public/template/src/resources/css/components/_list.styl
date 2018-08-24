@@ -1,0 +1,28 @@
+.list-group
+  &.-dark
+    background: linear-gradient(to bottom right, $scheme['dark']['background']['medium'], $scheme['dark']['background']['light'])
+    .list-group-item
+      border: 1px solid $scheme['dark']['background']['lighter']
+
+      &:hover, &:focus, &:active
+        background: $scheme['dark']['background']['lighter']
+
+  &.-light
+    background: linear-gradient(to bottom right, $scheme['light']['background']['lighter'], $scheme['light']['background']['light'])
+    .list-group-item
+      border: 1px solid $scheme['light']['background']['lighter']
+
+      &:hover, &:focus, &:active
+        background: $scheme['light']['background']['lighter']
+
+
+  .list-group-item
+    background: transparent
+    transition: all 0.3s ease
+
+    .list-group-icon
+      margin-right: 1rem
+
+    &:hover, &:focus, &:active
+      text-decoration: none
+      color: $scheme['light']['color']['default']

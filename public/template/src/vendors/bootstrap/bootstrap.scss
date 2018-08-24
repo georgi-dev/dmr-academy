@@ -1,0 +1,110 @@
+/*!
+ * Bootstrap v4.0.0-alpha.6 (https://getbootstrap.com)
+ * Copyright 2011-2017 The Bootstrap Authors
+ * Copyright 2011-2017 Twitter, Inc.
+ * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+ */
+
+// Core variables and mixins
+@import '~bootstrap/scss/variables';
+
+// Toggles
+//
+// Used in conjunction with global variables to enable certain theme features.
+
+
+@mixin box-shadow($shadow...) {
+  @if $enable-shadows {
+    box-shadow: $shadow;
+  }
+}
+
+@mixin transition($transition...) {
+  @if $enable-transitions {
+    @if length($transition) == 0 {
+      transition: $transition-base;
+    } @else {
+      transition: $transition;
+    }
+  }
+}
+
+// Utilities
+@import '~bootstrap/scss/mixins/breakpoints';
+@import '~bootstrap/scss/mixins/hover';
+@import '~bootstrap/scss/mixins/image';
+@import '~bootstrap/scss/mixins/badge';
+@import '~bootstrap/scss/mixins/resize';
+@import '~bootstrap/scss/mixins/screen-reader';
+@import '~bootstrap/scss/mixins/size';
+@import '~bootstrap/scss/mixins/reset-text';
+@import '~bootstrap/scss/mixins/text-emphasis';
+@import '~bootstrap/scss/mixins/text-hide';
+@import '~bootstrap/scss/mixins/text-truncate';
+@import '~bootstrap/scss/mixins/transforms';
+@import '~bootstrap/scss/mixins/visibility';
+
+// Components
+@import '~bootstrap/scss/mixins/alert';
+@import '~bootstrap/scss/mixins/buttons';
+@import '~bootstrap/scss/mixins/cards';
+@import '~bootstrap/scss/mixins/pagination';
+@import '~bootstrap/scss/mixins/lists';
+@import '~bootstrap/scss/mixins/list-group';
+@import '~bootstrap/scss/mixins/nav-divider';
+@import '~bootstrap/scss/mixins/forms';
+@import '~bootstrap/scss/mixins/table-row';
+
+// Skins
+@import '~bootstrap/scss/mixins/background-variant';
+@import '~bootstrap/scss/mixins/border-radius';
+@import '~bootstrap/scss/mixins/gradients';
+
+// Layout
+@import '~bootstrap/scss/mixins/clearfix';
+// @import '~bootstrap/scss/mixins/navbar-align';
+@import 'mixins/grid-framework';
+@import '~bootstrap/scss/mixins/grid';
+@import '~bootstrap/scss/mixins/float';
+
+// Print
+@import '~bootstrap/scss/print';
+
+// Core CSS
+@import '~bootstrap/scss/reboot';
+@import '~bootstrap/scss/type';
+@import '~bootstrap/scss/images';
+@import '~bootstrap/scss/code';
+@import '~bootstrap/scss/grid';
+@import '~bootstrap/scss/tables';
+@import '~bootstrap/scss/forms';
+@import '~bootstrap/scss/buttons';
+
+// Components
+@import '~bootstrap/scss/transitions';
+@import '~bootstrap/scss/dropdown';
+@import '~bootstrap/scss/button-group';
+@import '~bootstrap/scss/input-group';
+@import '~bootstrap/scss/custom-forms';
+@import '~bootstrap/scss/nav';
+@import '~bootstrap/scss/navbar';
+@import '~bootstrap/scss/card';
+@import '~bootstrap/scss/breadcrumb';
+@import '~bootstrap/scss/pagination';
+@import '~bootstrap/scss/badge';
+@import '~bootstrap/scss/jumbotron';
+@import '~bootstrap/scss/alert';
+@import '~bootstrap/scss/progress';
+@import '~bootstrap/scss/media';
+@import '~bootstrap/scss/list-group';
+@import '~bootstrap/scss/responsive-embed';
+@import '~bootstrap/scss/close';
+
+// Components w/ JavaScript
+@import '~bootstrap/scss/modal';
+@import '~bootstrap/scss/tooltip';
+@import '~bootstrap/scss/popover';
+@import '~bootstrap/scss/carousel';
+
+// Utility classes
+@import '~bootstrap/scss/utilities';

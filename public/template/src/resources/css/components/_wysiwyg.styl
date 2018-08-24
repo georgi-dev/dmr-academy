@@ -1,0 +1,233 @@
+$markdown-table-border-color = $scheme.dark.background.transparent
+$markdown-panel-default-heading-bg = $scheme.dark.background.transparent
+$markdown-font-family-monospace = Menlo, Monaco, Consolas, 'Courier New', monospace
+$markdown-font-size-base = 14px
+$markdown-input-bg-disabled = #eeeeee
+$markdown-input-bg = #fff
+$markdown-input-border-focus = #66afe9
+
+.md-editor
+  display: block
+  border: 1px solid $markdown-table-border-color
+
+  > .md-header, .md-footer
+    display: block
+    padding: 1rem 0.5rem
+    background: $markdown-panel-default-heading-bg
+
+
+  > .md-header
+    margin: 0
+
+
+  > .md-preview
+    background: $scheme.dark.background.medium
+    border-top: 1px dashed $markdown-table-border-color
+    border-bottom: 1px dashed $markdown-table-border-color
+    min-height: 10px
+    overflow: auto
+    padding: 1rem
+
+
+  > textarea
+    font-family: $markdown-font-family-monospace
+    outline: none
+    margin: 0
+    display: block
+    padding: 1rem
+    color: $scheme.light.color.default
+    width: 100%
+    border: none
+    border-top: 1px dashed $markdown-table-border-color
+    border-bottom: 1px dashed $markdown-table-border-color
+    border-radius: 0
+    box-shadow: none
+    background: $scheme.dark.background.medium
+    background: linear-gradient(to bottom right, $scheme.dark.background.medium, $scheme.dark.background.lighter)
+    &:focus,
+    &:active
+      border: none
+      outline: none
+      box-shadow: none
+      background: linear-gradient(to bottom right, $scheme.dark.background.medium, $scheme.dark.background.light)
+
+
+
+  // Hover state
+  $markdown-color = $markdown-input-border-focus
+  $markdown-color-rgba = rgba(red($markdown-color), green($markdown-color), blue($markdown-color), 0.6)
+  &.active
+    outline: none
+    // box-shadow(~"inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px $markdown-color-rgba")
+
+
+  .md-controls
+    float: right
+    padding: 3px
+    margin-bottom: -0.33rem
+
+    .md-control
+      right: 5px
+      color: #bebebe
+      padding: 3px 3px 3px 10px
+      &:hover
+        color: #333
+
+  .btn-group
+    margin-bottom: 0.33rem
+
+    .btn
+      padding-left: 1rem
+      padding-right: 1rem
+
+
+  // fullscreen mode styles
+  &.md-fullscreen-mode
+    width: 100%
+    height: 100%
+    position: fixed
+    top: 0
+    left: 0
+    z-index: 99999
+    padding: 60px 30px 15px
+    background: #fff !important
+    border: none !important
+
+    .md-input
+      margin-top: 2.5rem
+
+    .md-footer
+      display: none
+
+
+    .md-input,
+    .md-preview
+      height: 100% !important
+      font-size: 20px !important
+      padding: 20px !important
+      color: #999
+      line-height: 1.6em !important
+      resize: none !important
+      box-shadow: none !important
+      background: #fff !important
+      border: none !important
+
+
+    .md-preview
+      margin: 0 auto
+      color: #333
+      overflow: auto
+
+
+    .md-input
+      &:hover,
+      &:focus
+        color: #333
+        background: #fff !important
+
+
+
+    .md-header
+      background: none
+      text-align: center
+      position: fixed
+      width: 100%
+      top: 20px
+
+
+    .btn-group
+      float: none
+
+    .btn
+      border: none
+      background: none
+      color: #b3b3b3
+
+      &:hover,
+      &:focus,
+      &.active,
+      &:active
+        box-shadow: none
+        color: #333
+
+
+
+    .md-fullscreen-controls
+      position: absolute
+      top: 20px
+      right: 20px
+      text-align: right
+      z-index: 1002
+      display: block
+      a
+        color: #b3b3b3
+        clear: right
+        margin: 10px
+        width: 30px
+        height: 30px
+        text-align: center
+
+        &:hover
+          color: #333
+          text-decoration: none
+
+
+
+
+    .md-editor
+      height: 100% !important
+      position: relative
+
+
+
+  .md-fullscreen-controls
+    display: none
+
+
+
+.md-nooverflow
+  overflow: hidden
+  position: fixed
+  width: 100%
+
+
+.note-editor .note-toolbar
+  padding-top: 0
+  padding-left: 0
+  padding-right: 0
+
+.trumbowyg-box
+  .trumbowyg-editor[contenteditable=true]:empty::before
+    content: attr(placeholder)
+    color: #999
+
+  .trumbowyg-button-pane
+    background: $scheme.dark.background.medium
+    background: linear-gradient(to bottom right, $scheme.dark.background.medium, $scheme.dark.background.light)
+    border-bottom: 1px solid $scheme.dark.background.light
+    color: $scheme.light.color.default !important
+
+    svg
+      fill: $scheme.light.color.default !important
+
+
+    &::after
+      background: $scheme.dark.background.light
+
+
+    .trumbowyg-button-group
+      button
+        &:hover
+        &:active
+        &:focus
+          background: $scheme.dark.background.light
+
+        &.trumbowyg-active
+          background: $scheme.dark.background.medium
+
+      &:not(:empty) + .trumbowyg-button-group::before
+        background: $scheme.dark.background.light
+
+.trumbowyg-box
+.trumbowyg-editor
+  border: 1px solid $scheme.dark.color.lighter !important

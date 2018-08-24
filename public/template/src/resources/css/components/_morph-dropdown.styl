@@ -1,0 +1,173 @@
+.morph-dropdown-wrapper
+  position: absolute
+  padding-top: 10px
+  transform: translateY(100%)
+  display: block
+  height: auto
+  bottom: 0
+  &.-right
+    right: 0
+  &.-left
+    left: 0
+
+  .morph-dropdown-list
+    border-radius: 3px
+    display: block
+    position: relative
+    overflow: hidden
+    height: 0
+    width: 0
+    -webkit-backdrop-filter: blur(7px)
+    -moz-backdrop-filter: blur(7px)
+
+  .morph-dropdown
+    top: 0
+    left: 0
+    position: absolute
+    display: block
+    transition: all 0.5s ease
+    opacity: 0
+    &.-active
+      opacity: 1
+      z-index: 999
+
+
+  .morph-content
+    display: block
+    position: relative
+    height: auto
+    padding: 1rem
+    width: $sidebar['width']
+    box-sizing: border-box
+
+    &.-gallery
+      width: $sidebar['width'] * (3 / 2)
+
+
+  +breakpoint-down(sm)
+    .morph-dropdown-list
+      width: 100%
+
+    .morph-dropdown
+      width: 100%
+
+
+  for $scheme-name, $scheme-color in $morph-dropdown['schemes']
+    &.-{$scheme-name} .morph-dropdown-list
+      color: $scheme-color['color']
+      background: $scheme-color['background']
+
+.morph-gallery
+  display: block
+  list-style: none
+  padding: 0
+  margin-bottom: 0
+  max-height: 280px
+  overflow: auto
+  clearfix()
+  -ms-overflow-style: -ms-autohiding-scrollbar
+
+  &.-three li
+    width: percentage(1/3)
+    +breakpoint-down(sm)
+      width: percentage(1/2)
+    +breakpoint-down(xs)
+      width: 100%
+
+  li
+    position: relative
+    display: block
+    float: left
+    text-align: center
+    transition: all 0.3s ease
+    width: percentage(1/4)
+    +breakpoint-down(sm)
+      width: percentage(1/3)
+
+    &:hover, &:active, &:focus
+      background: $scheme.light.background.lighter
+
+    a
+      font-size: 1rem
+      padding: 1.5rem 0
+      +breakpoint-down(sm)
+        padding: 1rem 0
+      +breakpoint-down(xs)
+        padding: 0.5rem 0
+        font-size: 0.8rem
+      position: relative
+      display: block
+      border-radius: 2px
+
+
+    img
+      margin: 0 auto
+      width: 60%
+      display: block
+
+    i
+      position: relative
+      display: block
+      font-size: 2rem
+      +breakpoint-down(xs)
+        font-size: 1.5rem
+      margin-bottom: 0.5rem
+      margin-top: 0
+
+.morph-links
+  display: block
+  list-style: none
+  padding: 0
+  margin-left: -1rem
+  margin-right: -1rem
+  margin-bottom: 0
+  background: $scheme.light.background.lighter
+  clearfix()
+
+  &.-small li
+    font-size: 0.9rem
+
+  li
+    position: relative
+    display: block
+    border-bottom: 1px solid $scheme.light.background.lighter
+    transition: all 0.3s ease
+
+    small
+      display: block
+      opacity: 0.6
+
+    &:last-child
+      border-bottom: 0
+    a
+      padding: 0.75rem
+      display: block
+      position: relative
+      transition: all 0.3s ease
+
+    &:hover, &:focus, &:active
+      background: $scheme.light.background.lighter
+
+    img
+      float: left
+      width: 2.6rem
+      height: 2.6rem
+      margin-right: 1rem
+      margin-bottom: 0.5rem
+
+.morph-profile
+  h1
+  h2
+  h3
+  h4
+  h5
+  h6
+    margin-bottom: 0
+  img
+    border-radius: 2px
+    float: left
+    max-width: 45px
+    margin-right: 1rem
+  p
+    font-size: 0.9rem
+    color: $scheme.light.color.medium

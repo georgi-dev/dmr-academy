@@ -1,0 +1,96 @@
+extends ../../layouts/dashboard.pug
+
+block content
+  +aside(class='-dark -left -with-left-sidebar -collapse-with-sidebar -collapsible')
+    +sidebar-mail(server, page['view'])
+    
+  +beside(class='mail -left-aside -collapse-with-sidebar -collapsible')
+    form(class='form -dark' method='POST')
+      +container-fluid(class='mail-header')
+        +row 
+          +col({ xs: 12 })
+            h3 
+              +fa("envelope-open")
+              | Website Development Contract
+            div(class='form -dark')
+              // Mail Actions
+              div(class='mail-actions')
+                div(id='mail-actions-primary')
+                  div(class='btn-group _pull-right')
+                    div(class='btn -sm _cursor-default ')
+                      strong 3
+                      |  of 
+                      strong 247
+                    +btn(class='-sm -dark' data-toggle="tooltip" title="Previous Email" href="#")
+                      +fa('chevron-left')
+                    +btn(class='-sm -dark' data-toggle="tooltip" title="Next Email" href="#")
+                      +fa('chevron-right')
+                  div(class='btn-group')
+                    +btn(class='-sm -dark' data-toggle="tooltip" title="Reply" href="#")
+                      +fa('reply')
+                    +btn(class='-sm -dark' data-toggle="tooltip" title="Print" href="#")
+                      +fa('print')
+                
+                div(id='mail-actions-secondary')
+                  div(class='btn-group')
+                    +btn(class='-sm -dark' data-toggle="tooltip" title="Archive" href="#")
+                      +fa('archive')
+                    +btn(class='-sm -dark' data-toggle="tooltip" title="Spam" href="#")
+                      +fa('exclamation-circle')
+                    +btn(class='-sm -dark' data-toggle="tooltip" title="Delete" href="#")
+                      +fa('trash')
+                  div(class='btn-group')
+                    div(class='btn-dropdown' data-toggle="tooltip" title="Move To")
+                      +btn(class='-sm -dark' data-toggle="dropdown" href="#")
+                        +fa('folder')
+                        +fa("caret-down")(class='_margin-left-sm')
+                      div(class='dropdown-menu -dark')
+                        div(class='dropdown-item') Social
+                        div(class='dropdown-item') Promotions
+                        div(class='dropdown-item') Updates
+                        div(class='dropdown-item') Forums
+                        div(class='dropdown-divider')
+                        div(class='dropdown-item') Spam
+                        div(class='dropdown-item') Trash
+                    div(class='btn-dropdown' data-toggle="tooltip" title="Label As")
+                      +btn(class='-sm -dark' data-toggle="dropdown" href="#")
+                        +fa('tag')
+                        +fa("caret-down")(class='_margin-left-sm')
+                      div(class='dropdown-menu -dark')
+                        div(class='dropdown-item') Updates
+                        div(class='dropdown-item') Social
+                        div(class='dropdown-item') Promotions
+                        div(class='dropdown-item') Forums
+              // /Mail Actions
+
+      div(class='mail-detail')
+        div(class='mail-sender') 
+          span(class='_pull-right _text-muted') 24 November 2016
+          a(href="#")
+            img(src=url('resources/img/users/female2.jpg'))
+            | Rachel Perry 
+        div(class='mail-body')
+          p |
+            Hey Alex,
+          p |
+            I need to talk to you about the contract for our next project. Animum autem reliquis rebus ita perfecit, ut corpus. Nondum autem explanatum satis, erat, quid maxime natura vellet.
+          p |
+            Ita cum ea volunt retinere, quae superiori sententiae conveniunt, in Aristonem incidunt. Perge porro. Si mala non sunt, iacet omnis ratio Peripateticorum. Et quod est munus, quod opus sapientiae? Eodem modo is enim tibi nemo dabit, quod, expetendum sit, id esse laudabile. Multoque hoc melius nos veriusque quam Stoici. Ut id aliis narrare gestiant? Sed quid minus probandum quam esse aliquem beatum nec satis beatum?
+          p |
+            Mihi vero ista valde probata sunt, quod item fratri. Ita multa dicunt, quae vix intellegam. In qua si nihil est praeter rationem, sit in una virtute finis bonorum. Sed ego in hoc resisto. Sed quanta sit alias, nunc tantum possitne esse tanta. Miserum hominem! Si dolor summum malum est, dici aliter non potest. Idemne potest esse dies saepius, qui semel fuit?
+          p | 
+            Thank you for your interest in Volta. You're awesome!
+          p | Rachel P.
+          
+        
+      div(class='mail-info')
+        p(class='_pull-right _text-right')
+          | Last account activity: 0 minutes ago
+          br
+          | Open in 
+          a(href='#') 1 other location
+          |.
+        p 
+          | 20.78 GB (69%) of 30 GB used
+          br
+          a(href='#') Manage

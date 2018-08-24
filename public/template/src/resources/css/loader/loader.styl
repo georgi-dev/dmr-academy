@@ -1,0 +1,24 @@
+/*
+  0. Configuration
+
+  @visible Stylus only
+*/
+@import '../config/_breakpoints'
+@import '../config/_colors'
+@import '../config/_variables'
+@import '../config/_mixins'
+
+
+/*
+  1. Core
+*/
+@import '../components/_loader' 
+
+
+/*
+  2. Theme
+*/
+for $theme-name, $theme-color in $themes
+  body.{$theme-name} .loader-wrapper
+    background-color: mix($theme-color[0], $theme-color[1])
+    background-image: linear-gradient(to bottom right, $theme-color[0], $theme-color[1])

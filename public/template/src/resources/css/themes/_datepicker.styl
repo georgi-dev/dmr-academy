@@ -1,0 +1,228 @@
+.datepicker table tr td
+  &.highlighted
+    background-color: rgba($theme-color[0], 0.33)
+    border-color: rgba($theme-color[0], 0.5)
+
+    &:focus, &.focus
+      background-color: rgba($theme-color[0], 0.33)
+      border-color: rgba($theme-color[0], 0.4)
+    &:hover, &:active, &.active
+      background-color: rgba($theme-color[0], 0.33)
+      border-color: rgba($theme-color[0], 0.5)
+    &:active:hover, &.active:hover, &:active:focus, &.active:focus, &:active.focus, &.active.focus
+      background-color: rgba($theme-color[0], 0.33)
+      border-color: rgba($theme-color[0], 0.4)
+    &.disabled:hover, &[disabled]:hover
+      background-color: rgba($theme-color[0], 0.33)
+      border-color: rgba($theme-color[0], 0.5)
+
+fieldset[disabled] .datepicker table tr td.highlighted:hover
+  background-color: rgba($theme-color[0], 0.33)
+  border-color: rgba($theme-color[0], 0.5)
+
+.datepicker table tr td.highlighted
+  &.disabled:focus, &[disabled]:focus
+    background-color: rgba($theme-color[0], 0.33)
+    border-color: rgba($theme-color[0], 0.5)
+
+fieldset[disabled] .datepicker table tr td.highlighted:focus
+  background-color: rgba($theme-color[0], 0.33)
+  border-color: rgba($theme-color[0], 0.5)
+
+.datepicker table tr td.highlighted
+  &.disabled.focus, &[disabled].focus
+    background-color: rgba($theme-color[0], 0.33)
+    border-color: rgba($theme-color[0], 0.5)
+
+fieldset[disabled] .datepicker table tr td.highlighted.focus
+  background-color: rgba($theme-color[0], 0.33)
+  border-color: rgba($theme-color[0], 0.5)
+
+.datepicker table tr td
+  &.highlighted
+    &.focused
+      background: rgba($theme-color[0], 0.33)
+    &.disabled
+      background: rgba($theme-color[0], 0.33)
+      &:active
+        background: rgba($theme-color[0], 0.33)
+
+
+.datepicker table tr td.active
+  background-color: rgba($theme-color[0], 0.75)
+  border-color: rgba($theme-color[0], 0.5)
+  &.highlighted
+    background-color: rgba($theme-color[0], 0.75)
+    border-color: rgba($theme-color[0], 0.5)
+  &:focus, &.highlighted:focus, &.focus, &.highlighted.focus
+    background-color: rgba($theme-color[0], 0.75)
+    border-color: rgba(darken($theme-color[0], 10%), 0.5)
+  &:hover, &.highlighted:hover, &:active, &.highlighted:active, &.active, &.highlighted.active
+    background-color: rgba($theme-color[0], 0.75)
+    border-color: rgba(darken($theme-color[0], 10%), 0.75)
+  &:active:hover, &.highlighted:active:hover, &.active:hover, &.highlighted.active:hover, &:active:focus, &.highlighted:active:focus, &.active:focus, &.highlighted.active:focus, &:active.focus, &.highlighted:active.focus, &.active.focus, &.highlighted.active.focus
+    background-color: rgba(darken($theme-color[0], 10%), 0.75)
+    border-color: rgba(darken($theme-color[0], 10%), 0.5)
+  &.disabled:hover, &.highlighted.disabled:hover, &[disabled]:hover, &.highlighted[disabled]:hover
+    background-color: rgba($theme-color[0], 0.75)
+    border-color: rgba($theme-color[0], 0.5)
+
+fieldset[disabled] .datepicker table tr td.active
+  &:hover, &.highlighted:hover
+    background-color: rgba($theme-color[0], 0.75)
+    border-color: rgba($theme-color[0], 0.5)
+
+.datepicker table tr td.active
+  &.disabled:focus, &.highlighted.disabled:focus, &[disabled]:focus, &.highlighted[disabled]:focus
+    background-color: rgba($theme-color[0], 0.75)
+    border-color: rgba($theme-color[0], 0.5)
+
+fieldset[disabled] .datepicker table tr td.active
+  &:focus, &.highlighted:focus
+    background-color: rgba($theme-color[0], 0.75)
+    border-color: rgba($theme-color[0], 0.5)
+
+.datepicker table tr td.active
+  &.disabled.focus, &.highlighted.disabled.focus, &[disabled].focus, &.highlighted[disabled].focus
+    background-color: rgba($theme-color[0], 0.75)
+    border-color: rgba($theme-color[0], 0.5)
+
+fieldset[disabled] .datepicker table tr td.active
+  &.focus, &.highlighted.focus
+    background-color: rgba($theme-color[0], 0.75)
+    border-color: rgba($theme-color[0], 0.5)
+
+
+.datepicker table tr td span
+  &.active
+    background-color: rgba($theme-color[0], 0.75)
+    border-color: rgba($theme-color[0], 0.5)
+    &:hover
+      background-color: rgba($theme-color[0], 0.75)
+      border-color: rgba($theme-color[0], 0.5)
+    &.disabled
+      background-color: rgba($theme-color[0], 0.75)
+      border-color: rgba($theme-color[0], 0.5)
+      &:hover
+        background-color: rgba($theme-color[0], 0.75)
+        border-color: rgba($theme-color[0], 0.5)
+    &:focus, &:hover:focus
+      background-color: rgba($theme-color[0], 0.75)
+      border-color: rgba(darken($theme-color[0], 10%), 0.5)
+    &.disabled
+      &:focus, &:hover:focus
+        background-color: rgba($theme-color[0], 0.75)
+        border-color: rgba(darken($theme-color[0], 10%), 0.5)
+    &.focus, &:hover.focus
+      background-color: rgba($theme-color[0], 0.75)
+      border-color: rgba(darken($theme-color[0], 10%), 0.5)
+    &.disabled
+      &.focus, &:hover.focus
+        background-color: rgba($theme-color[0], 0.75)
+        border-color: rgba(darken($theme-color[0], 10%), 0.5)
+    &:hover, &.disabled:hover, &:active, &:hover:active
+      background-color: rgba($theme-color[0], 0.75)
+      border-color: rgba(darken($theme-color[0], 10%), 0.75)
+    &.disabled
+      &:active, &:hover:active
+        background-color: rgba($theme-color[0], 0.75)
+        border-color: rgba(darken($theme-color[0], 10%), 0.75)
+    &.active, &:hover.active
+      background-color: rgba($theme-color[0], 0.75)
+      border-color: rgba(darken($theme-color[0], 10%), 0.75)
+    &.disabled
+      &.active, &:hover.active
+        background-color: rgba($theme-color[0], 0.75)
+        border-color: rgba(darken($theme-color[0], 10%), 0.75)
+    &:active:hover, &.disabled:active:hover, &.active:hover, &.disabled.active:hover, &:active:focus, &:hover:active:focus
+      background-color: rgba(darken($theme-color[0], 10%), 0.75)
+      border-color: rgba(darken($theme-color[0], 10%), 0.5)
+    &.disabled
+      &:active:focus, &:hover:active:focus
+        background-color: rgba(darken($theme-color[0], 10%), 0.75)
+        border-color: rgba(darken($theme-color[0], 10%), 0.5)
+    &.active:focus, &:hover.active:focus
+      background-color: rgba(darken($theme-color[0], 10%), 0.75)
+      border-color: rgba(darken($theme-color[0], 10%), 0.5)
+    &.disabled
+      &.active:focus, &:hover.active:focus
+        background-color: rgba(darken($theme-color[0], 10%), 0.75)
+        border-color: rgba(darken($theme-color[0], 10%), 0.5)
+    &:active.focus, &:hover:active.focus
+      background-color: rgba(darken($theme-color[0], 10%), 0.75)
+      border-color: rgba(darken($theme-color[0], 10%), 0.5)
+    &.disabled
+      &:active.focus, &:hover:active.focus
+        background-color: rgba(darken($theme-color[0], 10%), 0.75)
+        border-color: rgba(darken($theme-color[0], 10%), 0.5)
+    &.active.focus, &:hover.active.focus
+      background-color: rgba(darken($theme-color[0], 10%), 0.75)
+      border-color: rgba(darken($theme-color[0], 10%), 0.5)
+    &.disabled
+      &.active.focus
+        background-color: rgba(darken($theme-color[0], 10%), 0.75)
+        border-color: rgba(darken($theme-color[0], 10%), 0.5)
+      &:hover
+        &.active.focus
+          background-color: rgba(darken($theme-color[0], 10%), 0.75)
+          border-color: rgba(darken($theme-color[0], 10%), 0.5)
+        background-color: rgba($theme-color[0], 0.75)
+        border-color: rgba($theme-color[0], 0.5)
+    &[disabled]:hover, &.disabled[disabled]:hover
+      background-color: rgba($theme-color[0], 0.75)
+      border-color: rgba($theme-color[0], 0.5)
+
+fieldset[disabled] .datepicker table tr td span.active
+  &:hover, &.disabled:hover
+    background-color: rgba($theme-color[0], 0.75)
+    border-color: rgba($theme-color[0], 0.5)
+
+.datepicker table tr td span.active
+  &.disabled:focus, &:hover.disabled:focus
+    background-color: rgba($theme-color[0], 0.75)
+    border-color: rgba($theme-color[0], 0.5)
+  &.disabled
+    &.disabled:focus, &:hover.disabled:focus
+      background-color: rgba($theme-color[0], 0.75)
+      border-color: rgba($theme-color[0], 0.5)
+  &[disabled]:focus, &:hover[disabled]:focus
+    background-color: rgba($theme-color[0], 0.75)
+    border-color: rgba($theme-color[0], 0.5)
+  &.disabled
+    &[disabled]:focus, &:hover[disabled]:focus
+      background-color: rgba($theme-color[0], 0.75)
+      border-color: rgba($theme-color[0], 0.5)
+
+fieldset[disabled] .datepicker table tr td span.active
+  &:focus, &:hover:focus
+    background-color: rgba($theme-color[0], 0.75)
+    border-color: rgba($theme-color[0], 0.5)
+  &.disabled
+    &:focus, &:hover:focus
+      background-color: rgba($theme-color[0], 0.75)
+      border-color: rgba($theme-color[0], 0.5)
+
+.datepicker table tr td span.active
+  &.disabled.focus, &:hover.disabled.focus
+    background-color: rgba($theme-color[0], 0.75)
+    border-color: rgba($theme-color[0], 0.5)
+  &.disabled
+    &.disabled.focus, &:hover.disabled.focus
+      background-color: rgba($theme-color[0], 0.75)
+      border-color: rgba($theme-color[0], 0.5)
+  &[disabled].focus, &:hover[disabled].focus
+    background-color: rgba($theme-color[0], 0.75)
+    border-color: rgba($theme-color[0], 0.5)
+  &.disabled
+    &[disabled].focus, &:hover[disabled].focus
+      background-color: rgba($theme-color[0], 0.75)
+      border-color: rgba($theme-color[0], 0.5)
+
+fieldset[disabled] .datepicker table tr td span.active
+  &.focus, &:hover.focus
+    background-color: rgba($theme-color[0], 0.75)
+    border-color: rgba($theme-color[0], 0.5)
+  &.disabled
+    &.focus, &:hover.focus
+      background-color: rgba($theme-color[0], 0.75)
+      border-color: rgba($theme-color[0], 0.5)

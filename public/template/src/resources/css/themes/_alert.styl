@@ -1,0 +1,12 @@
+.alert
+  for $brand-name, $brand-color in $theme-brand
+    &.-{$brand-name}
+      background: linear-gradient(to bottom right, rgba($brand-color, 1), rgba($brand-color, 0.75))
+      &.-contrasted .alert-icon
+        background: darken($brand-color, 15%)
+
+    &.-contrasted .alert-icon.-{$brand-name}
+      background: darken($brand-color, 15%)
+
+    &.-border-{$brand-name}
+      border-color: lighten($brand-color, 10%)

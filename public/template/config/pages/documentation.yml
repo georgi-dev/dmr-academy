@@ -1,0 +1,92 @@
+# Documentation
+#
+title: Documentation
+route: '/documentation'
+pages:
+
+# Documentation Homepage
+#
+- title: Documentation
+  route: ''
+  icon: pe pe-notebook
+  view: [ src, views, documentation, index ]
+
+# Introduction
+#
+- title: Introduction
+  route: '/introduction'
+  icon: pe pe-info
+  pages:
+    - title: About
+      route: '/about'
+      view: [ src, views, documentation, introduction, about ]
+    # --
+    - title: Licensing
+      route: '/licensing'
+      view: [ src, views, documentation, introduction, licensing ]
+    # --
+    - title: Basic requirements
+      route: '/basic-requirements'
+      view: [ src, views, documentation, introduction, basic-requirements ]
+    # --
+    - title: How to update?
+      route: '/how-to-update'
+      view: [ src, views, documentation, introduction, how-to-update ]
+    # --
+    - title: Support and resources
+      route: '/support-and-resources'
+      view: [ src, views, documentation, introduction, support-and-resources ]
+
+# Getting Started
+#
+- title: Getting Started
+  route: '/getting-started'
+  icon: pe pe-ribbon
+  pages:
+    - title: How to download?
+      route: '/how-to-download'
+      view: [ src, views, documentation, getting-started, how-to-download ]
+    # --
+    - title: What's Included?
+      route: '/what-is-included'
+      view: [ src, views, documentation, getting-started, what-is-included ]
+    # --
+    - title: Template structure
+      route: '/template-structure'
+      view: [ src, views, documentation, getting-started, template-structure ]
+    # --
+    - title: Build System
+      route: '/build-system'
+      view: [ src, views, documentation, getting-started, build-system ]
+
+# Theming
+#
+- title: Theming
+  route: '/theming'
+  icon: pe pe-paint-bucket
+  pages:
+    - title: RSCSS
+      route: '/rscss'
+      view: [ src, views, documentation, theming, rscss ]
+    # --
+    - title: Components
+      route: '/components'
+      view: [ src, views, documentation, theming, components ]
+    # --
+    - title: Choosing a Theme
+      route: '/choosing-theme'
+      view: [ src, views, documentation, theming, choosing-theme ]
+
+# Conclusion
+#
+- title: Conclusion
+  route: '/conclusion'
+  icon: pe pe-file
+  pages:
+    - title: Sources
+      route: '/sources'
+      view: [ src, views, documentation, conclusion, sources ]
+    # --
+    - title: Outro
+      route: '/outro'
+      view: [ src, views, documentation, conclusion, outro ]

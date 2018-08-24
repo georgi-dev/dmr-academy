@@ -1,0 +1,138 @@
+mixin navbar(server, theme, fixed, authenticated)
+  - theme = theme || 'dark'
+  - fixed = fixed || 'top'
+  - authenticated = typeof(authenticated) != 'undefined' ? authenticated : true
+  
+  // Navbar
+  div(class='navbar -' + theme + ' -fixed-' + fixed + ' -has-6-items')&attributes(attributes)
+    div(class='navbar-wrapper')
+      div(class='sidebar-toggle hidden-lg-up hidden-xs-down' id='sidebar-toggle-navbar-brand' data-target='#sidebar')  
+        a(href='javascript:void(0);') 
+          +fa('bars') 
+          
+      a(class='navbar-brand hidden-xs-down' href=url('dashboard'))  
+        h1 Volta
+  
+      if authenticated
+        ul(class='navbar-nav -right')
+          li(class='sidebar-toggle hidden-sm-up' id='sidebar-toggle' data-target='#sidebar') 
+            a(href='javascript:void(0);') 
+              +fa('bars') 
+          li 
+            a(class='has-morph-dropdown' href='#notifications-dropdown')
+              +pe('bell')
+              span(class='navbar-item-count') 2
+          li 
+            a(class='has-morph-dropdown' href='#applications-dropdown')
+              +pe('keypad') 
+          li(class='navbar-profile') 
+            a(class='has-morph-dropdown' href='#profile-dropdown')
+              +pe('user')
+              //- img src=url('img/users/male11.jpg')
+            
+          li(class='sidebar-toggle' id='sidebar-secondary-toggle' data-target='#sidebar-secondary') 
+            a(href='javascript:void(0);') 
+              +fa('ellipsis-v') 
+      
+        div(class="morph-dropdown-wrapper -dark -right")
+          div(class='morph-dropdown-list -links')
+                    
+            div(id='notifications-dropdown' class='morph-dropdown')
+              div(class='morph-content')
+                h3 Notifications
+                p(class='_text-muted') Here's what happened while you were away.
+                ul(class='morph-links -small')
+                  li
+                    a(href='#') 
+                      img(src=url('resources/img/users/male3.jpg'))
+                      | 
+                      strong John Doe 
+                      |  has accepted your team invitation.
+                      small Just Now
+                  li
+                    a(href='#')
+                      img(src=url('resources/img/users/female1.jpg'))
+                      | 
+                      strong Gabriella Cruz 
+                      |  has invited you to her event.
+                      small 12 Hours Ago
+                  li
+                    a(href='#')
+                      img(src=url('resources/img/users/female2.jpg'))
+                      | 
+                      strong Sofia Owens 
+                      |  has started following you.
+                      small 1 Day Ago
+      
+                div(class='_margin-top-1x') 
+                  a(class='btn -primary -block') View All Notifications
+                
+            div(id='applications-dropdown' class='morph-dropdown')
+              div(class='morph-content -gallery')
+                h3 Applications
+                p(class='_text-muted') Open one of your connected social applications.
+                ul(class='morph-gallery')
+                  li 
+                    a(href='https://facebook.com/pixevil' target='_blank')
+                      +fa('facebook-square')
+                      | Facebook
+                  li 
+                    a(href='https://twitter.com/pixevil' target='_blank')
+                      +fa('twitter')
+                      | Twitter
+                  li 
+                    a(href='https://plus.google.com/+pixevil' target='_blank') 
+                      +fa('google-plus')
+                      | Google Plus
+                  li 
+                    a(href='https://linkedin.com/company/pixevil' target='_blank')
+                      +fa('linkedin')
+                      | LinkedIn
+                  li 
+                    a(href='https://github.com/pixevil' target='_blank')
+                      +fa('github')
+                      | GitHub
+                  li 
+                    a(href='https://bitbucket.org' target='_blank' rel='nofollow')
+                      +fa('bitbucket')
+                      | BitBucket
+                  li 
+                    a(href='https://slack.com/' target='_blank' rel='nofollow')
+                      +fa('slack')
+                      | Slack
+                  li 
+                    a(href='https://dropbox.com/' target='_blank' rel='nofollow')
+                      +fa('dropbox')
+                      | DropBox
+                    
+                div(class='_margin-top-1x')
+                  a(class='btn -primary -block') View All Applications
+                    
+                  
+            div(id='profile-dropdown' class='morph-dropdown')
+              div(class='morph-content -links')
+                div(class='morph-profile')
+                  img(src=url('resources/img/users/male11.jpg'))  
+                  h4 John Doe
+                  p Senior Web Developer 
+                ul(class='morph-links')
+                  li
+                    a(href='#') My Profile
+                  li
+                    a(href='#') Account Settings
+                div(class='_margin-top-1x') 
+                  a(class='btn -primary -block') Sign Out
+                
+      else 
+        ul(class='navbar-nav -right')
+          li 
+            a(href=url('signup') data-toggle='tooltip' data-placement='bottom' title='Sign Up')
+              +pe('plus')
+          li 
+            a(href=url('signin') data-toggle='tooltip' data-placement='bottom' title='Sign In') 
+              +pe('angle-right-circle')
+      
+        div(class='morph-dropdown-wrapper -dark -right')
+          div(class='morph-dropdown-list -links')
+          
+  // /Navbar

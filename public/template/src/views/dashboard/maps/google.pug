@@ -1,0 +1,21 @@
+extends ../../layouts/dashboard.pug
+
+block content
+  +container-fluid
+    +row 
+      +col({ lg: 12 })
+        +page-heading(server, page)
+      
+    +row
+      +col({ lg: 12 })
+        +panel(class='-dark')
+          +panel-heading 
+            h4 Default Map
+          div(class='map' id='gmaps-default')
+      
+    +row
+      +col({ lg: 12 })
+        +panel(class='-dark') 
+          +panel-heading
+            h4 Styled Map 
+          div(class='map' id='gmaps-styled')

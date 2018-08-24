@@ -1,0 +1,42 @@
+.pagination
+  display: block
+  position: relative
+  list-style: none
+  padding: 0
+  .pagination-item
+    display: inline-block
+    margin-right: 0.5rem
+    &.-active a
+      font-weight: bold
+    &:last-child
+      margin-right: 0rem
+    a
+      display: block
+      position: relative
+      transition: all 0.5s ease
+      padding: $base-padding ($base-padding * 3 / 2)
+      background-position: 0% -100%
+      background-size: 100% 200%
+      &:hover, &:active, &:focus
+        text-decoration: none
+        background-position: 0% 100%
+
+
+  &.-dark
+    .pagination-item
+      &.-active a
+        background-color: $scheme['dark']['background']['medium']
+      &.-disabled a
+        background-color: $scheme['dark']['background']['lighter']
+      a
+        background-image: linear-gradient(to bottom, $scheme['dark']['background']['medium'], $scheme['dark']['background']['light'])
+
+
+  &.-light
+    .pagination-item
+      &.-active a
+        background-color: $scheme['light']['background']['light']
+      &.-disabled a
+        background-color: $scheme['light']['background']['lighter']
+      a
+        background-image: linear-gradient(to bottom, $scheme['light']['background']['lighter'], $scheme['light']['background']['light'])

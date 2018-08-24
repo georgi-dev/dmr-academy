@@ -1,0 +1,73 @@
+table
+.table
+  thead
+    tr
+      background-size: 100%
+    th
+      border-bottom-width: 1px
+
+  &.-bordered
+    border-width: 1px
+    border-style: solid
+    th
+    td
+      border-width: 1px
+      border-style: solid
+      transition: background 0.3s ease, color 0.3s ease
+
+  for $scheme-name, $scheme-color in $table['schemes']
+    &.-{$scheme-name}
+      background-image: linear-gradient(to bottom right, $scheme-color['background']['light'], $scheme-color['background']['lighter'])
+      thead
+        background-image: linear-gradient(to bottom, $scheme-color['background']['light'], $scheme-color['background']['lighter'])
+
+      th
+      td
+        border-color: $scheme-color['background']['lighter']
+
+      &.-bordered
+        border-color: $scheme-color['background']['light']
+        th
+        td
+          border-color: $scheme-color['background']['light']
+
+      &.-hovered
+        tr:hover td
+          background-color: alpha($scheme-color['background']['lighter'], 0.05)
+
+      &.-striped
+        tr:nth-child(2n+2)
+          background-color: $scheme-color['background']['lighter']
+
+  for $brand-name, $brand-color in $brand
+    tr.-{$brand-name}
+      background-color: rgba($brand-color, 0.33)
+
+  td
+    &.-user
+      img
+        width: 23px
+        height: 23px
+        float: left
+        border-radius: 3px
+        margin-right: 0.75rem
+      &.-detailed
+        img
+          width: 44px
+          height: 44px
+
+    &.-detailed
+      span
+        display: block
+        font-size: 80%
+        opacity: 0.5
+
+    &.-valign-middle
+      vertical-align: middle
+    &.-valign-top
+      vertical-align: top
+    &.-valign-bottom
+      vertical-align: bottom
+
+    .progress
+      margin-bottom: 0.5rem

@@ -1,0 +1,23 @@
+.tag
+  padding: 0.33rem 0.5rem
+  border-radius: 2px
+  display: inline-block
+
+  &.-dark
+    background: $scheme['dark']['background']['medium']
+    background: linear-gradient(to bottom right, $scheme['dark']['background']['medium'], $scheme['dark']['background']['light'])
+  &.-light
+    background: $scheme['light']['background']['medium']
+    background: linear-gradient(to bottom right, $scheme['light']['background']['light'], $scheme['light']['background']['lighter'])
+
+  for $brand-name, $brand-color in $brand
+    &.-{$brand-name}
+      background: $brand-color
+      background: linear-gradient(to bottom right, rgba($brand-color, 0.8), rgba($brand-color, 0.4))
+
+pre .tag
+code .tag
+  padding: 0
+  border-radius: 0
+  font-size: inherit
+  line-height: inherit

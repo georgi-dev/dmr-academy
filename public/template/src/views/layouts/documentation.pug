@@ -1,0 +1,7 @@
+extends dashboard.pug 
+
+block layout
+  +navbar(server, 'dark')      
+  
+  +content('dark', 'without-sidebar')
+    block content 

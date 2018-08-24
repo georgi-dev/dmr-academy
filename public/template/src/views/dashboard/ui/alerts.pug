@@ -1,0 +1,212 @@
+extends ../../layouts/dashboard.pug
+
+block content
+  +container-fluid
+    +row 
+      +col({ lg: 12 })
+        +page-heading(server, page)
+
+    +row 
+      +col({ lg: 6 })
+        +panel(class='-dark')
+          +panel-heading
+            h4 Default Alerts
+            span A showcase of Volta's alert design
+          +panel-body 
+            +alert('success', 'fa fa-check-circle')
+              strong  Success! 
+              | This is a good looking alert!
+            +alert('info', 'fa fa-info-circle')
+              strong  Info! 
+              | This is a good looking alert!
+            +alert('warning', 'fa fa-exclamation-triangle')
+              strong  Warning! 
+              | This is a good looking alert!
+            +alert('danger', 'fa fa-exclamation-circle')
+              strong  Danger! 
+              | This is a good looking alert!
+            +alert('primary', 'fa fa-cloud-upload')
+              strong  Primary! 
+              | This is a good looking alert!
+            +alert('secondary', 'fa fa-cloud-download')(class='_margin-bottom-none')
+              strong  Secondary! 
+              | This is a good looking alert!
+              
+      +col({ lg: 6 })
+        +panel(class='-dark')
+          +panel-heading
+            h4 Contrasted Alerts
+            span A showcase of Volta's alert design
+          +panel-body 
+            +alert('success', 'fa fa-check-circle')(class='-contrasted')
+              strong  Success! 
+              | This is a good looking alert!
+            +alert('info', 'fa fa-info-circle')(class='-contrasted')
+              strong  Info! 
+              | This is a good looking alert!
+            +alert('warning', 'fa fa-exclamation-triangle')(class='-contrasted')
+              strong  Warning! 
+              | This is a good looking alert!
+            +alert('danger', 'fa fa-exclamation-circle')(class='-contrasted')
+              strong  Danger! 
+              | This is a good looking alert!
+            +alert('primary', 'fa fa-cloud-upload')(class='-contrasted')
+              strong  Primary! 
+              | This is a good looking alert!
+            +alert('secondary', 'fa fa-cloud-download')(class='-contrasted._margin-bottom-none')
+              strong  Secondary! 
+              | This is a good looking alert!
+      
+    +row      
+      +col({ lg: 6 })
+        +panel(class='-dark')
+          +panel-heading
+            h4 Dark Contrasted Alerts
+            span A showcase of Volta's alert design
+          +panel-body 
+            +alert('dark', 'fa fa-check-circle', '-success')(class='-contrasted')
+              strong  Success! 
+              | This is a good looking alert!
+            +alert('dark', 'fa fa-info-circle', '-info')(class='-contrasted')
+              strong  Info! 
+              | This is a good looking alert!
+            +alert('dark', 'fa fa-exclamation-triangle', '-warning')(class='-contrasted')
+              strong  Warning! 
+              | This is a good looking alert!
+            +alert('dark', 'fa fa-exclamation-circle', '-danger')(class='-contrasted')
+              strong  Danger! 
+              | This is a good looking alert!
+            +alert('dark', 'fa fa-cloud-upload', '-primary')(class='-contrasted')
+              strong  Primary! 
+              | This is a good looking alert!
+            +alert('dark', 'fa fa-cloud-download', '-secondary')(class='-contrasted._margin-bottom-none')
+              strong  Secondary! 
+              | This is a good looking alert!
+    
+      +col({ lg: 6 })
+        +panel(class='-dark')
+          +panel-heading
+            h4 Light Contrasted Alerts
+            span A showcase of Volta's alert design
+          +panel-body 
+            +alert('light', 'fa fa-check-circle', '-success')(class='-contrasted')
+              strong  Success! 
+              | This is a good looking alert!
+            +alert('light', 'fa fa-info-circle', '-info')(class='-contrasted')
+              strong  Info! 
+              | This is a good looking alert!
+            +alert('light', 'fa fa-exclamation-triangle', '-warning')(class='-contrasted')
+              strong  Warning! 
+              | This is a good looking alert!
+            +alert('light', 'fa fa-exclamation-circle', '-danger')(class='-contrasted')
+              strong  Danger! 
+              | This is a good looking alert!
+            +alert('light', 'fa fa-cloud-upload', '-primary')(class='-contrasted')
+              strong  Primary! 
+              | This is a good looking alert!
+            +alert('light', 'fa fa-cloud-download', '-secondary')(class='-contrasted._margin-bottom-none')
+              strong  Secondary! 
+              | This is a good looking alert!
+    
+    
+    +row      
+      +col({ lg: 6 })
+        +panel(class='-dark')
+          +panel-heading
+            h4 Dark Contrasted Bordered Alerts
+            span A showcase of Volta's alert design
+          +panel-body 
+            +alert('dark', 'fa fa-check-circle', '-success')(class='-contrasted.-border-success')
+              strong  Success! 
+              | This is a good looking alert!
+            +alert('dark', 'fa fa-info-circle', '-info')(class='-contrasted.-border-info')
+              strong  Info! 
+              | This is a good looking alert!
+            +alert('dark', 'fa fa-exclamation-triangle', '-warning')(class='-contrasted.-border-warning')
+              strong  Warning! 
+              | This is a good looking alert!
+            +alert('dark', 'fa fa-exclamation-circle', '-danger')(class='-contrasted.-border-danger')
+              strong  Danger! 
+              | This is a good looking alert!
+            +alert('dark', 'fa fa-cloud-upload', '-primary')(class='-contrasted.-border-primary')
+              strong  Primary! 
+              | This is a good looking alert!
+            +alert('dark', 'fa fa-cloud-download', '-secondary')(class='-contrasted.-border-secondary._margin-bottom-none')
+              strong  Secondary! 
+              | This is a good looking alert!
+    
+      +col({ lg: 6 })
+        +panel(class='-dark')
+          +panel-heading
+            h4 Light Contrasted Bordered Alerts
+            span A showcase of Volta's alert design
+          +panel-body 
+            +alert('light', 'fa fa-check-circle', '-success')(class='-contrasted.-border-success')
+              strong  Success! 
+              | This is a good looking alert!
+            +alert('light', 'fa fa-info-circle', '-info')(class='-contrasted.-border-info')
+              strong  Info! 
+              | This is a good looking alert!
+            +alert('light', 'fa fa-exclamation-triangle', '-warning')(class='-contrasted.-border-warning')
+              strong  Warning! 
+              | This is a good looking alert!
+            +alert('light', 'fa fa-exclamation-circle', '-danger')(class='-contrasted.-border-danger')
+              strong  Danger! 
+              | This is a good looking alert!
+            +alert('light', 'fa fa-cloud-upload', '-primary')(class='-contrasted.-border-primary')
+              strong  Primary! 
+              | This is a good looking alert!
+            +alert('light', 'fa fa-cloud-download', '-secondary')(class='-contrasted.-border-secondary._margin-bottom-none')
+              strong  Secondary! 
+              | This is a good looking alert!
+
+    +row      
+      +col({ lg: 6 })
+        +panel(class='-dark')
+          +panel-heading
+            h4 Dark Icon Alerts
+            span A showcase of Volta's alert design
+          +panel-body 
+            +alert('dark', 'fa fa-check-circle', '_text-success')
+              strong  Success! 
+              | This is a good looking alert!
+            +alert('dark', 'fa fa-info-circle', '_text-info')
+              strong  Info! 
+              | This is a good looking alert!
+            +alert('dark', 'fa fa-exclamation-triangle', '_text-warning')
+              strong  Warning! 
+              | This is a good looking alert!
+            +alert('dark', 'fa fa-exclamation-circle', '_text-danger')
+              strong  Danger! 
+              | This is a good looking alert!
+            +alert('dark', 'fa fa-cloud-upload', '_text-primary')
+              strong  Primary! 
+              | This is a good looking alert!
+            +alert('dark', 'fa fa-cloud-download', '_text-secondary')(class='_margin-bottom-none')
+              strong  Secondary! 
+              | This is a good looking alert!
+    
+      +col({ lg: 6 })
+        +panel(class='-dark')
+          +panel-heading
+            h4 Light Icon Alerts
+            span A showcase of Volta's alert design
+          +panel-body 
+            +alert('light', 'fa fa-check-circle', '_text-success')
+              strong  Success! 
+              | This is a good looking alert!
+            +alert('light', 'fa fa-info-circle', '_text-info')
+              strong  Info! 
+              | This is a good looking alert!
+            +alert('light', 'fa fa-exclamation-triangle', '_text-warning')
+              strong  Warning! 
+              | This is a good looking alert!
+            +alert('light', 'fa fa-exclamation-circle', '_text-danger')
+              strong  Danger! 
+              | This is a good looking alert!
+            +alert('light', 'fa fa-cloud-upload', '_text-primary')
+              strong  Primary! 
+              | This is a good looking alert!
+            +alert('light', 'fa fa-cloud-download', '_text-secondary')(class='_margin-bottom-none')
+              strong  Secondary! 
+              | This is a good looking alert!

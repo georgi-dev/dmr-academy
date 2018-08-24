@@ -1,0 +1,281 @@
+extends ../../layouts/dashboard.pug
+
+block content
+  +container-fluid
+    +row 
+      +col({ lg: 12 })
+        +page-heading(server, page)
+
+    +row
+      each tabColor in ['dark', 'light', 'primary', 'secondary', 'success', 'info', 'warning', 'danger']
+        +col({ md: 6 })
+          +panel(class='-dark')
+            +panel-heading 
+              h4  
+                = tabColor.charAt(0).toUpperCase() + tabColor.slice(1)
+                |  Tabs
+              span A showcase Volta tabbed panels
+            
+            +nav-tabs(class='-' + tabColor)
+              li(class='nav-item')
+                a(class='nav-link active' data-toggle='tab' href='#home-tab-' + tabColor role='tab') Home
+              li(class='nav-item')
+                a(class='nav-link' data-toggle='tab' href='#profile-tab-' + tabColor role='tab') Profile
+              li(class='nav-item')
+                a(class='nav-link' data-toggle='tab' href='#messages-tab-' + tabColor role='tab') Messages
+              li(class='nav-item')
+                a(class='nav-link' data-toggle='tab' href='#settings-tab-' + tabColor role='tab') Settings
+            
+            +panel-body  
+              +tab-content
+                +tab-pane(id='home-tab-' + tabColor class='active' role='tabpanel')
+                  h4 Home
+                  p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam porta lacus ipsum, tempus consequat turpis auctor sit amet. Pellentesque porta mollis nisi, eget imperdiet eros.
+                  p Nam aliquet consequat quam sit amet dignissim. Quisque vel massa est. Donec dictum nisl dolor, ac malesuada tellus efficitur non. Pellentesque pellentesque odio neque.
+                +tab-pane(id='profile-tab-' + tabColor role='tabpanel')
+                  h4 Profile
+                  p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam porta lacus ipsum, tempus consequat turpis auctor sit amet. Pellentesque porta mollis nisi, eget imperdiet eros.
+                  p Nam aliquet consequat quam sit amet dignissim. Quisque vel massa est. Donec dictum nisl dolor, ac malesuada tellus efficitur non. Pellentesque pellentesque odio neque.
+                +tab-pane(id='messages-tab-' + tabColor role='tabpanel')
+                  h4 Messages
+                  p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam porta lacus ipsum, tempus consequat turpis auctor sit amet. Pellentesque porta mollis nisi, eget imperdiet eros.
+                  p Nam aliquet consequat quam sit amet dignissim. Quisque vel massa est. Donec dictum nisl dolor, ac malesuada tellus efficitur non. Pellentesque pellentesque odio neque.
+                +tab-pane(id='settings-tab-' + tabColor role='tabpanel')
+                  h4 Settings
+                  p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam porta lacus ipsum, tempus consequat turpis auctor sit amet. Pellentesque porta mollis nisi, eget imperdiet eros.
+                  p Nam aliquet consequat quam sit amet dignissim. Quisque vel massa est. Donec dictum nisl dolor, ac malesuada tellus efficitur non. Pellentesque pellentesque odio neque.
+    +row
+      +col({ md: 6 })
+        +panel(class='-dark')
+          +panel-heading 
+            h4 Icon Tabs
+            span A showcase Volta tabbed panels with icons
+          
+          +nav-tabs(class='-dark')
+            li(class='nav-item')
+              a(class='nav-link active' data-toggle="tab" href="#home-tab-icon" role="tab")
+                +fa('home')
+            li(class='nav-item')
+              a(class='nav-link' data-toggle='tab' href='#profile-tab-icon' role='tab')
+                +fa('user')
+            li(class='nav-item')
+              a(class='nav-link' data-toggle='tab' href='#messages-tab-icon' role='tab')
+                +fa('envelope')
+            li(class='nav-item')
+              a(class='nav-link' data-toggle='tab' href='#settings-tab-icon' role='tab')
+                +fa('cog')
+          
+          +panel-body
+            +tab-content
+              +tab-pane(id='home-tab-icon' role="tabpanel" class='active') 
+                h4 Home
+                p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam porta lacus ipsum, tempus consequat turpis auctor sit amet. Pellentesque porta mollis nisi, eget imperdiet eros.
+                p Nam aliquet consequat quam sit amet dignissim. Quisque vel massa est. Donec dictum nisl dolor, ac malesuada tellus efficitur non. Pellentesque pellentesque odio neque.
+              +tab-pane(id='profile-tab-icon' role="tabpanel")
+                h4 Profile
+                p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam porta lacus ipsum, tempus consequat turpis auctor sit amet. Pellentesque porta mollis nisi, eget imperdiet eros.
+                p Nam aliquet consequat quam sit amet dignissim. Quisque vel massa est. Donec dictum nisl dolor, ac malesuada tellus efficitur non. Pellentesque pellentesque odio neque.
+              +tab-pane(id='messages-tab-icon' role="tabpanel") 
+                h4 Messages
+                p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam porta lacus ipsum, tempus consequat turpis auctor sit amet. Pellentesque porta mollis nisi, eget imperdiet eros.
+                p Nam aliquet consequat quam sit amet dignissim. Quisque vel massa est. Donec dictum nisl dolor, ac malesuada tellus efficitur non. Pellentesque pellentesque odio neque.
+              +tab-pane(id='settings-tab-icon' role="tabpanel") 
+                h4 Settings
+                p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam porta lacus ipsum, tempus consequat turpis auctor sit amet. Pellentesque porta mollis nisi, eget imperdiet eros.
+                p Nam aliquet consequat quam sit amet dignissim. Quisque vel massa est. Donec dictum nisl dolor, ac malesuada tellus efficitur non. Pellentesque pellentesque odio neque.
+
+      +col({ md: 6 })
+        +panel(class='-dark')
+          +panel-heading 
+            h4 Icon with Text Tabs
+            span A showcase Volta tabbed panels with icons and text
+          
+          +nav-tabs(class='-dark')
+            li(class='nav-item')
+              a(class='nav-link active' data-toggle="tab" href="#home-tab-icon-text" role="tab" )
+                +fa('home')
+                |  Home
+            li(class='nav-item')
+              a(class='nav-link' data-toggle='tab' href='#profile-tab-icon-text' role='tab') 
+                +fa('user')
+                |  Profile
+            li(class='nav-item')
+              a(class='nav-link' data-toggle='tab' href='#messages-tab-icon-text' role='tab') 
+                +fa('envelope')
+                |  Messages
+            li(class='nav-item')
+              a(class='nav-link' data-toggle='tab' href='#settings-tab-icon-text' role='tab') 
+                +fa('cog')
+                |  Settings
+          
+          +panel-body
+            +tab-content
+              +tab-pane(id='home-tab-icon-text' class='active' role='tabpanel')
+                h4 Home
+                p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam porta lacus ipsum, tempus consequat turpis auctor sit amet. Pellentesque porta mollis nisi, eget imperdiet eros.
+                p Nam aliquet consequat quam sit amet dignissim. Quisque vel massa est. Donec dictum nisl dolor, ac malesuada tellus efficitur non. Pellentesque pellentesque odio neque.
+              +tab-pane(id='profile-tab-icon-text' role='tabpanel')
+                h4 Profile
+                p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam porta lacus ipsum, tempus consequat turpis auctor sit amet. Pellentesque porta mollis nisi, eget imperdiet eros.
+                p Nam aliquet consequat quam sit amet dignissim. Quisque vel massa est. Donec dictum nisl dolor, ac malesuada tellus efficitur non. Pellentesque pellentesque odio neque.
+              +tab-pane(id='messages-tab-icon-text' role='tabpanel')
+                h4 Messages
+                p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam porta lacus ipsum, tempus consequat turpis auctor sit amet. Pellentesque porta mollis nisi, eget imperdiet eros.
+                p Nam aliquet consequat quam sit amet dignissim. Quisque vel massa est. Donec dictum nisl dolor, ac malesuada tellus efficitur non. Pellentesque pellentesque odio neque.
+              +tab-pane(id='settings-tab-icon-text' role='tabpanel')
+                h4 Settings
+                p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam porta lacus ipsum, tempus consequat turpis auctor sit amet. Pellentesque porta mollis nisi, eget imperdiet eros.
+                p Nam aliquet consequat quam sit amet dignissim. Quisque vel massa est. Donec dictum nisl dolor, ac malesuada tellus efficitur non. Pellentesque pellentesque odio neque.
+
+            
+    +row 
+      +col({ md: 6 })
+        div(id='accordion' role="tablist" aria-multiselectable="true")
+          +card(class='-dark')
+            +card-header(role='tab')
+              h5
+                a(id='collapse-1' data-toggle="collapse" data-parent="#accordion" href="#collapsible-1" aria-expanded="true" aria-controls="collapsible-1")
+                  | Basic Accordion
+        
+            div(id='collapsible-1' class='collapse in' role="tabpanel" aria-labelledby="collapse-1")
+              +card-block
+                p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam porta lacus ipsum, tempus consequat turpis auctor sit amet. Pellentesque porta mollis nisi, eget imperdiet eros.
+                p Nam aliquet consequat quam sit amet dignissim. Quisque vel massa est. Donec dictum nisl dolor, ac malesuada tellus efficitur non. Pellentesque pellentesque odio neque.
+          +card(class='-dark')
+            +card-header(role='tab')
+              h5
+                a(id='collapse-2' class='collapsed' data-toggle="collapse" data-parent="#accordion" href="#collapsible-2" aria-expanded="true" aria-controls="collapsible-2")
+                  | Second Collapsible Item
+        
+            div(id='collapsible-2' class='collapse' role="tabpanel" aria-labelledby="collapse-2")
+              +card-block
+                p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam porta lacus ipsum, tempus consequat turpis auctor sit amet. Pellentesque porta mollis nisi, eget imperdiet eros.
+                p Nam aliquet consequat quam sit amet dignissim. Quisque vel massa est. Donec dictum nisl dolor, ac malesuada tellus efficitur non. Pellentesque pellentesque odio neque.
+          
+          +card(class='-dark')
+            +card-header(role='tab')
+              h5
+                a(id='collapse-3' class='collapsed' data-toggle="collapse" data-parent="#accordion" href="#collapsible-3" aria-expanded="true" aria-controls="collapsible-3")
+                  | Third Collapsible Item
+        
+            div(id='collapsible-3' class='collapse' role="tabpanel" aria-labelledby="collapse-3")
+              +card-block
+                p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam porta lacus ipsum, tempus consequat turpis auctor sit amet. Pellentesque porta mollis nisi, eget imperdiet eros.
+                p Nam aliquet consequat quam sit amet dignissim. Quisque vel massa est. Donec dictum nisl dolor, ac malesuada tellus efficitur non. Pellentesque pellentesque odio neque.
+      
+      
+        div(id='accordion-toggle' class='_margin-top-3x' role="tablist" aria-multiselectable="true")
+          +card(class='-dark')
+            +card-header(role='tab')
+              h5
+                a(id='collapse-toggle-1' data-toggle="collapse" href="#collapsible-toggle-1" aria-expanded="true" aria-controls="collapsible-toggle-1")
+                  | Togggled Accordion
+        
+            div(id='collapsible-toggle-1' class='collapse in' role="tabpanel" aria-labelledby="collapse-toggle-1")
+              +card-block
+                p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam porta lacus ipsum, tempus consequat turpis auctor sit amet. Pellentesque porta mollis nisi, eget imperdiet eros.
+                p Nam aliquet consequat quam sit amet dignissim. Quisque vel massa est. Donec dictum nisl dolor, ac malesuada tellus efficitur non. Pellentesque pellentesque odio neque.
+          
+          +card(class='-dark')
+            +card-header(role='tab')
+              h5
+                a(class='collapsed' id='collapse-toggle-2' data-toggle="collapse" href="#collapsible-toggle-2" aria-expanded="true" aria-controls="collapsible-toggle-2")
+                  | Second Togggled Item
+        
+            div(id='collapsible-toggle-2' class='collapse' role='tabpanel' aria-labelledby='collapse-toggle-2')
+              +card-block
+                p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam porta lacus ipsum, tempus consequat turpis auctor sit amet. Pellentesque porta mollis nisi, eget imperdiet eros.
+                p Nam aliquet consequat quam sit amet dignissim. Quisque vel massa est. Donec dictum nisl dolor, ac malesuada tellus efficitur non. Pellentesque pellentesque odio neque.
+          
+      
+      
+      
+      +col({ md: 6 })
+        div(id='accordion-colors' role="tablist" aria-multiselectable="true")
+          +card(class='-dark')
+            +card-header(role='tab')
+              h5
+                a(id='collapse-dark' data-toggle="collapse" data-parent="#accordion-colors" href="#collapsible-dark" aria-expanded="true" aria-controls="collapsible-dark")
+                  | Dark Accordion
+        
+            div(id='collapsible-dark' class='collapse in' role="tabpanel" aria-labelledby="collapse-dark")
+              +card-block
+                p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam porta lacus ipsum, tempus consequat turpis auctor sit amet. Pellentesque porta mollis nisi, eget imperdiet eros.
+                p Nam aliquet consequat quam sit amet dignissim. Quisque vel massa est. Donec dictum nisl dolor, ac malesuada tellus efficitur non. Pellentesque pellentesque odio neque.
+          
+          +card(class='-light')
+            +card-header(role='tab')
+              h5
+                a(class='collapsed' id='collapse-light' data-toggle="collapse" data-parent="#accordion-colors" href="#collapsible-light" aria-expanded="true" aria-controls="collapsible-light")
+                  | Light Accordion
+        
+            div(id='collapsible-light' class='collapse' role='tabpanel' aria-labelledby='collapse-light')
+              +card-block
+                p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam porta lacus ipsum, tempus consequat turpis auctor sit amet. Pellentesque porta mollis nisi, eget imperdiet eros.
+                p Nam aliquet consequat quam sit amet dignissim. Quisque vel massa est. Donec dictum nisl dolor, ac malesuada tellus efficitur non. Pellentesque pellentesque odio neque.
+          
+          +card(class='-primary')
+            +card-header(role='tab')
+              h5
+                a(class='collapsed' id='collapse-primary' data-toggle="collapse" data-parent="#accordion-colors" href="#collapsible-primary" aria-expanded="true" aria-controls="collapsible-primary")
+                  | Primary Accordion
+        
+            div(id='collapsible-primary' class='collapse' role='tabpanel' aria-labelledby='collapse-primary')
+              +card-block
+                p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam porta lacus ipsum, tempus consequat turpis auctor sit amet. Pellentesque porta mollis nisi, eget imperdiet eros.
+                p Nam aliquet consequat quam sit amet dignissim. Quisque vel massa est. Donec dictum nisl dolor, ac malesuada tellus efficitur non. Pellentesque pellentesque odio neque.
+          
+          +card(class='-secondary')
+            +card-header(role='tab')
+              h5
+                a(class='collapsed' id='collapse-secondary' data-toggle="collapse" data-parent="#accordion-colors" href="#collapsible-secondary" aria-expanded="true" aria-controls="collapsible-secondary")
+                  | Secondary Accordion
+        
+            div(id='collapsible-secondary' class='collapse' role='tabpanel' aria-labelledby='collapse-secondary')
+              +card-block
+                p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam porta lacus ipsum, tempus consequat turpis auctor sit amet. Pellentesque porta mollis nisi, eget imperdiet eros.
+                p Nam aliquet consequat quam sit amet dignissim. Quisque vel massa est. Donec dictum nisl dolor, ac malesuada tellus efficitur non. Pellentesque pellentesque odio neque.
+          
+          +card(class='-success')
+            +card-header(role='tab')
+              h5
+                a(class='collapsed' id='collapse-success' data-toggle="collapse" data-parent="#accordion-colors" href="#collapsible-success" aria-expanded="true" aria-controls="collapsible-success")
+                  | Success Accordion
+        
+            div(id='collapsible-success' class='collapse' role='tabpanel' aria-labelledby='collapse-success')
+              +card-block
+                p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam porta lacus ipsum, tempus consequat turpis auctor sit amet. Pellentesque porta mollis nisi, eget imperdiet eros.
+                p Nam aliquet consequat quam sit amet dignissim. Quisque vel massa est. Donec dictum nisl dolor, ac malesuada tellus efficitur non. Pellentesque pellentesque odio neque.
+          
+          +card(class='-info')
+            +card-header(role='tab')
+              h5
+                a(class='collapsed' id='collapse-info' data-toggle="collapse" data-parent="#accordion-colors" href="#collapsible-info" aria-expanded="true" aria-controls="collapsible-info")
+                  | Info Accordion
+        
+            div(id='collapsible-info' class='collapse' role='tabpanel' aria-labelledby='collapse-info')
+              +card-block
+                p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam porta lacus ipsum, tempus consequat turpis auctor sit amet. Pellentesque porta mollis nisi, eget imperdiet eros.
+                p Nam aliquet consequat quam sit amet dignissim. Quisque vel massa est. Donec dictum nisl dolor, ac malesuada tellus efficitur non. Pellentesque pellentesque odio neque.
+          
+          +card(class='-warning')
+            +card-header(role='tab')
+              h5
+                a(class='collapsed' id='collapse-warning' data-toggle="collapse" data-parent="#accordion-colors" href="#collapsible-warning" aria-expanded="true" aria-controls="collapsible-warning")
+                  | Warning Accordion
+        
+            div(id='collapsible-warning' class='collapse' role='tabpanel' aria-labelledby='collapse-warning')
+              +card-block
+                p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam porta lacus ipsum, tempus consequat turpis auctor sit amet. Pellentesque porta mollis nisi, eget imperdiet eros.
+                p Nam aliquet consequat quam sit amet dignissim. Quisque vel massa est. Donec dictum nisl dolor, ac malesuada tellus efficitur non. Pellentesque pellentesque odio neque.
+          
+          +card(class='-danger')
+            +card-header(role='tab')
+              h5
+                a(class='collapsed' id='collapse-danger' data-toggle="collapse" data-parent="#accordion-colors" href="#collapsible-danger" aria-expanded="true" aria-controls="collapsible-danger")
+                  | Danger Accordion
+        
+            div(id='collapsible-danger' class='collapse' role='tabpanel' aria-labelledby='collapse-danger')
+              +card-block
+                p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam porta lacus ipsum, tempus consequat turpis auctor sit amet. Pellentesque porta mollis nisi, eget imperdiet eros.
+                p Nam aliquet consequat quam sit amet dignissim. Quisque vel massa est. Donec dictum nisl dolor, ac malesuada tellus efficitur non. Pellentesque pellentesque odio neque.

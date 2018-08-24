@@ -1,0 +1,53 @@
+extends ../../layouts/dashboard.pug
+
+block content
+  +container-fluid
+    +row 
+      +col({ lg: 12 })
+        +page-heading(server, page)
+            
+    +row
+      +col({ md: 6 })
+        +panel.-dark
+          +panel-heading 
+            h4 Line Chart
+            span A showcase of Volta's Chart.js chart integration
+          +panel-body
+            canvas(class='chart' id='chartjs-chart-line')
+      +col({ md: 6 })
+        +panel.-dark
+          +panel-heading   
+            h4 Bar Chart
+            span A showcase of Volta's Chart.js chart integration
+          +panel-body
+            canvas(class='chart' id='chartjs-chart-bar')
+    +row
+      +col({ md: 6 })
+        +panel.-dark
+          +panel-heading 
+            h4 Radar Chart
+            span A showcase of Volta's Chart.js chart integration
+          +panel-body
+            canvas(class='chart' id='chartjs-chart-radar')
+      +col({ md: 6 })
+        +panel.-dark
+          +panel-heading  
+            h4 Polar Area Chart
+            span A showcase of Volta's Chart.js chart integration
+          +panel-body
+            canvas(class='chart' id='chartjs-chart-polar')
+    +row
+      +col({ md: 6 })
+        +panel.-dark
+          +panel-heading 
+            h4 Pie Chart
+            span A showcase of Volta's Chart.js chart integration
+          +panel-body
+            canvas(class='chart' id='chartjs-chart-pie')
+      +col({ md: 6 })
+        +panel.-dark
+          +panel-heading 
+            h4 Doughnut Chart
+            span A showcase of Volta's Chart.js chart integration
+          +panel-body
+            canvas(class='chart' id='chartjs-chart-doughnut')

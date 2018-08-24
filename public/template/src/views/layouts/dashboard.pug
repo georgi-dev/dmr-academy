@@ -1,0 +1,32 @@
+include ../partials/definitions.pug 
+
+doctype html 
+html(lang="en") 
+  head
+    include ../partials/head/meta.pug
+    include ../partials/head/favicons.pug 
+    include ../partials/head/opengraph.pug
+    
+    // Theme
+    script(src=url('vendors/cookie/cookie.js') type="text/javascript")
+    script(src=url('resources/js/themes/base.js') type="text/javascript")
+    
+    // Loader
+    link(href=url('resources/css/loader/loader.css') rel="stylesheet" type="text/css")
+        
+    include ../partials/head/stylesheets.pug
+
+  body(itemscope=true itemtype="http://schema.org/WebPage")
+    +loader 
+  
+    block layout 
+      +navbar(server, 'dark') 
+
+      +sidebar-main({ server: server, pages: pages[1], theme: 'dark' })
+      +sidebar-secondary(server, page['view'], 'dark')  
+      
+      +content('dark')(class='-collapsible')
+        block content 
+      
+    include ../partials/footer/footer.pug
+    include ../partials/footer/scripts.pug

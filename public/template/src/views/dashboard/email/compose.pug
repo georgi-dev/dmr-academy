@@ -1,0 +1,40 @@
+extends ../../layouts/dashboard.pug
+
+block content
+  +aside(class='-dark -left -with-left-sidebar -collapse-with-sidebar -collapsible')
+    +sidebar-mail(server, page['view'])
+    
+  +beside(class='mail -left-aside -collapse-with-sidebar -collapsible')
+    form(class='form -dark' method='POST')
+      +container-fluid(class='mail-header')
+        +row 
+          +col({ xs: 12 })
+            h3  
+              fa('pencil')
+              | Compose
+              
+      +container-fluid
+        +row 
+          +col({ xs: 12 })
+            +form-group(class='_margin-top-1x')
+              input(class='form-control' id='email-to' name='to' type='email' placeholder='To') 
+            +form-group
+              input(class='form-control' id='email-title' name='title' type='text' placeholder='Title') 
+            div(id='email-body') 
+              h1 Welcome to Volta!
+              p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+              
+            div(class='_margin-top-1x')
+              button(class='btn -dark -block' type='submit') Send 
+
+    div(class='mail-info _margin-top-2x')
+      p(class='_pull-right _text-right')
+        | Last account activity: 0 minutes ago
+        br
+        | Open in   
+        a(href='#') 1 other location
+        | .
+      p 
+        | 20.78 GB (69%) of 30 GB used
+        br
+        a(href='#') Manage

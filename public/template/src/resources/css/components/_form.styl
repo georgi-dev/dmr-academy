@@ -1,0 +1,174 @@
+placeholder()
+  &::-webkit-input-placeholder
+    {block}
+  &::-moz-placeholder
+    {block}
+  &:-moz-placeholder
+    {block}
+  &:-ms-input-placeholder
+    {block}
+
+$form-control-padding-vertical = 0.75rem
+$form-control-padding-horizontal = 1rem
+
+form, .form
+  legend
+    font-size: 1.25rem
+    font-weight: 300
+
+  select.form-control:not([multiple]):not([size])
+    padding: 0 $form-control-padding-horizontal
+    height: 2.9rem
+
+  .form-control
+    border-radius: 2px
+    transition: all 0.5s ease
+    padding: $form-control-padding-vertical $form-control-padding-horizontal
+    &.-xs
+      font-size: 80%
+      padding: $form-control-padding-vertical * 0.5 $form-control-padding-horizontal
+    &.-sm
+      font-size: 90%
+      padding: $form-control-padding-vertical * 0.75 $form-control-padding-horizontal
+    &.-md
+      padding: $form-control-padding-vertical * 1 $form-control-padding-horizontal
+    &.-lg
+      font-size: 110%
+      padding: $form-control-padding-vertical * 1.25 $form-control-padding-horizontal
+    &.-xl
+      font-size: 120%
+      padding: $form-control-padding-vertical * 1.5 $form-control-padding-horizontal
+
+
+  .form-check
+    margin-left: 0
+    input
+      display: none
+
+      &:checked + label::after
+        transform: rotate(0deg)
+        opacity: 1
+
+    label
+      cursor: pointer
+      margin-left: 0
+      &::before
+        font-family: 'FontAwesome'
+        content: ''
+        display: block
+        text-align: center
+        float: left
+        width: 24px
+        height: 24px
+        margin-right: 0.75rem
+        position: relative
+      &::after
+        font-family: 'FontAwesome'
+        content: ''
+        display: block
+        text-align: center
+        width: 24px
+        height: 24px
+        margin-right: 0.75rem
+        position: absolute
+        left: 0
+        top: 0
+        transition: all 0.5s ease
+        transform: rotate(30deg) scale(0.5) translateZ(0)
+        opacity: 0
+
+    &.-radio
+      label::before
+        border-radius: 100%
+
+      label::after
+        content: '\f111'
+
+
+    &.-checkbox
+      label::before
+        border-radius: 2px
+
+      label::after
+        content: '\f00c'
+
+
+  .help-block
+    font-size: 0.9rem
+    margin-top: 0.5rem
+    color: $scheme['light']['color']['medium']
+
+  &.-dark
+    .form-control
+    .form-check label::before
+      color: $scheme['light']['color']['default']
+      border-color: $scheme['dark']['background']['lighter']
+      background-color: $scheme['dark']['background']['transparent']
+      background-image: linear-gradient(to bottom right, $scheme['dark']['background']['light'], $scheme['dark']['background']['lighter'])
+      &:disabled
+        background-color: $scheme['light']['color']['light']
+    .form-check label::before
+      background-image: linear-gradient(to bottom right, $scheme['dark']['background']['medium'], $scheme['dark']['background']['light'])
+
+    .form-control
+      &:active, &:focus
+        background-color: $scheme['dark']['background']['lighter']
+      +placeholder()
+        color: $scheme['light']['color']['medium']
+
+    .form-control.disabled label
+    .form-check.disabled label
+      color: $scheme['light']['color']['medium']
+      &::before
+        background: linear-gradient(to bottom right, $scheme['dark']['background']['light'], $scheme['dark']['background']['lighter'])
+      &::after
+        color: $scheme['light']['color']['medium']
+
+    select.form-control:not([multiple]):not([size])
+      option
+        color: $scheme['light']['color']['default']
+        background: $scheme['dark']['background']['default']
+
+  &.-light
+    .form-control
+    .form-check label::before
+      color: $scheme['light']['color']['default']
+      border-color: $scheme['light']['background']['lighter']
+      background-color: $scheme['light']['background']['transparent']
+      background-image: linear-gradient(to bottom right, $scheme['light']['background']['lighter'], $scheme['light']['background']['light'])
+      &:disabled
+        background-color: $scheme['light']['color']['light']
+    .form-check label::before
+      background-image: linear-gradient(to bottom right, $scheme['light']['background']['light'], $scheme['light']['background']['medium'])
+
+
+    .form-control
+      &:active, &:focus
+        background-color: $scheme['light']['background']['lighter']
+      +placeholder()
+        color: $scheme['light']['color']['medium']
+
+    .form-control.disabled label
+    .form-check.disabled label
+      color: $scheme['light']['color']['medium']
+      &::before
+        background: linear-gradient(to bottom right, $scheme['light']['background']['light'], $scheme['light']['background']['lighter'])
+      &::after
+        color: $scheme['light']['color']['medium']
+
+    select.form-control:not([multiple]):not([size])
+      option
+        color: $scheme['dark']['color']['default']
+        background: $scheme['light']['background']['default']
+
+
+  for $brand-name, $brand-color in $brand
+    .form-group.-{$brand-name}
+    .form-group.has-{$brand-name}
+      label, .help-block
+        color: $brand-color
+      .form-control
+      .form-check label::before
+        border-color: rgba($brand-color, 0.66)
+        &:active, &:focus
+          box-shadow: none

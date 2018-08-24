@@ -1,0 +1,25 @@
+// Generate color helpers
+for $name, $color in $colors
+  ._{$name}
+    transition: background 0.3s ease
+    background: $color
+
+  ._text-{$name}
+    transition: color 0.3s ease
+    color: $color
+
+  ._hover-{$name}:hover
+    background: $color
+
+// Generate color helpers
+for $name, $color in $brand
+  ._{$name}
+    transition: background 0.3s ease
+    background: $color
+
+  ._text-{$name}
+    transition: color 0.3s ease
+    color: $color
+
+  ._hover-{$name}:hover
+    background: $color

@@ -1,0 +1,99 @@
+.modal
+  color: $scheme['light']['color']['default']
+
+  .modal-dialog
+    margin-top: 6rem
+
+    backdrop-filter: blur(10px)
+    -webkit-backdrop-filter: blur(10px)
+
+  .modal-header
+    position: relative
+    min-height: 4rem
+    h1
+    h2
+    h3
+    h4
+    h5
+    h6
+    .h1
+    .h2
+    .h3
+    .h4
+    .h5
+    .h6
+      margin: 0
+
+  .modal-header
+  .modal-footer
+    border: none
+  .modal-content
+    border-radius: 3px
+
+    &.-padded
+      padding-bottom: 3rem
+
+  .modal-icon
+    font-size: 3rem
+
+  .modal-close
+    font-size: 2rem
+    padding: 0
+    position: absolute
+    top: 50%
+    transform: translateY(-50%)
+    right: 1rem
+    background: transparent
+    border: none
+    color: inherit
+
+  .btn
+    color: $scheme['light']['color']['default']
+    &.-light, &.-light:hover
+      color: $scheme['dark']['color']['default']
+
+  &.-light
+    .modal-dialog
+      .modal-content
+        color: $scheme['dark']['color']['default']
+        background: $scheme['light']['background']['darker']
+        background: linear-gradient(to right, $scheme['light']['background']['darker'], $scheme['light']['background']['dark'])
+
+        .btn
+          color: $scheme['light']['color']['default']
+          &.-light, &.-light:hover
+            color: $scheme['dark']['color']['default']
+
+  .modal-header.-light
+    color: $scheme['dark']['color']['default']
+    background: $scheme['light']['background']['darker']
+    background: linear-gradient(to right, $scheme['light']['background']['darker'], $scheme['light']['background']['dark'])
+
+
+  &.-dark
+    .modal-dialog
+      .modal-content
+        background: $scheme['dark']['background']['darker']
+        background: linear-gradient(to right, $scheme['dark']['background']['darker'], $scheme['dark']['background']['medium'])
+
+  .modal-header.-dark
+    background: $scheme['dark']['background']['darker']
+    background: linear-gradient(to right, $scheme['dark']['background']['darker'], $scheme['dark']['background']['medium'])
+
+
+  for $brand-name, $brand-color in $brand
+    &.-{$brand-name}
+      .modal-dialog
+        .modal-content
+          background: $brand-color
+          background: linear-gradient(to right, rgba($brand-color, 1), rgba($brand-color, 0.8))
+    .modal-header.-{$brand-name}
+      background: $brand-color
+      background: linear-gradient(to right, rgba($brand-color, 1), rgba($brand-color, 0.8))
+
+
+.modal.fade
+  opacity: 1
+
+.modal.fade .modal-dialog
+  transform: translate(0)

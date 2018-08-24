@@ -1,0 +1,113 @@
+extends ../../layouts/dashboard.pug
+
+block content
+  +container-fluid
+    +row 
+      +col({ lg: 12 })
+        +page-heading(server, page)
+          
+    +row
+      +col({ lg: 12 })
+        +panel(class='-dark')
+          +panel-heading
+            h4 Data Table
+          div(class='form -dark')
+            table(id='datatable' class='table -dark') 
+              thead 
+                tr 
+                  th #
+                  th Name
+                  th Date
+                  th Progress
+                  th 
+              tbody  
+                tr 
+                  td(class='-valign-middle') 1
+                  td(class='-user -detailed') 
+                    a(href='#') 
+                      img(src=url('resources/img/users/male3.jpg'))
+                      | John Doe
+                      span Sales Lead
+                  td(class='-detailed')
+                    | 16/06/2016
+                    span 14:30
+                  td(class='-detailed')
+                    div(class='progress -dark')
+                      div(class='bar -primary' style="width: 58%")
+                    span(class='_pull-right') 116/200
+                    span 58%
+                  td(class='_text-center') 
+                    a(href='#') 
+                      +fa('search')
+                tr 
+                  td(class='-valign-middle') 2
+                  td(class='-user -detailed') 
+                    a(href='#') 
+                      img(src=url('resources/img/users/female1.jpg'))
+                      | Gabriella Cruz
+                      span Sales Manager
+                  td(class='-detailed')
+                    | 15/08/2016
+                    span 06:24
+                  td(class='-detailed')
+                    div(class='progress -dark')
+                      div(class='bar -primary' style="width: 41%")
+                    span(class='_pull-right') 166/400
+                    span 41% 
+                  td(class='_text-center') 
+                    a(href='#') 
+                      +fa('search')
+                tr 
+                  td(class='-valign-middle') 3
+                  td(class='-user -detailed') 
+                    a(href='#') 
+                      img(src=url('resources/img/users/female2.jpg'))
+                      | Sofia Owens
+                      span Sales Staff
+                  td(class='-detailed')
+                    | 11/09/2016
+                    span 08:42
+                  td(class='-detailed')
+                    div(class='progress -dark')
+                      div(class='bar -primary' style="width: 84%")
+                    span(class='_pull-right') 420/500
+                    span 84% 
+                  td(class='_text-center') 
+                    a(href='#')
+                      +fa('search')
+                tr 
+                  td(class='-valign-middle') 4
+                  td(class='-user -detailed') 
+                    a(href='#') 
+                      img(src=url('resources/img/users/male2.jpg'))
+                      | Mario Flores
+                      span Sales Staff
+                  td(class='-detailed')
+                    | 15/09/2016
+                    span 19:36
+                  td(class='-detailed')
+                    div(class='progress -dark')
+                      div(class='bar -primary' style="width: 72%")
+                    span(class='_pull-right') 360/500
+                    span 72%
+                  td(class='_text-center')
+                    a(href='#')
+                      +fa('search')
+                tr 
+                  td(class='-valign-middle') 5
+                  td(class='-user -detailed') 
+                    a(href='#') 
+                      img(src=url('resources/img/users/female3.jpg'))
+                      | Johanna Cooper
+                      span Accounting
+                  td(class='-detailed')
+                    | 15/08/2016
+                    span 15:25
+                  td(class='-detailed')
+                    div(class='progress -dark')
+                      div(class='bar -primary' style="width: 64%")
+                    span(class='_pull-right') 192/300
+                    span 64%
+                  td(class='_text-center')
+                    a(href='#')
+                      +fa('search')

@@ -1,0 +1,212 @@
+extends ../../layouts/dashboard.pug
+
+block content
+  +container-fluid
+    +row 
+      +col({ lg: 12 })
+        +page-heading(server, page)
+          
+  
+    +row 
+      +col({ lg: 6 })
+        +panel(class='-dark')
+          +panel-heading
+            h4 Basic Form
+            span A showcase of Volta's form elements
+          +panel-body 
+            form(class='form -dark' id='form-basic' method="POST" )
+              +form-group 
+                label(class='form-label' for='form-basic-email') Email Address
+                input(class='form-control' id='form-basic-email' name="email" type="email" placeholder="Email")
+                small(class='form-text _text-muted') We'll never share your email with anyone else.
+              +form-group
+                label(for='form-basic-password') Password
+                input(class='form-control' id='form-basic-password' name="password" type="password" placeholder="Password")
+              +form-group(class='_margin-top-2x')
+                div(class='form-check -checkbox')
+                  input(class='form-check-input' id='form-basic-remember' name="password" type="checkbox" checked=true)
+                  label(for='form-basic-remember') Remember me 
+                  button(class='btn -primary _pull-right' type="submit" name="signup") Signup
+      
+      +col({ lg: 6 })
+        +panel(class='-dark')
+          +panel-heading
+            h4 Inline Form
+            span A showcase of Volta's form elements
+          +panel-body 
+            form(class='form -dark' id='form-inline' method="POST" )
+              +form-group(class='row')
+                label(class='col -xs-2 col-form-label _text-right' for='form-inline-email') Email Address
+                +col({ xs: 10 })
+                  input(class='form-control' id='form-inline-email' name="email" type="email" placeholder="Email")
+                  small(class='form-text _text-muted') We'll never share your email with anyone else.
+              +form-group(class='row')
+                label(class='col -xs-2 col-form-label _text-right' for='form-inline-username') Username
+                +col({ xs: 10 })
+                  input(class='form-control' id='form-inline-username' name="username" type="text" placeholder="Username")
+              +form-group(class='row')
+                label(class='col -xs-2 col-form-label _text-right' for='form-inline-password') Password
+                +col({ xs: 10 })
+                  input(class='form-control' id='form-inline-password' name="password" type="password" placeholder="Password")
+              +form-group(class='_margin-top-2x')
+                div(class='form-check -checkbox')
+                  input(class='form-check-input' id='form-inline-remember' name="password" type="checkbox" checked=true)
+                  label(for='form-inline-remember') Remember me 
+                  button(class='btn -primary _pull-right' type="submit" name="signup") Signup
+    +row
+      +col({ lg: 12 })
+        +panel(class='-dark')
+          +panel-heading
+            h4 Form Elements
+            span A showcase of Volta's form elements
+          +panel-body 
+            form(class='form -dark' id='form-elements' method="POST" enctype="multipart/form-data")
+
+              +form-group
+                label(for='form-elements-text') Text Input
+                input(class='form-control' id='form-elements-text' name="text" type="text" placeholder="Text")
+                div(class="help-block") This is an example help block.
+
+              +form-group
+                label(for='form-elements-password') Password Input
+                input(class='form-control' id='form-elements-password' name="password" type="password" placeholder="Password")
+
+              +form-group
+                label(for='form-elements-textarea') Textarea Input
+                textarea(class='form-control' id='form-elements-textarea' name="textarea" rows="4" type="textarea" placeholder="Textarea")
+
+              +form-group
+                label(for='form-elements-select') Select Input
+                select(class='form-control' id='form-elements-select' name="select") 
+                  option(value='1') 1
+                  option(value='2') 2
+                  option(value='3') 3
+                  option(value='4') 4
+                  option(value='5') 5
+                  
+              +form-group
+                label(for='form-elements-select-multiple') Select Multiple Input
+                select(class='form-control' id='form-elements-select-multiple' multiple='true' name="select-multiple")
+                  option(value='1') 1
+                  option(value='2') 2
+                  option(value='3') 3
+                  option(value='4') 4
+                  option(value='5') 5
+
+              +form-group
+                label(for='form-elements-file') File Input
+                input(class='form-control' id='form-elements-file' name="file" type="file" )
+                div(class='form-text _text-muted') This is some placeholder block-level help text for the above input. It's a bit lighter and easily wraps to a new line.
+
+              +form-group
+                label Checkbox Input
+                div(class='form-check -checkbox')
+                  input(class='form-check-input' id='form-elements-checkbox-1' name="checkbox" type="checkbox" checked="true")
+                  label(for='form-elements-checkbox-1') Checkbox Input 1
+                div(class='form-check -checkbox')
+                  input(class='form-check-input' id='form-elements-checkbox-2' name="checkbox" type="checkbox")
+                  label(for='form-elements-checkbox-2') Checkbox Input 2
+                div(class='form-check disabled -checkbox')
+                  input(class='form-check-input' id='form-elements-checkbox-3' disabled="true" name="checkbox" type="checkbox")
+                  label(for='form-elements-checkbox-3') Disabled Checkbox Input
+                  
+              +form-group
+                label Radio Input
+                div(class='form-check -radio')
+                  input(class='form-check-input' id='form-elements-radio-1' name="radio" value="1" type="radio" checked="true")
+                  label(for='form-elements-radio-1')  Radio Input 1
+                div(class='form-check -radio')
+                  input(class='form-check-input' id='form-elements-radio-2' name="radio" value="2" type="radio")
+                  label(for='form-elements-radio-2')  Radio Input 2
+                div(class='form-check disabled -radio')
+                  input(class='form-check-input' id='form-elements-radio-3' disabled="true" name="radio" value="2" type="radio")
+                  label(for='form-elements-radio-3')  Disabled Radio Input
+                    
+              button(class='btn -primary -block' type="submit") Submit
+    
+    +row
+      +col({ lg: 12 })
+        +panel(class='-dark')
+          +panel-heading
+            h4 Form Sizes
+            span A showcase of Volta's form elements
+          +panel-body 
+            form(class='form -dark' id='form-element-sizes' method="POST" enctype="multipart/form-data")
+
+              +form-group
+                label(for='form-elements-xs') Extra Small Input
+                input(class='form-control -xs' id='form-elements-xs' name="text" type="text" placeholder="Text")
+
+              +form-group
+                label(for='form-elements-sm') Small Input
+                input(class='form-control -sm' id='form-elements-sm' name="text" type="text" placeholder="Text")
+
+              +form-group
+                label(for='form-elements-md') Default Input
+                input(class='form-control -md' id='form-elements-md' name="text" type="text" placeholder="Text")
+              
+              +form-group
+                label(for='form-elements-lg') Large Input
+                input(class='form-control -lg' id='form-elements-lg' name="text" type="text" placeholder="Text")
+
+              +form-group
+                label(for='form-elements-xl') Extra Large Input
+                input(class='form-control -xl' id='form-elements-xl' name="text" type="text" placeholder="Text")
+
+      
+    +row
+      +col({ lg: 12 })
+        +panel(class='-dark')
+          +panel-heading
+            h4 Form States
+            span A showcase of Volta's form elements
+          +panel-body 
+            form(class='form -dark' id='form-element-states' method="POST" enctype="multipart/form-data")
+
+              +form-group
+                label(for='form-element-states-plain') Plain Input
+                input(class='form-control' id='form-element-states-plain' name="text" type="text")
+
+              +form-group
+                label(for='form-element-states-placeholder') Placeholder Input
+                input(class='form-control' id='form-element-states-placeholder' name="text" type="text" placeholder="Text")
+
+              +form-group
+                label(for='form-element-states-disabled') Disabled Input
+                input(class='form-control' id='form-element-states-disabled' disabled=true name="text" type="text" placeholder="Text")
+
+              +form-group
+                label(for='form-element-states-readonly') Readonly Input
+                input(class='form-control' id='form-element-states-readonly' readonly=true name="text" type="text" value="Text")
+      
+    +row
+      +col({ lg: 12 })
+        +panel(class='-dark')
+          +panel-heading
+            h4 Validation States
+            span A showcase of Volta's form elements
+          +panel-body 
+            form(class='form -dark' id='form-element-states' method="POST" enctype="multipart/form-data")
+              +form-group.-primary
+                label(for='form-element-colors-primary') Primary Input
+                input(class='form-control -dark' id='form-element-colors-primary' name='text' type='text' placeholder='Primary Input Text')
+
+              +form-group.-secondary
+                label(for='form-element-colors-secondary') Secondary Input
+                input(class='form-control -dark' id='form-element-colors-secondary' name='text' type='text' placeholder='Secondary Input Text')
+
+              +form-group.-success
+                label(for='form-element-colors-success') Success Input
+                input(class='form-control -dark' id='form-element-colors-success' name='text' type='text' placeholder='Success Input Text')
+
+              +form-group.-info
+                label(for='form-element-colors-info') Info Input
+                input(class='form-control -dark' id='form-element-colors-info' name='text' type='text' placeholder='Info Input Text')
+
+              +form-group.-warning
+                label(for='form-element-colors-warning') Warning Input
+                input(class='form-control -dark' id='form-element-colors-warning' name='text' type='text' placeholder='Warning Input Text')
+
+              +form-group.-danger
+                label(for='form-element-colors-danger') Danger Input
+                input(class='form-control -dark' id='form-element-colors-danger' name='text' type='text' placeholder='Danger Input Text')

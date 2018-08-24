@@ -1,0 +1,147 @@
+// Configuration
+//
+@import '../config/_breakpoints'
+@import '../config/_colors'
+@import '../config/_variables'
+@import '../config/_mixins'
+@import '../components/_table'
+@import '_folder-tree-view'
+
+.-documentation-page
+  table
+    @extend .table
+    @extend table.-dark
+    @extend table.-bordered
+    width: 100%
+
+    td, th
+      padding: 0.5rem
+      &:first-child
+        width: 33%
+
+ul.table-of-contents
+  list-style: none
+  padding: 0
+  margin: 20px 0 0 20px
+  font-size: 14px!important
+
+  > li
+    &.active
+      ul
+        display: block
+      > a
+        color: $concrete
+    > a
+      color: $gray
+      border-left: 2px solid transparent
+      transition: all 0.5s ease
+      padding-left: 20px
+      &:hover
+        color: $concrete
+
+    ul
+      display: none
+      padding: 0
+      li
+        margin-top: 2px
+        a
+          color: $gray
+          padding: 0 0 0 30px
+          border-left: 1px solid $silver
+        &.active a
+          color: $concrete
+      list-style: none
+
+    margin-bottom: 5px
+    &.table-heading
+      padding-left: 0
+      margin: 1rem 0
+
+
+.count-bubble
+  font-size: 10px
+  width: 20px
+  height: 20px
+  line-height: 20px
+  text-align: center
+  display: inline-block
+  border-radius: 100%
+  color: $scheme.light.color.default
+  float: left
+  margin-right: 0.75rem
+  margin-left: -0.2rem
+
+.topics
+  ul
+    margin-top: 1.5rem
+    margin-bottom: 1.5rem
+
+    li
+      margin-top: 0.5rem
+      a
+        font-size: 1rem
+        color: $scheme.light.color.dark
+        i
+          color: $scheme.light.color.medium
+          margin-right: 0.75rem
+
+
+
+.themes-list
+  list-style: none
+  margin: 0
+  padding: 0
+  clearfix()
+  display: block;
+  position: relative;
+
+  li
+    float: left;
+    width: percentage(1/3)
+
+    +breakpoint(sm)
+      width: 50%
+    +breakpoint(xs)
+      width: 100%
+    a
+      font-size: 1.1rem
+      padding: 1rem
+      display: block
+
+
+.documentation-sidebar
+  > ul
+    list-style: none
+    padding: 0
+
+    > li
+      font-size: 1rem
+      color: rgba(255, 255, 255, 0.5)
+      margin-top: 1rem
+
+      &:first-child
+        margin-top: 0
+
+      > ul
+        padding-left: 1.05rem
+        list-style: square
+
+        > li
+          > a
+            color: rgba(255, 255, 255, 0.9)
+          &.active > a
+            color: rgba(255, 255, 255, 1)
+            font-weight: bold
+
+  .documentation-sidebar-heading
+    margin-bottom: 0.5rem
+
+    i
+      margin-right: 0.5rem
+
+  .documentation-sidebar-toggle
+    display: none
+  +breakpoint-down(sm)
+    .documentation-sidebar-toggle
+      display: block
+      float: right

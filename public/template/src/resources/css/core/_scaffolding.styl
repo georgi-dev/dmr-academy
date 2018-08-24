@@ -1,0 +1,310 @@
+.pe
+  display: inline-block
+  &.-rotate-90
+    transform: rotate(90deg)
+  &.-rotate-180
+    transform: rotate(180deg)
+  &.-rotate-270
+    transform: rotate(270deg)
+
+
+.btn-list
+  clearfix()
+
+  &:last-child
+    margin-bottom: 0
+
+  &.-two
+    > .btn
+    > .btn-group
+    > .btn-dropdown
+      width: 49%
+
+  &.-three
+    > .btn
+    > .btn-group
+    > .btn-dropdown
+      width: 32.3%
+
+  &.-four
+    > .btn
+    > .btn-group
+    > .btn-dropdown
+      width: 24%
+
+  &.-five
+    > .btn
+    > .btn-group
+    > .btn-dropdown
+      width: 19%
+
+  &.-two, &.-three, &.-four, &.-five
+    > .btn
+    > .btn-group
+      +breakpoint-down(lg)
+        width: 100%
+        margin-right: 0
+
+    > .btn-dropdown
+      +breakpoint-down(lg)
+        width: auto
+
+
+  > .btn
+  > .btn-group
+    width: 24%
+    padding-left: 0.5rem!important
+    padding-right: 0.5rem!important
+    margin-right: 1%
+    float: left
+    margin-bottom: 0.5rem
+
+    +breakpoint-down(lg)
+      width: 100%
+      margin-right: 0
+
+.btn-list-unstyled
+  > .btn
+  > .btn-group
+    margin-bottom: 0.5rem
+
+.dropdown-preview
+  display: inline-block
+  float: left
+  margin: 0 1rem 1rem 0
+
+  .dropdown-menu
+    z-index: 0
+    display: block
+    position: relative
+
+
+.icon-grid
+  display: block
+  margin: 0 auto
+  position: relative
+  text-align: center
+  box-sizing: border-box
+  clearfix()
+
+  .icon-grid-item
+    display: inline-block
+    float: left
+    width: 170px
+    height: 170px
+    padding: 3rem 1rem
+    text-align: center
+    background: $scheme['dark']['background']['light']
+    border: 1px solid $scheme['dark']['background']['light']
+    i
+      margin-bottom: 0.5rem
+      font-size: 2rem
+    span
+      display: block
+
+
+#grid-presentation
+  .row, .col
+    color: $scheme['light']['background']['dark']
+    border: 1px dashed $scheme['dark']['background']['light']
+    background: $scheme['dark']['background']['lighter']
+    text-align: center
+
+  .col
+    padding-top: 4rem
+    padding-bottom: 4rem
+
+  .row
+    margin-bottom: 3rem
+
+  h5
+    display: block
+    width: 100%
+
+#ui-general-progress-bars .progress
+  margin-bottom: 1rem
+
+.sparklines-table
+  th:nth-child(2n+2)
+  td:nth-child(2n+2)
+    text-align: right
+
+
+.tasks-calendar-wrapper
+  .tasks-calendar-list
+    position: absolute
+    display: block
+    top: 0
+    left: 0
+    padding: 1rem
+    width: 320px
+    height: 100%
+    background: $scheme.dark.background.lighter
+    background: linear-gradient(to bottom, $scheme.dark.background.light, $scheme.dark.background.transparent)
+    overflow: auto
+
+    @media screen and (min-width: 1840px)
+      width: 520px
+
+    +breakpoint-down(sm)
+      position: relative
+      width: 100%
+      margin-top: 2rem
+
+    .tasks-calendar-day
+      font-size: 1.5rem
+    .tasks-calendar-date
+      font-size: 0.9rem
+      margin-top: -0.25rem
+      color: $scheme.light.color.medium
+
+    form
+      position: relative
+      margin-top: 1rem
+
+      button
+        position: absolute
+        right: 0
+        top: 0.25rem
+        border: none
+        background: transparent
+        color: $scheme.light.color.medium
+        font-size: 1.25rem
+        transition: color 0.5s ease
+
+    .tasks-calendar-add-new
+      background: transparent
+      color: $scheme.light.color.default
+      border: none
+      width: 100%
+      padding: 0.5rem 0.25rem
+      border-bottom: 1px solid $scheme.light.background.light
+      transition: all 0.5s ease
+
+      &:active, &:focus
+        outline: none
+        border-bottom-color: $scheme.light.background.default
+
+        + button
+          color: $scheme.light.color.default
+
+    ul
+      list-style: none
+      padding: 0
+      margin-top: 1.5rem
+      li
+        margin-bottom: 0.5rem
+        span
+          float: right
+          color: $scheme.light.color.medium
+
+  .tasks-calendar
+    width: 100%
+    height: auto
+    padding-left: 320px
+    position: relative
+    display: block
+
+    @media screen and (min-width: 1840px)
+      padding-left: 520px
+
+    +breakpoint-down(sm)
+      padding-left: 0
+
+    .datepicker-inline
+    .datepicker-inline table
+      width: 100%
+
+
+// #themes-item
+//   $themes-item-offset = 16px
+//   +breakpoint-down(xs)
+//     width: ($navbar['height'] - $themes-item-offset) !important
+//   +breakpoint-down(md)
+//     position: fixed
+//     top: $navbar['height'] + ($themes-item-offset)
+//     // bottom: ($themes-item-offset)
+//     right: ($themes-item-offset)
+//     border: 0
+//     background: $scheme.dark.background.medium
+//     a
+//       height: $navbar['height'] - $themes-item-offset
+//       line-height: $navbar['height'] - $themes-item-offset
+//       width: ($navbar['height'] - $themes-item-offset) !important
+
+
+.dashboard-table-col
+  @media screen and (min-width: 1400px)
+    width: 50%!important
+
+// Themeable Items
+[data-change-theme]
+  cursor: pointer
+  transition: all 0.5s ease
+  background-position: 0 0
+  background-size: 100% 100%
+  margin: 0.25rem
+  font-size: 0.8rem!important
+  padding: 1rem 0
+  &:hover, &:focus, &:active
+    background-size: 150% 150%
+    background-position: 0 -100%
+
+
+#dashboard-sparklines canvas
+  margin-top: 0.6rem
+
+#dashboard-progress-bars
+  padding-bottom: 3.25rem
+
+  p
+    margin: 0.67rem 0 0.33rem
+
+#chart-project-progress
+  $chart-height = 300px
+
+  height: $chart-height
+  +breakpoint-down(lg)
+    height: $chart-height * 1.2
+  +breakpoint-down(md)
+    height: $chart-height * 1
+  +breakpoint-down(sm)
+    height: $chart-height * 0.8
+  +breakpoint-down(xs)
+    height: $chart-height * 0.75
+
+#sidebar-secondary
+  background: transparent
+
+#sidebar-toggle-navbar-brand
+  position: absolute
+  display: block
+  line-height: $navbar['height']
+  height: $navbar['height']
+  width: $navbar['height']
+  text-align: center
+
+  a
+    display: block
+    width: 100%
+    height: 100%
+    transition: background 0.3s ease
+    background-color: $scheme.dark.background.lighter
+    background-image: linear-gradient(to bottom right, $scheme.dark.background.lighter, $scheme.dark.background.transparent)
+
+    &:hover
+    &:active
+    &:focus
+      background-color: $scheme.dark.background.light
+
+#sidebar-toggle a
+#sidebar-secondary-toggle a
+  font-size: 1.35rem
+
+
+.note-btn-group > .note-btn-group
+  margin-right: 0!important
+  margin-bottom: 0!important
+
+#sidebar-main-purchase
+  margin-top: 1rem

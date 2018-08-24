@@ -1,0 +1,13 @@
+//- Add server base URL to link if it's a relative url 
+//-
+- function url(link){
+  - let separator = link[0] === '/' ? '' : '/'
+  
+  if link.indexOf('http') != -1
+    - return link
+  else
+    if !(/\..+$/.test(link))
+      - return link.replace(/^\//g, '').replace(/\//g, '-') + '.html'
+    else 
+      - return link
+- }

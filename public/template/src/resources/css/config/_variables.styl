@@ -1,0 +1,247 @@
+// Typography
+$font-family-body = "Proxima Nova", "Helvetica Neue", Helvetica, Arial, sans-serif
+$font-family-heading = "Lytiga Pro", "Proxima Nova", "Helvetica Neue", Helvetica, Arial, sans-serif
+
+// Body
+//
+$body-bg = $silver
+
+
+// Box Model
+//
+$base-margin = 1rem
+$base-padding = $base-margin
+
+
+// Color Schemes
+//
+$scheme = {
+  dark: {
+    background: {
+      transparent:  rgba(0,0,0,0.0)
+      lighter:      rgba(0,0,0,0.125)
+      light:        rgba(0,0,0,0.25)
+      medium:       rgba(0,0,0,0.5)
+      dark:         rgba(0,0,0,0.7)
+      darker:       rgba(0,0,0,0.8)
+      default:      rgba(0,0,0,1.0)
+    }
+    color: {
+      transparent:  rgba(0,0,0,0.0)
+      lighter:      rgba(0,0,0,0.125)
+      light:        rgba(0,0,0,0.25)
+      medium:       rgba(0,0,0,0.5)
+      dark:         rgba(0,0,0,0.75)
+      darker:       rgba(0,0,0,0.875)
+      default:      rgba(0,0,0,1.0)
+    }
+  }
+
+  light: {
+    background: {
+      transparent:  rgba(255,255,255,0.0)
+      lighter:      rgba(255,255,255,0.05)
+      light:        rgba(255,255,255,0.15)
+      medium:       rgba(255,255,255,0.5)
+      dark:         rgba(255,255,255,0.85)
+      darker:       rgba(255,255,255,0.95)
+      default:      rgba(255,255,255,1.0)
+    }
+    color: {
+      transparent:  rgba(255,255,255,0.0)
+      lighter:      rgba(255,255,255,0.05)
+      light:        rgba(255,255,255,0.15)
+      medium:       rgba(255,255,255,0.5)
+      dark:         rgba(255,255,255,0.85)
+      darker:       rgba(255,255,255,0.95)
+      default:      rgba(255,255,255,1.0)
+    }
+  }
+}
+
+
+// Content
+//
+$content = {
+  padding: 16px
+  schemes: {
+    dark: {
+      color: $scheme.light.color.default
+    }
+    light: {
+      color: $scheme.dark.color.default
+    }
+  }
+}
+
+// Navbar
+//
+$navbar = {
+  height: 70px
+  nav: {
+    margin-right: 2rem
+  }
+  schemes: {
+    light: {
+      color: $scheme.dark.color
+      background: $scheme.light.background
+    }
+    dark: {
+      color: $scheme.light.color
+      background: $scheme.dark.background
+    }
+  }
+}
+
+// Morph Dropdown
+//
+$morph-dropdown = {
+  schemes: {
+    light: {
+      color: $scheme.dark.color.default
+      background: $scheme.light.background.dark
+    }
+    dark: {
+      color: $scheme.light.color.default
+      background: $scheme.dark.background.dark
+    }
+  }
+}
+
+
+// Sidebar
+//
+$sidebar = {
+  width: 280px
+  responsive-width: 60px
+  link-height: 60px
+  link-inner-height: 45px
+  active-border-width: 5px
+  schemes: {
+    light: {
+      color: $scheme.dark.color
+      background: $scheme.light.background
+    }
+    dark: {
+      color: $scheme.light.color
+      background: $scheme.dark.background
+    }
+  }
+}
+// $sidebar['schemes']['dark']['color']['dark'] = rgba(255,255,255,0.9)
+// $sidebar['schemes']['light']['color']['dark'] = rgba(0,0,0,0.9)
+
+
+// Panel
+//
+$panel = {
+  padding: $base-padding
+  schemes: {
+    light: {
+      color: $scheme.light.color
+      background: $scheme.light.background
+    }
+    dark: {
+      color: $scheme.light.color
+      background: $scheme.dark.background
+    }
+  }
+}
+
+
+// Dropdown
+//
+$dropdown = {
+  schemes: {
+    light: {
+      color: $scheme.dark.color
+      background: $scheme.light.background
+    }
+    dark: {
+      color: $scheme.light.color
+      background: $scheme.dark.background
+    }
+  }
+}
+
+
+// Page Heading
+//
+$page-heading = {
+  schemes: {
+    light: {
+      color: $scheme.dark.color
+      background: $scheme.light.background
+    }
+    dark: {
+      color: $scheme.light.color
+      background: $scheme.dark.background
+    }
+  }
+}
+
+
+// Tables
+//
+$table = {
+  schemes: {
+    light: {
+      color: $scheme.dark.color
+      background: $scheme.light.background
+    }
+    dark: {
+      color: $scheme.light.color
+      background: $scheme.dark.background
+    }
+  }
+}
+
+
+// Buttons
+//
+$button = {
+  padding-vertical: 0.75rem
+  padding-horizontal: 1.5rem
+}
+
+
+
+// Tabs
+//
+$tabs = {
+  schemes: {
+    light: {
+      color: $scheme.light.color
+      background: $scheme.light.background
+    }
+    dark: {
+      color: $scheme.light.color
+      background: $scheme.dark.background
+    }
+  }
+}
+
+// Charts
+//
+$chart = {
+  height: 300px
+  factor: {
+    xl: 1.32
+    lg: 1.15
+    md: 1
+    sm: 0.75
+    xs: 0.5
+  }
+}
+
+// Maps
+//
+$map = {
+  height: 500px
+  factor: {
+    lg: 1.25
+    md: 1
+    sm: 0.75
+    xs: 0.5
+  }
+}

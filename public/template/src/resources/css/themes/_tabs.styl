@@ -1,0 +1,19 @@
+.nav 
+  for $brand-name, $brand-color in $theme-brand
+    &.-{$brand-name}
+      background: linear-gradient(to right, rgba($brand-color, 0.5), rgba($brand-color, 0.25))
+      border-color: rgba($brand-color, 0.25)
+      .nav-link
+        color: $scheme['light']['color']['default']
+        &.active
+          background: rgba($brand-color, 0.25)
+          background: linear-gradient(to bottom right, rgba($brand-color, 0.25), rgba($brand-color, 0.5))
+          border-color: rgba($brand-color, 0)
+          &:hover, &:focus, &:active
+            background: linear-gradient(to bottom right, rgba($brand-color, 0.25), rgba($brand-color, 0.5))
+            color: $scheme['light']['color']['default']
+            border-color: rgba($brand-color, 0.5)
+
+        &:hover, &:focus, &:active
+          background: rgba($brand-color, 0.1)
+          border-color: rgba($brand-color, 0.5)

@@ -1,0 +1,43 @@
+mixin sidebar-main-pages(options)
+  each item in options.pages 
+    - let itemUrl = item.view ? url(options.route + item.route) : 'javascript:void(0);'
+    - let itemTitle = (item.nav && item.nav.title) ? item.nav.title : item.title
+    
+    if item.nav && item.nav.heading  
+      li(class='sidebar-heading') 
+        = item.nav.heading
+    
+    if item.view || item.pages 
+      li(class=(isActivePage(item)) ? '-active active' : '')
+        a(href=itemUrl) 
+          i(class=item.icon)
+          span 
+            = itemTitle  
+          if item.pages 
+            span(class='fa arrow')
+
+        if item.pages
+          ul
+            +sidebar-main-pages({ pages: item.pages, route: options.route + item.route })
+            
+
+mixin sidebar-main(options)
+  - let theme = options.theme || 'dark'
+  - let position = options.position || 'left' 
+  - let responsive = options.responsive || 'slideable'   
+  - let route = options.pages.route || '' 
+  
+  // Left Sidebar 
+  div(class='sidebar -' + theme + ' -' + position + ' -' + responsive id='sidebar')&attributes(attributes)
+    div(class='scrollable')
+      div(class='scrollable-content')
+        div(class='sidebar-wrapper') 
+          ul(class='sidebar-menu metismenu')
+            +sidebar-main-pages({ pages: options.pages.pages, route: route }) 
+
+            li#sidebar-main-purchase
+              a(href='https://codecanyon.net/cart/configure_before_adding/19359531&size=source&support=bundle_12month&ref=pixevil') 
+                +fa('download')
+                span Buy Now
+  // /Left Sidebar
+  

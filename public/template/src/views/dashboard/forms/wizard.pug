@@ -1,0 +1,91 @@
+extends ../../layouts/dashboard.pug
+
+block content
+  +container-fluid
+    +row 
+      +col({ lg: 12 })
+        +page-heading(server, page)
+          
+    +row
+      +col({ lg: 12 })
+        +panel(class='-dark')
+          +panel-heading
+            h4 Wizard
+            span A showcase of Volta's form wizard
+          form(class='form -dark' id='form-basic' method="POST") 
+            div(class='wizard -dark' id='wizard')
+              h3 Step 1
+              +panel-body 
+                +form-group
+                  label(class='form-label' for='form-basic-email') Email Address
+                  input(class='form-control' id='form-basic-email' name="email" type="email" placeholder="Email")
+                  small(class='form-text _text-muted') We'll never share your email with anyone else.
+                +form-group
+                  label(for='form-basic-password') Password
+                  input(class='form-control' id='form-basic-password' name="password" type="password" placeholder="Password")
+              h3 Step 2 
+              +panel-body 
+                +form-group
+                  label(for='form-elements-text') Text Input
+                  input(class='form-control' id='form-elements-text' name="text" type="text" placeholder="Text")
+                  div(class="help-block") This is an example help block.
+
+                +form-group
+                  label(for='form-elements-password') Password Input
+                  input(class='form-control' id='form-elements-password' name="password" type="password" placeholder="Password")
+
+                +form-group
+                  label(for='form-elements-textarea') Textarea Input
+                  textarea(class='form-control' id='form-elements-textarea' name="textarea" rows="4" type="textarea" placeholder="Textarea")
+
+              h3 Step 3
+              +panel-body 
+                +form-group
+                  label(for='form-elements-select') Select Input
+                  select(class='form-control' id='form-elements-select' name="select")
+                    option(value='1') 1
+                    option(value='2') 2
+                    option(value='3') 3
+                    option(value='4') 4
+                    option(value='5') 5
+                    
+                +form-group
+                  label(for='form-elements-select-multiple') Select Multiple Input
+                  select(class='form-control' id='form-elements-select-multiple' multiple='true' name="select-multiple")
+                    option(value='1') 1
+                    option(value='2') 2
+                    option(value='3') 3
+                    option(value='4') 4
+                    option(value='5') 5
+
+                +form-group
+                  label(for='form-elements-file') File Input
+                  input(class='form-control' id='form-elements-file' name="file" type="file" )
+                  div(class='form-text _text-muted') This is some placeholder block-level help text for the above input. It's a bit lighter and easily wraps to a new line.
+
+              h3 Step 4
+              +panel-body  
+                +form-group
+                  label Checkbox Input
+                  div(class='form-check -checkbox')
+                    input(class='form-check-input' id='form-elements-checkbox-1' name="checkbox" type="checkbox" checked="true")
+                    label(for='form-elements-checkbox-1') Checkbox Input 1
+                  div(class='form-check -checkbox')
+                    input(class='form-check-input' id='form-elements-checkbox-2' name="checkbox" type="checkbox")
+                    label(for='form-elements-checkbox-2') Checkbox Input 2
+                  div(class='form-check disabled -checkbox')
+                    input(class='form-check-input' id='form-elements-checkbox-3' disabled="true" name="checkbox" type="checkbox")
+                    label(for='form-elements-checkbox-3') Disabled Checkbox Input
+                    
+                +form-group
+                  label Radio Input
+                  div(class='form-check -radio')
+                    input(class='form-check-input' id='form-elements-radio-1' name="radio" value="1" type="radio" checked="true")
+                    label(for='form-elements-radio-1')  Radio Input 1
+                  div(class='form-check -radio')
+                    input(class='form-check-input' id='form-elements-radio-2' name="radio" value="2" type="radio")
+                    label(for='form-elements-radio-2')  Radio Input 2
+                  div(class='form-check disabled -radio')
+                    input(class='form-check-input' id='form-elements-radio-3' disabled="true" name="radio" value="2" type="radio")
+                    label(for='form-elements-radio-3')  Disabled Radio Input
+      

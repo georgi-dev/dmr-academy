@@ -1,0 +1,135 @@
+<!DOCTYPE html >
+<html lang="en"> 
+  <head>
+    <!-- Page Title-->
+    <title> Volta - Sign Up
+    </title>
+    <!-- Page Meta-->
+    <meta name="description" content="Volta is a futuristic Web Application and Admin Dashboard built with Bootstrap, Stylus and CoffeeScript. From a developer trusted by thousands of users."/>
+    <meta name="keywords" content="volta, admin, volta admin, dashboard, web, application, template, theme, admin dashboard, admin template, admin theme, web application template, dashboard template, pixevil, pixevil themes, grozav"/>
+    <meta name="author" content="Pixevil (https://pixevil.com)"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no"/>
+    <!-- Browser Favicons-->
+    <link rel="apple-touch-icon" sizes="180x180" href="resources/icon/apple-touch-icon.png"/>
+    <link rel="icon" type="image/png" href="resources/icon/favicon-32x32.png" sizes="32x32"/>
+    <link rel="icon" type="image/png" href="resources/icon/favicon-16x16.png" sizes="16x16"/>
+    <link rel="manifest" href="resources/icon/manifest.json"/>
+    <link rel="mask-icon" href="resources/icon/safari-pinned-tab.svg" color="#ff1643"/>
+    <link rel="shortcut icon" href="resources/icon/favicon.ico"/>
+    <meta name="msapplication-config" content="resources/icon/browserconfig.xml"/>
+    <meta name="theme-color" content="#ff1643"/>
+    <!-- Facebook OpenGraph-->
+    <meta property="og:title" content="Volta - Web Application and Admin Dashboard"/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:url" content=""/>
+    <meta property="og:image" content="http://pixevil.com/img/template-thumbnails/volta.jpg"/>
+    <meta property="og:site_name" content="pixevil"/>
+    <!-- Theme-->
+    <script src="vendors/cookie/cookie.js" type="text/javascript"></script>
+    <script src="resources/js/themes/base.js" type="text/javascript"></script>
+    <!-- Loader-->
+    <link href="resources/css/loader/loader.css" rel="stylesheet" type="text/css"/>
+    <!-- Stylesheets-->
+    <link href="vendors/bootstrap/bootstrap.css" rel="stylesheet" type="text/css"/>
+    <link href="vendors/animate/animate.css" rel="stylesheet" type="text/css"/>
+    <link href="vendors/metismenu/metismenu.css" rel="stylesheet" type="text/css"/>
+    <link href="vendors/perfect-scrollbar/perfect-scrollbar.css" rel="stylesheet" type="text/css"/>
+    <link href="vendors/font-awesome/font-awesome.css" rel="stylesheet" type="text/css"/>
+    <link href="vendors/pixeden-stroke/pixeden-stroke.css" rel="stylesheet" type="text/css"/>
+    <link href="resources/css/dashboard/dashboard.css" rel="stylesheet" type="text/css"/>
+  </head>
+  <body itemscope="itemscope" itemtype="http://schema.org/WebPage">
+    <!-- Loading Spinner-->
+    <div class="loader-wrapper">
+      <div class="loader"><span class="loader-block"></span><span class="loader-block"></span><span class="loader-block"></span><span class="loader-block"></span><span class="loader-block"></span><span class="loader-block"></span><span class="loader-block"></span><span class="loader-block"></span><span class="loader-block"></span><span class="loader-block"></span><span class="loader-block"></span><span class="loader-block"></span><span class="loader-block"></span><span class="loader-block"></span><span class="loader-block"></span><span class="loader-block"></span>
+      </div>
+    </div>
+    <!-- /Loading Spinner-->
+    <!-- Navbar-->
+    <div class="navbar -dark -fixed-top -has-6-items">
+      <div class="navbar-wrapper">
+        <div class="sidebar-toggle hidden-lg-up hidden-xs-down" id="sidebar-toggle-navbar-brand" data-target="#sidebar"> <a href="javascript:void(0);"> <i class="fa fa-bars"> </i></a></div><a class="navbar-brand hidden-xs-down" href="dashboard.html"> 
+          <h1>Volta</h1></a>
+        <ul class="navbar-nav -right">
+          <li> <a href="signup.html" data-toggle="tooltip" data-placement="bottom" title="Sign Up"><i class="pe pe-plus"></i></a></li>
+          <li> <a href="signin.html" data-toggle="tooltip" data-placement="bottom" title="Sign In"> <i class="pe pe-angle-right-circle"></i></a></li>
+        </ul>
+        <div class="morph-dropdown-wrapper -dark -right">
+          <div class="morph-dropdown-list -links"></div>
+        </div>
+      </div>
+    </div>
+    <!-- /Navbar-->
+    <!-- Content-->
+    <div class="content -dark -without-sidebar">
+      <div class="container-fluid"> 
+        <div class="row">  
+          <div class="col -lg-12">
+            <div class="panel -dark -focused">
+              <div class="panel-heading -dark -with-icon-lg"><i class="pe pe-plus"></i>
+                <h3>Sign Up</h3><span>We'll never share your credentials with anyone.</span>
+              </div>
+              <div class="panel-body"> 
+                <form class="form -dark" id="form-signup" action="/" data-toggle="validator" method="POST">
+                  <!-- Form Group-->
+                  <div class="form-group">
+                    <label class="form-label" for="form-signup-username">Username</label>
+                    <input class="form-control" id="form-signup-username" name="username" type="text" required="required" placeholder="Username"/>
+                  </div>
+                  <!-- /Form Group-->
+                  <!-- Form Group-->
+                  <div class="form-group">
+                    <label class="form-label" for="form-signup-email">Email</label>
+                    <input class="form-control" id="form-signup-email" name="email" type="email" required="required" placeholder="Email"/>
+                  </div>
+                  <!-- /Form Group-->
+                  <!-- Form Group-->
+                  <div class="form-group">
+                    <label for="form-signup-password">Password</label>
+                    <input class="form-control" id="form-signup-password" name="password" type="password" required="required" placeholder="Password"/>
+                  </div>
+                  <!-- /Form Group-->
+                  <!-- Form Group-->
+                  <div class="form-group">
+                    <input class="form-control" id="form-signup-password-confirmation" name="password-confirmation" type="password" required="required" placeholder="Password Confirmation" data-match="#form-signup-password"/>
+                  </div>
+                  <!-- /Form Group-->
+                  <!-- Form Group-->
+                  <div class="form-group _margin-top-2x _margin-bottom-none">
+                    <div class="form-check -checkbox"> 
+                      <button class="btn -primary -block" type="submit" name="signup">Signup      </button>
+                    </div>
+                  </div>
+                  <!-- /Form Group-->
+                </form>
+              </div>
+            </div>
+            <p class="_text-center"><a class="_text-muted" href="signin.html">I already have an account, sign me in!</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- /Content-->
+    <!-- Scripts-->
+    <script src="vendors/jquery/jquery.js" type="text/javascript"></script>
+    <script src="vendors/gsap/gsap.js" type="text/javascript"></script>
+    <script src="vendors/browser/browser.js" type="text/javascript"></script>
+    <script src="vendors/hammer/hammer.js" type="text/javascript"></script>
+    <script src="vendors/tether/tether.js" type="text/javascript"></script>
+    <script src="vendors/moment/moment.js" type="text/javascript"></script>
+    <script src="vendors/bootstrap/bootstrap.js" type="text/javascript"></script>
+    <script src="vendors/bootstrap/plugins/modal.js" type="text/javascript"></script>
+    <script src="vendors/datepicker/datepicker.js" type="text/javascript"></script>
+    <script src="vendors/validator/validator.js" type="text/javascript"></script>
+    <script src="vendors/perfect-scrollbar/perfect-scrollbar.js" type="text/javascript"></script>
+    <script src="vendors/gritter/gritter.js" type="text/javascript"></script>
+    <script src="vendors/metismenu/metismenu.js" type="text/javascript"></script>
+    <script src="resources/js/themes/picker.js" type="text/javascript"></script>
+    <script src="resources/js/animus/animus.js" type="text/javascript"></script>
+    <script src="resources/js/components/morph-dropdown.js" type="text/javascript"></script>
+    <script src="resources/js/components/navbar.js" type="text/javascript"></script>
+    <script src="resources/js/components/panel.js" type="text/javascript"></script>
+    <script src="resources/js/components/sidebar.js" type="text/javascript"></script>
+    <script src="resources/js/dashboard/dashboard.js" type="text/javascript"></script>
+  </body>
+</html>

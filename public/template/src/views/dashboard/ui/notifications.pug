@@ -1,0 +1,64 @@
+extends ../../layouts/dashboard.pug
+
+block content    
+  +container-fluid
+    +row
+      +col({ lg: 12 })
+        +page-heading(server, page)
+        
+    +row    
+      +col({ lg: 6 })
+        +panel(class='-dark')
+          +panel-heading  
+            h4 Notification Colors
+            span A showcase of Volta's growl notifications
+          +panel-body 
+            div(class='btn-list-unstyled')
+              +btn(class='-light' id='notification-light' href='#') Light
+              +btn(class='-dark' id='notification-dark' href='#') Dark
+              +btn(class='-primary' id='notification-primary' href='#') Primary
+              +btn(class='-secondary' id='notification-secondary' href='#') Secondary
+              +btn(class='-success' id='notification-success' href='#') Success
+              +btn(class='-warning' id='notification-warning' href='#') Warning
+              +btn(class='-info' id='notification-info' href='#') Info 
+              +btn(class='-danger' id='notification-danger' href='#') Danger
+              
+      +col({ lg: 6 })     
+        +panel(class='-dark')
+          +panel-heading 
+            h4 Notification Styles
+            span A showcase of Volta's growl notifications styles
+          +panel-body 
+            div(class='btn-list-unstyled') 
+              +btn(class='-dark' id='notification-basic' href='#') Basic
+              +btn(class='-dark' id='notification-sticky' href='#') Sticky
+              +btn(class='-dark' id='notification-image' data-image=url('resources/img/notifications/iphone.jpg') href='#') Image
+              +btn(class='-dark' id='notification-top-left' href='#') Top Left
+              +btn(class='-dark' id='notification-top-right' href='#') Top Right   
+              +btn(class='-dark' id='notification-bottom-left' href='#') Bottom Left
+              +btn(class='-dark' id='notification-bottom-right' href='#') Bottom Right
+
+    +row
+      +col({ lg: 12 })
+        +panel(class='-dark')
+          +panel-heading   
+            h4 Social Notification
+            span A showcase of Volta's social growl notifications
+          +panel-body   
+            div(class='btn-list-unstyled')
+              +btn(class='-facebook' id='notification-facebook' data-image=url('resources/img/notifications/facebook.png') href='#') Facebook
+              +btn(class='-twitter' id='notification-twitter' data-image=url('resources/img/notifications/twitter.png') href='#') Twitter
+              +btn(class='-google-plus' id='notification-google-plus' data-image=url('resources/img/notifications/google-plus.png') href='#') Google+
+              +btn(class='-dribbble' id='notification-dribbble' data-image=url('resources/img/notifications/dribbble.png') href='#') Dribbble
+              +btn(class='-behance' id='notification-behance' data-image=url('resources/img/notifications/behance.png') href='#') Behance
+              +btn(class='-flickr' id='notification-flickr' data-image=url('resources/img/notifications/flickr.png') href='#') flickr
+              +btn(class='-linkedin' id='notification-linkedin' data-image=url('resources/img/notifications/linkedin.png') href='#') LinkedIn
+              +btn(class='-youtube' id='notification-youtube' data-image=url('resources/img/notifications/youtube.png') href='#') YouTube
+              +btn(class='-pinterest' id='notification-pinterest' data-image=url('resources/img/notifications/pinterest.png') href='#') Pinterest
+              +btn(class='-github' id='notification-github' data-image=url('resources/img/notifications/github.png') href='#') Github
+              +btn(class='-tumblr' id='notification-tumblr' data-image=url('resources/img/notifications/tumblr.png') href='#') Tumblr
+              +btn(class='-twitch' id='notification-twitch' data-image=url('resources/img/notifications/twitch.png') href='#') Twitch
+              +btn(class='-envato' id='notification-envato' data-image=url('resources/img/notifications/envato.png') href='#') Envato
+
+
+      
